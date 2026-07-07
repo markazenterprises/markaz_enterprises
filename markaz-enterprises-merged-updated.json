@@ -1,0 +1,1815 @@
+{
+  "project": "Markaz Enterprises — Complete Website Master Plan",
+  "version": "v1.0",
+  "date": "June 2025",
+  "prepared_for": "Muhammad Athar Siddiqui, Founder & CEO",
+  "company": "Markaz Enterprises, Karachi, Pakistan",
+  "contact": {
+    "email": "themarkazenterprises@gmail.com",
+    "phone": "0334-3660833",
+    "whatsapp": "+923343660833",
+    "address": "House #85, Street #10, Sec 11 1/2, Lal Shahbaz Nagar, Orangi Town, Karachi"
+  },
+  "design_system": {
+    "colors": {
+      "primary_navy": "#1A2B5F",
+      "golden_amber": "#E8A020",
+      "emerald_green": "#0D9B76",
+      "light_bg": "#F4F6FB",
+      "dark_text": "#1C1C2E",
+      "body_text": "#3D3D55",
+      "muted": "#8890A8",
+      "border": "#D0D8EE",
+      "white": "#FFFFFF"
+    },
+    "typography": {
+      "h1": {
+        "family": "Inter Bold",
+        "size": "48px",
+        "color": "primary_navy",
+        "use": "Hero headings, page titles"
+      },
+      "h2": {
+        "family": "Inter Bold",
+        "size": "32px",
+        "color": "primary_navy",
+        "use": "Major section headings"
+      },
+      "h3": {
+        "family": "Inter SemiBold",
+        "size": "22px",
+        "color": "emerald_green",
+        "use": "Card titles, sub-sections"
+      },
+      "h4": {
+        "family": "Inter Medium",
+        "size": "16px",
+        "color": "dark_text",
+        "use": "Feature names, bullet titles"
+      },
+      "body": {
+        "family": "Inter Regular",
+        "size": "16px",
+        "color": "body_text",
+        "use": "All paragraph content"
+      },
+      "button": {
+        "family": "Inter Bold",
+        "size": "15px",
+        "color": "white",
+        "use": "Primary & secondary CTAs"
+      },
+      "nav": {
+        "family": "Inter SemiBold",
+        "size": "14px",
+        "color": "dark_text",
+        "use": "Desktop & mobile nav links"
+      }
+    },
+    "ui_components": {
+      "primary_button": {
+        "background": "#1A2B5F",
+        "text": "white",
+        "border_radius": "8px",
+        "padding": "14px 32px",
+        "hover_bg": "#E8A020"
+      },
+      "secondary_button": {
+        "border": "2px solid #1A2B5F",
+        "text": "#1A2B5F",
+        "hover": "fill navy"
+      },
+      "navigation": "Sticky top · White bg · Logo left · Links center · CTA button right",
+      "hero_section": "Min-height: 90vh · BG image + navy overlay 60% · CTA center",
+      "service_cards": "White bg · 1px border · 12px radius · 24px padding · shadow hover",
+      "section_spacing": {
+        "desktop": "80px top/bottom",
+        "mobile": "48px top/bottom",
+        "max_width": "1280px"
+      }
+    }
+  },
+  "animations": {
+    "global_style": "ReactBits-inspired — fluid, purposeful micro-animations with GPU-accelerated transforms",
+    "background_animations": {
+      "hero": {
+        "type": "animated_gradient_mesh",
+        "description": "Slowly morphing radial gradient blobs in navy/gold/emerald. CSS @keyframes on multiple radial-gradient layers. No JS needed.",
+        "implementation": "background: radial-gradient animated via @keyframes 'mesh-move' 12s ease infinite alternate",
+        "layers": [
+          {
+            "color": "rgba(26,43,95,0.9)",
+            "size": "80%",
+            "animation": "drift-slow 15s ease-in-out infinite"
+          },
+          {
+            "color": "rgba(232,160,32,0.12)",
+            "size": "60%",
+            "animation": "float-orb 10s ease-in-out infinite reverse"
+          },
+          {
+            "color": "rgba(13,155,118,0.08)",
+            "size": "40%",
+            "animation": "pulse-glow 8s ease-in-out infinite"
+          }
+        ]
+      },
+      "sections": {
+        "type": "particle_grid",
+        "description": "Subtle dot-grid background with gentle parallax on scroll",
+        "implementation": "CSS background-image: radial-gradient dots + JS IntersectionObserver for parallax shift"
+      },
+      "cards_section": {
+        "type": "aurora_tint",
+        "description": "Light sections get a faint aurora gradient wash behind cards",
+        "implementation": "::before pseudo-element with linear-gradient animation, opacity 0.04"
+      }
+    },
+    "card_animations": {
+      "default_card": {
+        "style": "ReactBits glass-morphism card",
+        "css": {
+          "background": "rgba(255,255,255,0.7)",
+          "backdrop_filter": "blur(12px)",
+          "border": "1px solid rgba(255,255,255,0.3)",
+          "border_radius": "16px",
+          "box_shadow": "0 8px 32px rgba(26,43,95,0.08)",
+          "transition": "transform 0.3s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.3s ease"
+        },
+        "hover": {
+          "transform": "translateY(-6px) scale(1.01)",
+          "box_shadow": "0 20px 48px rgba(26,43,95,0.18)",
+          "border_color": "rgba(232,160,32,0.5)"
+        }
+      },
+      "service_card": {
+        "style": "Tilt + spotlight glow on hover (ReactBits Spotlight Card)",
+        "implementation": "JS MouseEvent tracking → CSS custom properties --mouse-x, --mouse-y → radial-gradient spotlight follows cursor",
+        "icon_animation": "Icon scales to 1.2x with golden drop-shadow on hover"
+      },
+      "stat_card": {
+        "style": "Number counter animation on scroll entry",
+        "implementation": "IntersectionObserver triggers JS counter from 0 to target value over 1.5s with easeOutExpo"
+      },
+      "division_card": {
+        "style": "Flip-reveal card (ReactBits FlipCard)",
+        "front": "Division name, icon, brief description",
+        "back": "Full service list + tech stack pills",
+        "animation": "rotateY(180deg) on hover, perspective: 1000px"
+      },
+      "testimonial_card": {
+        "style": "Marquee / infinite scroll ticker (ReactBits InfiniteMarquee)",
+        "implementation": "CSS animation: scroll-x linear infinite. Duplicated set for seamless loop.",
+        "speed": "40s per cycle"
+      }
+    },
+    "entrance_animations": {
+      "scroll_reveal": {
+        "library": "Custom IntersectionObserver (no dependency)",
+        "default": {
+          "initial": "opacity: 0; transform: translateY(32px)",
+          "final": "opacity: 1; transform: translateY(0)",
+          "transition": "0.6s cubic-bezier(0.22,1,0.36,1)",
+          "delay_stagger": "0.1s per child element"
+        },
+        "variants": {
+          "fade_up": "translateY(32px) → translateY(0)",
+          "fade_left": "translateX(-32px) → translateX(0)",
+          "fade_right": "translateX(32px) → translateX(0)",
+          "scale_in": "scale(0.85) → scale(1)",
+          "blur_in": "blur(8px) opacity(0) → blur(0) opacity(1)"
+        }
+      }
+    },
+    "navigation_animations": {
+      "sticky_nav": "backdrop-filter: blur(20px) on scroll past hero. Smooth transition 0.3s.",
+      "mobile_menu": "Slide-in from right with clip-path animation: circle(0) → circle(200%)",
+      "active_link": "Gold underline slides in from left on hover/active state"
+    },
+    "button_animations": {
+      "primary_cta": "Shimmer sweep on hover — linear-gradient slides right to left over 0.5s",
+      "whatsapp_btn": "Pulse ring animation: box-shadow expands and fades, 1.5s loop",
+      "secondary_btn": "Border color slides from left on hover using clip-path"
+    },
+    "page_transitions": {
+      "type": "Cross-fade with slight upward drift",
+      "implementation": "CSS View Transitions API (viewTransition) + @keyframes page-enter",
+      "duration": "0.4s ease"
+    }
+  },
+  "pages": [
+    {
+      "page_id": 1,
+      "page_type": "cover",
+      "label": "Cover",
+      "title": "MARKAZ ENTERPRISES — Complete Website Master Plan",
+      "subtitle": "Complete Website Master Plan",
+      "meta": {
+        "document_type": "Website Master Plan — Strategy & Content",
+        "prepared_for": "Muhammad Athar Siddiqui, Founder & CEO",
+        "company": "Markaz Enterprises, Karachi, Pakistan",
+        "divisions": "11 Service Divisions Covered",
+        "total_sections": "14 Sections · 16 Pages",
+        "version": "v1.0 — June 2025"
+      },
+      "badges": [
+        {
+          "number": "11",
+          "label": "Divisions"
+        },
+        {
+          "number": "500+",
+          "label": "Projects"
+        },
+        {
+          "number": "10+ yrs",
+          "label": "Experience"
+        },
+        {
+          "number": "98%",
+          "label": "Satisfaction"
+        }
+      ],
+      "design_spec": {
+        "background": "var(--navy) #1A2B5F",
+        "decorative_orbs": [
+          {
+            "position": "top-right",
+            "size": "480px",
+            "color": "rgba(232,160,32,0.12)"
+          },
+          {
+            "position": "bottom-left",
+            "size": "340px",
+            "color": "rgba(232,160,32,0.07)"
+          }
+        ],
+        "tag_pill": "CONFIDENTIAL · v1.0 · JUNE 2025",
+        "title_font": "Playfair Display 900 3.6rem white",
+        "gold_word": "ENTERPRISES",
+        "layout": "flex column align-start min-height 100vh"
+      },
+      "animation_spec": {
+        "background": "animated_gradient_mesh with 3 orb layers drifting slowly",
+        "tag_pill": "fade_in from top, delay 0.2s",
+        "title": "blur_in 0.8s delay 0.4s",
+        "subtitle": "fade_up 0.6s delay 0.6s",
+        "divider": "width expands 0→64px, delay 0.7s",
+        "meta_rows": "staggered fade_left, 0.1s each, starting delay 0.8s",
+        "badges": "scale_in staggered from right, delay 1.0s",
+        "orbs": "float-orb keyframes 10-15s infinite alternating"
+      },
+      "html_content": "<div class=\"page cover\" id=\"page-1\" data-label=\"Cover\">\n  <div class=\"cover-tag\">Confidential Document · v1.0 · June 2025</div>\n  <h1 class=\"cover-title\">Markaz<br><span>Enterprises</span></h1>\n  <p style=\"font-size:1.15rem;color:rgba(255,255,255,.5);font-weight:300;letter-spacing:.04em;margin-bottom:10px;position:relative;z-index:1\">Complete Website Master Plan</p>\n  <div class=\"cover-divider\"></div>\n  <div class=\"cover-sub\">Sitemap · Full Content · SEO Strategy · Design System · Page Blueprints — Prepared for Markaz Enterprises, Karachi, Pakistan</div>\n  <div class=\"cover-meta\" style=\"position:relative;z-index:1\">\n    <div class=\"cover-meta-row\"><span class=\"cover-meta-label\">Document Type</span><span class=\"cover-meta-value\">Website Master Plan — Strategy & Content</span></div>\n    <div class=\"cover-meta-row\"><span class=\"cover-meta-label\">Divisions</span><span class=\"cover-meta-value\">11 Service Divisions Covered</span></div>\n    <div class=\"cover-meta-row\"><span class=\"cover-meta-label\">Total Pages</span><span class=\"cover-meta-value\">14 Sections · 25+ Pages</span></div>\n    <div class=\"cover-meta-row\"><span class=\"cover-meta-label\">Version</span><span class=\"cover-meta-value\">v1.0 — June 2025</span></div>\n    <div class=\"cover-meta-row\"><span class=\"cover-meta-label\">Prepared for</span><span class=\"cover-meta-value\">Muhammad Athar Siddiqui, Founder & CEO</span></div>\n  </div>\n  <div class=\"cover-badge\" style=\"z-index:1\">\n    <div class=\"cover-badge-row\">\n      <div><div class=\"cover-badge-num\">11</div><div class=\"cover-badge-label\">Divisions</div></div>\n      <div><div class=\"cover-badge-num\">500+</div><div class=\"cover-badge-label\">Projects</div></div>\n      <div><div class=\"cover-badge-num\">10+</div><div class=\"cover-badge-label\">Years</div></div>\n    </div>\n  </div>\n</div>\n\n<!-- ════════════════ PAGE 2 — TABLE OF CONTENTS ════════════════ -->"
+    },
+    {
+      "page_id": 2,
+      "page_type": "table_of_contents",
+      "label": "TOC",
+      "section": "00",
+      "title": "Table of Contents",
+      "subtitle": "Document Index — Navigate each section of the master plan.",
+      "toc_items": [
+        {
+          "num": "01",
+          "title": "Company Overview & Brand Identity",
+          "desc": "Mission, Vision, Core Values, Brand Voice",
+          "page": "P3"
+        },
+        {
+          "num": "02",
+          "title": "Website Sitemap",
+          "desc": "Full URL structure and page hierarchy",
+          "page": "P4"
+        },
+        {
+          "num": "03",
+          "title": "Design System & Visual Guidelines",
+          "desc": "Colors, typography, component specs",
+          "page": "P5"
+        },
+        {
+          "num": "04",
+          "title": "Homepage — Full Content & SEO",
+          "desc": "Hero, trust bar, services, testimonials, CTA",
+          "page": "P6"
+        },
+        {
+          "num": "05",
+          "title": "About Us Page",
+          "desc": "Brand story, quality assurance, project methodology",
+          "page": "P7"
+        },
+        {
+          "num": "06A",
+          "title": "Service Pages — Divisions 01–05",
+          "desc": "Construction, Interior, Appliances, CCTV, IT Solutions",
+          "page": "P8"
+        },
+        {
+          "num": "06B",
+          "title": "Service Pages — Divisions 06–11",
+          "desc": "Mobile Apps, Software, Analytics, Marketing, Solar",
+          "page": "P9"
+        },
+        {
+          "num": "07",
+          "title": "Portfolio & Case Studies",
+          "desc": "Gallery structure, template, solar case study",
+          "page": "P10"
+        },
+        {
+          "num": "08",
+          "title": "Blog Strategy & Content Calendar",
+          "desc": "Categories, topics by division, post template",
+          "page": "P11"
+        },
+        {
+          "num": "09",
+          "title": "Contact & Lead Generation",
+          "desc": "Form structure, WhatsApp CTA, lead workflow",
+          "page": "P12"
+        },
+        {
+          "num": "10",
+          "title": "SEO Strategy & Keywords",
+          "desc": "Primary and long-tail keywords by division",
+          "page": "P13"
+        },
+        {
+          "num": "11",
+          "title": "Technical SEO & Page Speed",
+          "desc": "Core Web Vitals, schema markup, local SEO",
+          "page": "P14"
+        },
+        {
+          "num": "13",
+          "title": "Meta Tags — All Key Pages",
+          "desc": "Optimised titles & descriptions for 13 pages",
+          "page": "P15"
+        },
+        {
+          "num": "14",
+          "title": "Implementation Roadmap",
+          "desc": "Phase-by-phase plan: discovery to launch",
+          "page": "P16"
+        }
+      ],
+      "animation_spec": {
+        "title": "fade_up 0.5s",
+        "toc_items": "staggered fade_left 0.08s each",
+        "item_hover": "gold underline slide-in + title color shift to #E8A020, 0.2s",
+        "item_num_badge": "scale to 1.05 on hover",
+        "background": "subtle dot-grid pattern, static"
+      },
+      "html_content": "<div class=\"page\" id=\"page-2\" data-label=\"Contents\">\n  <div class=\"section-tag\">Document Index</div>\n  <h1 class=\"page-title\">Table of Contents</h1>\n  <p class=\"page-sub\">Navigate each section of the master plan below.</p>\n  <div class=\"toc-list\">\n    <a class=\"toc-item\" href=\"#page-3\"><div class=\"toc-item-left\"><div class=\"toc-item-num\">01</div><div><div class=\"toc-item-title\">Company Overview & Brand Identity</div><div class=\"toc-item-desc\">Mission, vision, core values, brand voice</div></div></div><span class=\"toc-item-page\">P3</span></a>\n    <a class=\"toc-item\" href=\"#page-4\"><div class=\"toc-item-left\"><div class=\"toc-item-num\">02</div><div><div class=\"toc-item-title\">Website Sitemap</div><div class=\"toc-item-desc\">Full URL structure and page hierarchy</div></div></div><span class=\"toc-item-page\">P4</span></a>\n    <a class=\"toc-item\" href=\"#page-5\"><div class=\"toc-item-left\"><div class=\"toc-item-num\">03</div><div><div class=\"toc-item-title\">Design System & Visual Guidelines</div><div class=\"toc-item-desc\">Colors, typography, component specs</div></div></div><span class=\"toc-item-page\">P5</span></a>\n    <a class=\"toc-item\" href=\"#page-6\"><div class=\"toc-item-left\"><div class=\"toc-item-num\">04</div><div><div class=\"toc-item-title\">Homepage — Full Content & SEO</div><div class=\"toc-item-desc\">Hero, trust bar, services, CTA, testimonials</div></div></div><span class=\"toc-item-page\">P6</span></a>\n    <a class=\"toc-item\" href=\"#page-7\"><div class=\"toc-item-left\"><div class=\"toc-item-num\">05</div><div><div class=\"toc-item-title\">About Us Page</div><div class=\"toc-item-desc\">Brand story, mission, quality assurance, project management</div></div></div><span class=\"toc-item-page\">P7</span></a>\n    <a class=\"toc-item\" href=\"#page-8\"><div class=\"toc-item-left\"><div class=\"toc-item-num\">06</div><div><div class=\"toc-item-title\">Service Pages — All 11 Divisions</div><div class=\"toc-item-desc\">Full content framework per division</div></div></div><span class=\"toc-item-page\">P8–9</span></a>\n    <a class=\"toc-item\" href=\"#page-10\"><div class=\"toc-item-left\"><div class=\"toc-item-num\">07</div><div><div class=\"toc-item-title\">Portfolio & Case Studies</div><div class=\"toc-item-desc\">Gallery structure, case study template, metrics</div></div></div><span class=\"toc-item-page\">P10</span></a>\n    <a class=\"toc-item\" href=\"#page-11\"><div class=\"toc-item-left\"><div class=\"toc-item-num\">08</div><div><div class=\"toc-item-title\">Blog Strategy & Content Calendar</div><div class=\"toc-item-desc\">Categories, topics, post template</div></div></div><span class=\"toc-item-page\">P11</span></a>\n    <a class=\"toc-item\" href=\"#page-12\"><div class=\"toc-item-left\"><div class=\"toc-item-num\">09</div><div><div class=\"toc-item-title\">Contact & Lead Generation</div><div class=\"toc-item-desc\">Form structure, WhatsApp CTA, lead workflow</div></div></div><span class=\"toc-item-page\">P12</span></a>\n    <a class=\"toc-item\" href=\"#page-13\"><div class=\"toc-item-left\"><div class=\"toc-item-num\">10</div><div><div class=\"toc-item-title\">SEO Strategy & Keywords</div><div class=\"toc-item-desc\">Primary & long-tail keywords by division</div></div></div><span class=\"toc-item-page\">P13</span></a>\n    <a class=\"toc-item\" href=\"#page-14\"><div class=\"toc-item-left\"><div class=\"toc-item-num\">11</div><div><div class=\"toc-item-title\">Technical SEO & Page Speed</div><div class=\"toc-item-desc\">Core Web Vitals, schema, local SEO</div></div></div><span class=\"toc-item-page\">P14</span></a>\n    <a class=\"toc-item\" href=\"#page-15\"><div class=\"toc-item-left\"><div class=\"toc-item-num\">12–13</div><div><div class=\"toc-item-title\">Meta Tags — All Key Pages</div><div class=\"toc-item-desc\">Optimized titles & descriptions for every major page</div></div></div><span class=\"toc-item-page\">P15</span></a>\n    <a class=\"toc-item\" href=\"#page-16\"><div class=\"toc-item-left\"><div class=\"toc-item-num\">14</div><div><div class=\"toc-item-title\">Implementation Roadmap</div><div class=\"toc-item-desc\">Phase-by-phase build plan, discovery to launch</div></div></div><span class=\"toc-item-page\">P16</span></a>\n  </div>\n  <span class=\"page-num\">Page 2</span>\n</div>\n\n<!-- ════════════════ PAGE 3 — COMPANY OVERVIEW ════════════════ -->"
+    },
+    {
+      "page_id": 3,
+      "page_type": "content",
+      "label": "Brand Identity",
+      "section": "01",
+      "title": "Company Overview & Brand Identity",
+      "subtitle": "Core identity elements that underpin every page, every message, and every design decision.",
+      "company_overview": "Markaz Enterprises is Pakistan's comprehensive multi-industry solutions provider, headquartered in Karachi. We deliver Construction, Interior Design, Home Décor, Home Appliances, CCTV & Security, IT Solutions, Software Development, Mobile App Development, Data Analytics, Digital Marketing, and Solar Energy Solutions — all under one trusted brand umbrella.",
+      "mission": "To deliver integrated, high-quality solutions across construction, technology, and energy sectors — empowering businesses and homes to grow sustainably through reliable expertise and innovation.",
+      "vision": "To be Pakistan's most trusted one-stop enterprise solutions brand — known for quality, innovation, and customer-centric service delivery in every market we serve.",
+      "core_values": [
+        {
+          "name": "Quality First",
+          "desc": "Every project delivered to international standards, every time."
+        },
+        {
+          "name": "Customer Commitment",
+          "desc": "Long-term partnerships built on transparency and results."
+        },
+        {
+          "name": "Innovation",
+          "desc": "Embracing new technologies across all service divisions."
+        },
+        {
+          "name": "Integrity",
+          "desc": "Honest pricing, realistic timelines, no hidden surprises."
+        },
+        {
+          "name": "Sustainability",
+          "desc": "Eco-friendly practices from solar energy to green construction."
+        },
+        {
+          "name": "Results-Oriented",
+          "desc": "Lead with outcomes and measurable success metrics."
+        }
+      ],
+      "brand_voice": {
+        "tone": "Professional yet Approachable — technical confidence without jargon overload.",
+        "approach": "Results-Oriented — lead with outcomes, not just process descriptions.",
+        "identity": "Locally Rooted, Globally Aware — Pakistani knowledge + international standards."
+      },
+      "animation_spec": {
+        "section_tag": "fade_in 0.3s",
+        "title": "fade_up 0.5s",
+        "overview_paragraph": "fade_up 0.5s delay 0.1s",
+        "mission_vision_cards": "scale_in staggered 0.15s, gold left-border slides in from top on entry",
+        "core_values_grid": "staggered scale_in 0.1s each, value_dot pulses gold on hover",
+        "brand_voice_cards": "fade_left 0.4s staggered",
+        "card_hover": "translateY(-4px) + box-shadow deepens, 0.25s ease"
+      },
+      "html_content": "<div class=\"page\" id=\"page-3\" data-label=\"Overview\">\n  <div class=\"section-tag\">Section 01</div>\n  <h1 class=\"page-title\">Company Overview & Brand Identity</h1>\n  <p class=\"page-sub\">Core identity elements that underpin every page, every message, and every design decision.</p>\n\n  <p>Markaz Enterprises is Pakistan's comprehensive multi-industry solutions provider, headquartered in Karachi. We deliver Construction, Interior Design, Home Décor, Home Appliances, CCTV & Security, IT Solutions, Software Development, Mobile App Development, Data Analytics, Digital Marketing, and Solar Energy Solutions — all under one trusted brand umbrella.</p>\n\n  <div class=\"card-grid col2\" style=\"margin-top:20px\">\n    <div class=\"card navy-accent\">\n      <div class=\"card-label\">Mission</div>\n      <div class=\"card-value\">To deliver integrated, high-quality solutions across construction, technology, and energy sectors — empowering businesses and homes to grow sustainably through reliable expertise and innovation.</div>\n    </div>\n    <div class=\"card gold-accent\">\n      <div class=\"card-label\">Vision</div>\n      <div class=\"card-value\">To be Pakistan's most trusted one-stop enterprise solutions brand — known for quality, innovation, and customer-centric service delivery in every market we serve.</div>\n    </div>\n  </div>\n\n  <div class=\"section-rule\"></div>\n  <h3>Core Values</h3>\n  <div class=\"values-grid\">\n    <div class=\"value-item\"><div class=\"value-dot\"></div><div><div class=\"value-title\">Quality First</div><div class=\"value-desc\">Every project delivered to international standards, every time.</div></div></div>\n    <div class=\"value-item\"><div class=\"value-dot\"></div><div><div class=\"value-title\">Customer Commitment</div><div class=\"value-desc\">Long-term partnerships built on transparency and results.</div></div></div>\n    <div class=\"value-item\"><div class=\"value-dot\"></div><div><div class=\"value-title\">Innovation</div><div class=\"value-desc\">Embracing new technologies across all service divisions.</div></div></div>\n    <div class=\"value-item\"><div class=\"value-dot\"></div><div><div class=\"value-title\">Integrity</div><div class=\"value-desc\">Honest pricing, realistic timelines, no hidden surprises.</div></div></div>\n    <div class=\"value-item\"><div class=\"value-dot\"></div><div><div class=\"value-title\">Sustainability</div><div class=\"value-desc\">Eco-friendly practices from solar energy to green construction.</div></div></div>\n    <div class=\"value-item\"><div class=\"value-dot\" style=\"background:var(--green)\"></div><div><div class=\"value-title\">Results-Oriented</div><div class=\"value-desc\">Lead with outcomes and measurable success metrics.</div></div></div>\n  </div>\n\n  <div class=\"section-rule\"></div>\n  <h3>Brand Voice & Tone</h3>\n  <div class=\"card-grid col3\">\n    <div class=\"card\"><div class=\"card-title\">Professional yet Approachable</div><div class=\"card-desc\">Technical confidence without jargon overload.</div></div>\n    <div class=\"card\"><div class=\"card-title\">Results-Oriented</div><div class=\"card-desc\">Lead with outcomes, not just process descriptions.</div></div>\n    <div class=\"card\"><div class=\"card-title\">Locally Rooted</div><div class=\"card-desc\">Pakistani market knowledge + international standards.</div></div>\n  </div>\n  <span class=\"page-num\">Page 3</span>\n</div>\n\n<!-- ════════════════ PAGE 4 — SITEMAP ════════════════ -->"
+    },
+    {
+      "page_id": 4,
+      "page_type": "sitemap",
+      "label": "Sitemap",
+      "section": "02",
+      "title": "Website Sitemap — Full Structure",
+      "subtitle": "Complete URL architecture and page hierarchy for markaz-enterprises.com",
+      "sitemap": [
+        {
+          "level": "Main",
+          "page": "Home",
+          "url": "/",
+          "notes": "Primary landing page"
+        },
+        {
+          "level": "Primary",
+          "page": "About Us",
+          "url": "/about",
+          "notes": "Story, team, values",
+          "children": [
+            {
+              "page": "Our Story",
+              "url": "/about/story",
+              "notes": "Founding narrative"
+            },
+            {
+              "page": "Team",
+              "url": "/about/team",
+              "notes": "Leadership profiles"
+            },
+            {
+              "page": "Certifications",
+              "url": "/about/certifications",
+              "notes": "Licences & accreditations"
+            }
+          ]
+        },
+        {
+          "level": "Primary",
+          "page": "Construction",
+          "url": "/construction",
+          "notes": "Division hub",
+          "children": [
+            {
+              "page": "Residential Construction",
+              "url": "/construction/residential"
+            },
+            {
+              "page": "Commercial Construction",
+              "url": "/construction/commercial"
+            },
+            {
+              "page": "Renovation & Remodeling",
+              "url": "/construction/renovation"
+            },
+            {
+              "page": "Turnkey Projects",
+              "url": "/construction/turnkey"
+            },
+            {
+              "page": "Civil Works",
+              "url": "/construction/civil-works"
+            },
+            {
+              "page": "Structural Design",
+              "url": "/construction/structural-design"
+            }
+          ]
+        },
+        {
+          "level": "Primary",
+          "page": "Interior Design",
+          "url": "/interior-design",
+          "notes": "Division hub",
+          "children": [
+            {
+              "page": "Living Rooms",
+              "url": "/interior-design/living-rooms"
+            },
+            {
+              "page": "Bedrooms & Kitchens",
+              "url": "/interior-design/bedrooms-kitchens"
+            },
+            {
+              "page": "Office Interiors",
+              "url": "/interior-design/office"
+            },
+            {
+              "page": "Luxury Solutions",
+              "url": "/interior-design/luxury"
+            }
+          ]
+        },
+        {
+          "level": "Primary",
+          "page": "Home Appliances",
+          "url": "/home-appliances",
+          "notes": "Supply, install, maintain"
+        },
+        {
+          "level": "Primary",
+          "page": "CCTV & Security",
+          "url": "/cctv-security",
+          "notes": "Division hub",
+          "children": [
+            {
+              "page": "CCTV Installation",
+              "url": "/cctv-security/cctv"
+            },
+            {
+              "page": "Remote Monitoring",
+              "url": "/cctv-security/remote-monitoring"
+            },
+            {
+              "page": "Commercial Surveillance",
+              "url": "/cctv-security/commercial"
+            }
+          ]
+        },
+        {
+          "level": "Primary",
+          "page": "IT Solutions",
+          "url": "/it-solutions",
+          "notes": "Division hub",
+          "children": [
+            {
+              "page": "Web Development",
+              "url": "/it-solutions/web-development"
+            },
+            {
+              "page": "Ecommerce",
+              "url": "/it-solutions/ecommerce"
+            },
+            {
+              "page": "CRM & ERP Systems",
+              "url": "/it-solutions/crm-erp"
+            },
+            {
+              "page": "Cloud Solutions",
+              "url": "/it-solutions/cloud"
+            }
+          ]
+        },
+        {
+          "level": "Primary",
+          "page": "Mobile Apps",
+          "url": "/mobile-apps",
+          "notes": "Android, iOS, Hybrid"
+        },
+        {
+          "level": "Primary",
+          "page": "Software Development",
+          "url": "/software-development",
+          "notes": "Custom software"
+        },
+        {
+          "level": "Primary",
+          "page": "Data Analytics",
+          "url": "/data-analytics",
+          "notes": "BI & dashboards"
+        },
+        {
+          "level": "Primary",
+          "page": "Digital Marketing",
+          "url": "/digital-marketing",
+          "notes": "SEO, ads, social",
+          "children": [
+            {
+              "page": "SEO Services",
+              "url": "/digital-marketing/seo"
+            },
+            {
+              "page": "Social Media Marketing",
+              "url": "/digital-marketing/social-media"
+            },
+            {
+              "page": "Google & Facebook Ads",
+              "url": "/digital-marketing/paid-ads"
+            }
+          ]
+        },
+        {
+          "level": "Primary",
+          "page": "Solar Solutions",
+          "url": "/solar-solutions",
+          "notes": "Division hub",
+          "children": [
+            {
+              "page": "On-Grid / Off-Grid / Hybrid",
+              "url": "/solar-solutions/on-grid",
+              "notes": "3 sub-pages"
+            }
+          ]
+        },
+        {
+          "level": "Primary",
+          "page": "Portfolio",
+          "url": "/portfolio",
+          "notes": "All project galleries",
+          "children": [
+            {
+              "page": "Construction Projects",
+              "url": "/portfolio/construction"
+            },
+            {
+              "page": "IT Projects",
+              "url": "/portfolio/it"
+            },
+            {
+              "page": "Case Studies",
+              "url": "/portfolio/case-studies"
+            }
+          ]
+        },
+        {
+          "level": "Primary",
+          "page": "Blog",
+          "url": "/blog",
+          "notes": "Weekly content hub"
+        },
+        {
+          "level": "Primary",
+          "page": "Careers",
+          "url": "/careers",
+          "notes": "Job listings"
+        },
+        {
+          "level": "Primary",
+          "page": "Contact",
+          "url": "/contact",
+          "notes": "All contact methods"
+        }
+      ],
+      "animation_spec": {
+        "table_rows": "staggered fade_left 0.05s each",
+        "primary_rows": "gold left accent pulse on entry",
+        "sub_rows": "indent + fade_right slightly lighter",
+        "url_badge": "emerald-green pill, appears with blur_in 0.3s",
+        "hover_row": "background tints to rgba(232,160,32,0.05), cursor pointer"
+      },
+      "html_content": "<div class=\"page\" id=\"page-4\" data-label=\"Sitemap\">\n  <div class=\"section-tag\">Section 02</div>\n  <h1 class=\"page-title\">Website Sitemap — Full Structure</h1>\n  <p class=\"page-sub\">Complete URL architecture and page hierarchy for markaz-enterprises.com</p>\n\n  <table class=\"data-table\">\n    <thead>\n      <tr><th>Level</th><th>Page Name</th><th>URL Slug</th><th>Notes</th></tr>\n    </thead>\n    <tbody>\n      <tr><td><span class=\"badge\">Main</span></td><td>Home</td><td>/</td><td>Primary landing page</td></tr>\n      <tr><td><span class=\"badge\">Primary</span></td><td>About Us</td><td>/about</td><td>Story, team, values</td></tr>\n      <tr><td><span class=\"badge\">Sub</span></td><td>Our Story</td><td>/about/story</td><td>Founding narrative</td></tr>\n      <tr><td><span class=\"badge\">Sub</span></td><td>Team</td><td>/about/team</td><td>Leadership profiles</td></tr>\n      <tr><td><span class=\"badge\">Sub</span></td><td>Certifications</td><td>/about/certifications</td><td>Licenses & accreditations</td></tr>\n      <tr><td><span class=\"badge\">Primary</span></td><td>Construction</td><td>/construction</td><td>Division hub</td></tr>\n      <tr><td><span class=\"badge\">Sub</span></td><td>Residential</td><td>/construction/residential</td><td></td></tr>\n      <tr><td><span class=\"badge\">Sub</span></td><td>Commercial</td><td>/construction/commercial</td><td></td></tr>\n      <tr><td><span class=\"badge\">Sub</span></td><td>Renovation</td><td>/construction/renovation</td><td></td></tr>\n      <tr><td><span class=\"badge\">Sub</span></td><td>Turnkey Projects</td><td>/construction/turnkey</td><td></td></tr>\n      <tr><td><span class=\"badge\">Primary</span></td><td>Interior Design</td><td>/interior-design</td><td>Division hub</td></tr>\n      <tr><td><span class=\"badge\">Primary</span></td><td>Home Appliances</td><td>/home-appliances</td><td>Supply, install, maintain</td></tr>\n      <tr><td><span class=\"badge\">Primary</span></td><td>CCTV & Security</td><td>/cctv-security</td><td>Division hub</td></tr>\n      <tr><td><span class=\"badge\">Primary</span></td><td>IT Solutions</td><td>/it-solutions</td><td>Division hub</td></tr>\n      <tr><td><span class=\"badge\">Sub</span></td><td>Web Development</td><td>/it-solutions/web-development</td><td></td></tr>\n      <tr><td><span class=\"badge\">Sub</span></td><td>Ecommerce</td><td>/it-solutions/ecommerce</td><td></td></tr>\n      <tr><td><span class=\"badge\">Sub</span></td><td>CRM & ERP</td><td>/it-solutions/crm-erp</td><td></td></tr>\n      <tr><td><span class=\"badge\">Primary</span></td><td>Mobile Apps</td><td>/mobile-apps</td><td>Android, iOS, Hybrid</td></tr>\n      <tr><td><span class=\"badge\">Primary</span></td><td>Software Development</td><td>/software-development</td><td>Custom software</td></tr>\n      <tr><td><span class=\"badge\">Primary</span></td><td>Data Analytics</td><td>/data-analytics</td><td>BI & dashboards</td></tr>\n      <tr><td><span class=\"badge\">Primary</span></td><td>Digital Marketing</td><td>/digital-marketing</td><td>SEO, ads, social</td></tr>\n      <tr><td><span class=\"badge\">Primary</span></td><td>Solar Solutions</td><td>/solar-solutions</td><td>Division hub</td></tr>\n      <tr><td><span class=\"badge\">Sub</span></td><td>On-Grid / Off-Grid / Hybrid</td><td>/solar-solutions/on-grid</td><td>3 sub-pages</td></tr>\n      <tr><td><span class=\"badge\">Primary</span></td><td>Portfolio</td><td>/portfolio</td><td>All project galleries</td></tr>\n      <tr><td><span class=\"badge\">Primary</span></td><td>Blog</td><td>/blog</td><td>Weekly content hub</td></tr>\n      <tr><td><span class=\"badge\">Primary</span></td><td>Careers</td><td>/careers</td><td>Job listings</td></tr>\n      <tr><td><span class=\"badge\">Primary</span></td><td>Contact</td><td>/contact</td><td>All contact methods</td></tr>\n    </tbody>\n  </table>\n  <span class=\"page-num\">Page 4</span>\n</div>\n\n<!-- ════════════════ PAGE 5 — DESIGN SYSTEM ════════════════ -->"
+    },
+    {
+      "page_id": 5,
+      "page_type": "design_system",
+      "label": "Design System",
+      "section": "03",
+      "title": "Design System & Visual Guidelines",
+      "subtitle": "Typography, color palette, spacing, and UI specifications for developers and designers.",
+      "color_palette": [
+        {
+          "hex": "#1A2B5F",
+          "name": "Primary Navy",
+          "use": "Headers, CTAs, footer"
+        },
+        {
+          "hex": "#E8A020",
+          "name": "Golden Amber",
+          "use": "Accents, badges, icons"
+        },
+        {
+          "hex": "#0D9B76",
+          "name": "Emerald Green",
+          "use": "Success, links, tags"
+        },
+        {
+          "hex": "#F4F6FB",
+          "name": "Light BG",
+          "use": "Cards, section backgrounds"
+        },
+        {
+          "hex": "#1C1C2E",
+          "name": "Dark Text",
+          "use": "Headings, primary copy"
+        },
+        {
+          "hex": "#3D3D55",
+          "name": "Body Text",
+          "use": "Paragraphs, descriptions"
+        },
+        {
+          "hex": "#8890A8",
+          "name": "Muted",
+          "use": "Captions, labels, secondary"
+        },
+        {
+          "hex": "#FFFFFF",
+          "name": "White",
+          "use": "Card surfaces, button text"
+        }
+      ],
+      "typography_scale": [
+        {
+          "tag": "H1",
+          "spec": "Inter Bold / 48px / Primary Navy",
+          "use": "Hero headings, page titles"
+        },
+        {
+          "tag": "H2",
+          "spec": "Inter Bold / 32px / Primary Navy",
+          "use": "Major section headings"
+        },
+        {
+          "tag": "H3",
+          "spec": "Inter SemiBold / 22px / Emerald",
+          "use": "Card titles, sub-sections"
+        },
+        {
+          "tag": "H4",
+          "spec": "Inter Medium / 16px / Dark Text",
+          "use": "Feature names, bullet titles"
+        },
+        {
+          "tag": "Body",
+          "spec": "Inter Regular / 16px / Body Text",
+          "use": "All paragraph content"
+        },
+        {
+          "tag": "Button",
+          "spec": "Inter Bold / 15px / White",
+          "use": "Primary & secondary CTAs"
+        },
+        {
+          "tag": "Nav",
+          "spec": "Inter SemiBold / 14px / Dark Text",
+          "use": "Desktop & mobile nav links"
+        }
+      ],
+      "ui_components": {
+        "primary_button": "BG: #1A2B5F · Text: White · Radius: 8px · Padding: 14px 32px · Hover: #E8A020",
+        "secondary_button": "Border: 2px #1A2B5F · Text: #1A2B5F · Hover: fill navy",
+        "navigation": "Sticky top · White bg · Logo left · Links center · CTA button right",
+        "hero_section": "Min-height: 90vh · BG image + navy overlay 60% · CTA center",
+        "service_cards": "White bg · 1px border · 12px radius · 24px padding · shadow hover",
+        "section_spacing": "Top/Bottom: 80px desktop · 48px mobile · Max-width: 1280px"
+      },
+      "animation_spec": {
+        "color_swatches": "scale_in staggered 0.05s each; hover lifts swatch with shadow and shows hex tooltip",
+        "swatch_hover": "transform: scale(1.15) translateY(-4px) with color name tooltip fade_in",
+        "typography_rows": "fade_left staggered 0.08s each",
+        "component_specs": "fade_up staggered 0.1s each",
+        "background": "subtle aurora tint behind the color section only"
+      },
+      "html_content": "<div class=\"page\" id=\"page-5\" data-label=\"Design\">\n  <div class=\"section-tag\">Section 03</div>\n  <h1 class=\"page-title\">Design System & Visual Guidelines</h1>\n  <p class=\"page-sub\">Typography, color palette, spacing, and UI component specifications for developers and designers.</p>\n\n  <h3>Color Palette</h3>\n  <div class=\"swatch-grid\">\n    <div class=\"swatch\"><div class=\"swatch-block\" style=\"background:#1A2B5F\"></div><div class=\"swatch-hex\">#1A2B5F</div><div class=\"swatch-name\">Primary Navy</div></div>\n    <div class=\"swatch\"><div class=\"swatch-block\" style=\"background:#E8A020\"></div><div class=\"swatch-hex\">#E8A020</div><div class=\"swatch-name\">Golden Amber</div></div>\n    <div class=\"swatch\"><div class=\"swatch-block\" style=\"background:#0D9B76\"></div><div class=\"swatch-hex\">#0D9B76</div><div class=\"swatch-name\">Emerald Green</div></div>\n    <div class=\"swatch\"><div class=\"swatch-block\" style=\"background:#F4F6FB;border:1px solid #D0D8EE\"></div><div class=\"swatch-hex\">#F4F6FB</div><div class=\"swatch-name\">Light BG</div></div>\n    <div class=\"swatch\"><div class=\"swatch-block\" style=\"background:#1C1C2E\"></div><div class=\"swatch-hex\">#1C1C2E</div><div class=\"swatch-name\">Dark Text</div></div>\n    <div class=\"swatch\"><div class=\"swatch-block\" style=\"background:#3D3D55\"></div><div class=\"swatch-hex\">#3D3D55</div><div class=\"swatch-name\">Body Text</div></div>\n    <div class=\"swatch\"><div class=\"swatch-block\" style=\"background:#8890A8\"></div><div class=\"swatch-hex\">#8890A8</div><div class=\"swatch-name\">Muted</div></div>\n    <div class=\"swatch\"><div class=\"swatch-block\" style=\"background:#FFFFFF;border:1px solid #D0D8EE\"></div><div class=\"swatch-hex\">#FFFFFF</div><div class=\"swatch-name\">White</div></div>\n  </div>\n\n  <div class=\"section-rule\"></div>\n  <h3>Typography Scale</h3>\n  <div class=\"type-row\"><div class=\"type-preview\"><span style=\"font-size:1.6rem;font-weight:900;color:#1A2B5F;line-height:1\">Page Heading H1</span></div><div class=\"type-spec\">Inter Bold · 48px · Navy</div></div>\n  <div class=\"type-row\"><div class=\"type-preview\"><span style=\"font-size:1.1rem;font-weight:800;color:#1A2B5F\">Section Title H2</span></div><div class=\"type-spec\">Inter Bold · 32px · Navy</div></div>\n  <div class=\"type-row\"><div class=\"type-preview\"><span style=\"font-size:.95rem;font-weight:600;color:#0D9B76\">Sub-Heading H3</span></div><div class=\"type-spec\">Inter SemiBold · 22px · Emerald</div></div>\n  <div class=\"type-row\"><div class=\"type-preview\"><span style=\"font-size:.82rem;font-weight:600;color:#1C1C2E\">Feature Label H4</span></div><div class=\"type-spec\">Inter Medium · 16px · Dark</div></div>\n  <div class=\"type-row\"><div class=\"type-preview\"><span style=\"font-size:.82rem;color:#3D3D55\">Body copy — paragraph text for all service descriptions</span></div><div class=\"type-spec\">Inter Regular · 16px · Body</div></div>\n  <div class=\"type-row\"><div class=\"type-preview\"><span style=\"font-size:.72rem;color:#8890A8\">Small caption / footer note / label</span></div><div class=\"type-spec\">Inter Regular · 13px · Muted</div></div>\n\n  <div class=\"section-rule\"></div>\n  <h3>UI Component Specs</h3>\n  <div class=\"card-grid col2\">\n    <div class=\"card\"><div class=\"card-title\">Primary Button</div><div class=\"card-desc\">BG: #1A2B5F · Text: White · Radius: 8px · Padding: 14px 32px · Hover: #E8A020</div></div>\n    <div class=\"card\"><div class=\"card-title\">Secondary Button</div><div class=\"card-desc\">Border: 2px #1A2B5F · Text: #1A2B5F · Radius: 8px · Hover: fill navy</div></div>\n    <div class=\"card\"><div class=\"card-title\">Service Cards</div><div class=\"card-desc\">White bg · 1px #D0D8EE border · 12px radius · 24px padding · shadow on hover</div></div>\n    <div class=\"card\"><div class=\"card-title\">Navigation</div><div class=\"card-desc\">Sticky top · White bg · Logo left · Links center · CTA button right</div></div>\n    <div class=\"card\"><div class=\"card-title\">Hero Section</div><div class=\"card-desc\">Min-height: 90vh · Background image with navy overlay 60% · CTA center</div></div>\n    <div class=\"card\"><div class=\"card-title\">Section Spacing</div><div class=\"card-desc\">Top/Bottom: 80px desktop · 48px mobile · Max-width: 1280px · Gutter: 24px</div></div>\n  </div>\n  <span class=\"page-num\">Page 5</span>\n</div>\n\n<!-- ════════════════ PAGE 6 — HOMEPAGE ════════════════ -->"
+    },
+    {
+      "page_id": 6,
+      "page_type": "homepage_blueprint",
+      "label": "Homepage",
+      "section": "04",
+      "title": "Homepage — Full Content & SEO Blueprint",
+      "subtitle": "Complete section-by-section content for the primary landing page.",
+      "hero_section": {
+        "h1": "Building, Powering & Digitizing Businesses Across Pakistan",
+        "h2": "From construction and interior solutions to software development and solar energy — Markaz Enterprises helps clients transform ideas into successful, profitable projects.",
+        "primary_cta": "Request a Free Quote →",
+        "secondary_cta": "Schedule a Consultation",
+        "supporting_text": "Trusted by 500+ clients · 11 Service Divisions · Karachi-based, Pakistan-wide"
+      },
+      "trust_bar": [
+        {
+          "stat": "500+",
+          "label": "Projects Delivered"
+        },
+        {
+          "stat": "11",
+          "label": "Service Divisions"
+        },
+        {
+          "stat": "10+",
+          "label": "Years Experience"
+        },
+        {
+          "stat": "98%",
+          "label": "Client Satisfaction"
+        },
+        {
+          "stat": "Pakistan-Wide",
+          "label": "Coverage"
+        }
+      ],
+      "services_overview": {
+        "heading": "Complete Solutions for Every Business & Home Need",
+        "layout": "3-column card grid — 11 service cards with icon, title, 2-line description, and Learn More link"
+      },
+      "why_choose_us": [
+        {
+          "point": "One Vendor, Complete Solutions",
+          "desc": "No need to juggle multiple contractors and agencies"
+        },
+        {
+          "point": "Proven Track Record",
+          "desc": "500+ successful projects across Pakistan"
+        },
+        {
+          "point": "Transparent Pricing",
+          "desc": "Detailed quotes upfront, no hidden costs"
+        },
+        {
+          "point": "Technology-Driven",
+          "desc": "Modern tools and methodologies across all divisions"
+        }
+      ],
+      "featured_projects": {
+        "heading": "Our Work Speaks for Itself",
+        "layout": "Full-width 4-column masonry gallery with project type filter tabs",
+        "cta": "View Full Portfolio →"
+      },
+      "testimonials": [
+        {
+          "quote": "Markaz Enterprises completed our commercial building project on time and within budget. Their professionalism is unmatched in Karachi.",
+          "client": "Arif Construction Co."
+        },
+        {
+          "quote": "The IT team built our complete ERP system in record time. Excellent communication throughout.",
+          "client": "Distribution Business, Karachi"
+        },
+        {
+          "quote": "Our solar installation has reduced electricity bills by 70%. Highly recommended for any business.",
+          "client": "Textile Factory, Lahore"
+        }
+      ],
+      "final_cta": {
+        "heading": "Ready to Start Your Project?",
+        "sub": "Talk to our experts today — free consultation, no obligation.",
+        "cta1": "Get a Free Quote",
+        "cta2": "WhatsApp Us Now",
+        "cta3": "Call: 0334-3660833"
+      },
+      "animation_spec": {
+        "hero_h1": "text splits word-by-word, each word blur_in with 0.05s stagger",
+        "hero_h2": "fade_up 0.6s delay 0.5s",
+        "cta_buttons": "scale_in 0.4s delay 0.8s; primary has shimmer sweep on hover",
+        "supporting_text": "fade_in 0.4s delay 1.0s",
+        "trust_bar": "counter animation triggers on scroll entry; numbers count up from 0",
+        "service_cards": "spotlight_card effect — radial-gradient follows mouse cursor",
+        "why_cards": "alternating fade_left / fade_right on scroll, gold icon spins 360deg once on entry",
+        "portfolio_gallery": "masonry tiles scale_in staggered 0.06s; filter tabs slide-underline animation",
+        "testimonials": "infinite_marquee horizontal scroll, pauses on hover",
+        "final_cta_section": "background is deep navy with animated particle dots; CTA buttons pulse gently"
+      },
+      "html_content": "<div class=\"page\" id=\"page-6\" data-label=\"Homepage\">\n  <div class=\"section-tag\">Section 04</div>\n  <h1 class=\"page-title\">Homepage — Full Content & SEO Blueprint</h1>\n  <p class=\"page-sub\">Complete section-by-section content for the primary landing page.</p>\n\n  <div class=\"division-card\">\n    <div class=\"division-card-header\"><span class=\"division-card-title\">Hero Section</span><span class=\"division-card-num\">Top of Page</span></div>\n    <div class=\"division-card-body\">\n      <div class=\"card-grid col2\" style=\"gap:12px\">\n        <div><div class=\"card-label\">H1 Heading</div><div class=\"card-value\" style=\"color:#1A2B5F;font-weight:700\">Building, Powering & Digitizing Businesses Across Pakistan</div></div>\n        <div><div class=\"card-label\">H2 Sub-Heading</div><div class=\"card-value\">From construction and interior solutions to software development and solar energy — Markaz Enterprises helps clients transform ideas into successful, profitable projects.</div></div>\n        <div><div class=\"card-label\">Primary CTA</div><div class=\"card-value\">Request a Free Quote →</div></div>\n        <div><div class=\"card-label\">Supporting Text</div><div class=\"card-value\">Trusted by 500+ clients · 11 Service Divisions · Karachi-based, Pakistan-wide</div></div>\n      </div>\n    </div>\n  </div>\n\n  <div class=\"metric-row\">\n    <div class=\"metric-box\"><div class=\"metric-num\">500+</div><div class=\"metric-label\">Projects Delivered</div></div>\n    <div class=\"metric-box\"><div class=\"metric-num\">11</div><div class=\"metric-label\">Service Divisions</div></div>\n    <div class=\"metric-box\"><div class=\"metric-num\">10+</div><div class=\"metric-label\">Years Experience</div></div>\n    <div class=\"metric-box\"><div class=\"metric-num\">98%</div><div class=\"metric-label\">Satisfaction Rate</div></div>\n  </div>\n\n  <div class=\"section-rule\"></div>\n  <h3>Services Overview Section</h3>\n  <div class=\"callout\"><p><strong>Section Heading:</strong> \"Complete Solutions for Every Business & Home Need\"<br>Layout: 3-column card grid — 11 service cards with icon, title, 2-line description, and 'Learn More' link</p></div>\n\n  <h3>Why Choose Us — Key Points</h3>\n  <div class=\"card-grid col2\" style=\"margin-top:10px\">\n    <div class=\"card\"><div class=\"card-title\">One Vendor, Complete Solutions</div><div class=\"card-desc\">No need to juggle multiple contractors and agencies.</div></div>\n    <div class=\"card\"><div class=\"card-title\">Proven Track Record</div><div class=\"card-desc\">Portfolio of 500+ successful projects across Pakistan.</div></div>\n    <div class=\"card\"><div class=\"card-title\">Transparent Pricing</div><div class=\"card-desc\">Detailed quotes upfront, no hidden costs.</div></div>\n    <div class=\"card\"><div class=\"card-title\">Technology-Driven</div><div class=\"card-desc\">Modern tools and methodologies across all divisions.</div></div>\n  </div>\n\n  <div class=\"section-rule\"></div>\n  <h3>Final CTA Section</h3>\n  <div class=\"cta-box\">\n    <div><div class=\"cta-box-text\">Ready to Start Your Project?</div><div class=\"cta-box-sub\">Talk to our experts today — free consultation, no obligation.</div></div>\n    <div style=\"display:flex;gap:10px;flex-wrap:wrap\">\n      <span class=\"cta-btn\">Get a Free Quote</span>\n      <span class=\"cta-btn\" style=\"background:#25D366;color:#fff\">WhatsApp Us Now</span>\n    </div>\n  </div>\n  <span class=\"page-num\">Page 6</span>\n</div>\n\n<!-- ════════════════ PAGE 7 — ABOUT US ════════════════ -->"
+    },
+    {
+      "page_id": 7,
+      "page_type": "about_page",
+      "label": "About Us",
+      "section": "05",
+      "title": "About Us Page — Full Content",
+      "subtitle": "Building trust, authority, and emotional connection with visitors.",
+      "headline": "Pakistan's Most Trusted Multi-Industry Solutions Provider",
+      "brand_story": "Founded in Karachi, Markaz Enterprises began with a simple mission: to give businesses and homeowners access to expert solutions across every domain they need. Over the past decade, we've grown from a construction-focused firm into Pakistan's leading multi-industry solutions provider — now spanning 11 service divisions and serving clients from Karachi to Lahore, Islamabad to Multan.",
+      "quality_assurance": {
+        "title": "Quality Assurance — 5-Stage Process",
+        "steps": [
+          {
+            "num": "01",
+            "title": "Planning Review",
+            "desc": "Scope and requirements validated"
+          },
+          {
+            "num": "02",
+            "title": "Design Approval",
+            "desc": "Client signs off on design"
+          },
+          {
+            "num": "03",
+            "title": "Execution Monitoring",
+            "desc": "Daily progress tracked"
+          },
+          {
+            "num": "04",
+            "title": "Quality Inspection",
+            "desc": "Multi-point QC check"
+          },
+          {
+            "num": "05",
+            "title": "Client Sign-Off",
+            "desc": "Final approval and handover"
+          }
+        ]
+      },
+      "project_methodology": {
+        "title": "Project Management Methodology — 7-Step",
+        "steps": [
+          {
+            "num": "01",
+            "title": "Discovery & Requirements",
+            "desc": "Understand goals, budget, constraints, and success criteria"
+          },
+          {
+            "num": "02",
+            "title": "Proposal & Agreement",
+            "desc": "Detailed BOQ/scope document, timeline, and signed agreement"
+          },
+          {
+            "num": "03",
+            "title": "Planning & Scheduling",
+            "desc": "Resource allocation, milestone mapping, risk assessment"
+          },
+          {
+            "num": "04",
+            "title": "Execution",
+            "desc": "Work begins with daily progress tracking and client updates"
+          },
+          {
+            "num": "05",
+            "title": "Testing / Inspection",
+            "desc": "Multi-stage QC review and punch-list resolution"
+          },
+          {
+            "num": "06",
+            "title": "Delivery & Handover",
+            "desc": "Documentation, warranty, training, and client sign-off"
+          },
+          {
+            "num": "07",
+            "title": "Ongoing Support",
+            "desc": "Dedicated account manager, AMC options, 24/7 emergency line for active clients"
+          }
+        ]
+      },
+      "animation_spec": {
+        "headline": "text_reveal — characters animate in from below with clip-path, 0.8s",
+        "brand_story": "fade_up 0.6s",
+        "qa_process_row": "horizontal connector line draws from left-to-right on entry (width: 0→100%), then circles scale_in staggered",
+        "qa_circles": "navy bg with gold border, border rotates 360deg once on entry",
+        "methodology_steps": "vertical timeline — line grows downward as user scrolls, each step fades_left when line reaches it",
+        "step_numbers": "counter spin animation — number rotates into view on a Y-axis"
+      },
+      "html_content": "<div class=\"page\" id=\"page-7\" data-label=\"About\">\n  <div class=\"section-tag\">Section 05</div>\n  <h1 class=\"page-title\">About Us Page — Full Content</h1>\n  <p class=\"page-sub\">Building trust, authority, and emotional connection with visitors.</p>\n\n  <div class=\"callout\"><p><strong>Page Headline:</strong> \"Pakistan's Most Trusted Multi-Industry Solutions Provider\"</p></div>\n\n  <h3>Our Story</h3>\n  <p>Founded in Karachi, Markaz Enterprises began with a simple mission: to give businesses and homeowners access to expert solutions across every domain they need. Over the past decade, we've grown from a construction-focused firm into Pakistan's leading multi-industry solutions provider — now spanning 11 service divisions and serving clients from Karachi to Lahore, Islamabad to Multan.</p>\n\n  <div class=\"section-rule\"></div>\n  <h3>Quality Assurance Process</h3>\n  <div class=\"process-row\">\n    <div class=\"process-step-item\"><div class=\"process-circle\">1</div><div class=\"process-label\">Planning Review</div></div>\n    <div class=\"process-step-item\"><div class=\"process-circle\">2</div><div class=\"process-label\">Design Approval</div></div>\n    <div class=\"process-step-item\"><div class=\"process-circle\">3</div><div class=\"process-label\">Execution</div></div>\n    <div class=\"process-step-item\"><div class=\"process-circle\">4</div><div class=\"process-label\">Quality Inspection</div></div>\n    <div class=\"process-step-item\"><div class=\"process-circle\">5</div><div class=\"process-label\">Client Sign-Off</div></div>\n  </div>\n\n  <div class=\"section-rule\"></div>\n  <h3>Project Management Methodology</h3>\n  <div class=\"workflow-steps\">\n    <div class=\"workflow-step\"><div class=\"workflow-num\">1</div><div class=\"workflow-content\"><div class=\"workflow-title\">Discovery & Requirements</div><div class=\"workflow-desc\">Understand goals, budget, constraints, and success criteria</div></div></div>\n    <div class=\"workflow-step\"><div class=\"workflow-num\">2</div><div class=\"workflow-content\"><div class=\"workflow-title\">Proposal & Agreement</div><div class=\"workflow-desc\">Detailed BOQ / scope document, timeline, and signed agreement</div></div></div>\n    <div class=\"workflow-step\"><div class=\"workflow-num\">3</div><div class=\"workflow-content\"><div class=\"workflow-title\">Planning & Scheduling</div><div class=\"workflow-desc\">Resource allocation, milestone mapping, risk assessment</div></div></div>\n    <div class=\"workflow-step\"><div class=\"workflow-num\">4</div><div class=\"workflow-content\"><div class=\"workflow-title\">Execution</div><div class=\"workflow-desc\">Work begins with daily progress tracking and client updates</div></div></div>\n    <div class=\"workflow-step\"><div class=\"workflow-num\">5</div><div class=\"workflow-content\"><div class=\"workflow-title\">Testing / Inspection</div><div class=\"workflow-desc\">Multi-stage quality review and punch-list resolution</div></div></div>\n    <div class=\"workflow-step\"><div class=\"workflow-num\">6</div><div class=\"workflow-content\"><div class=\"workflow-title\">Delivery & Handover</div><div class=\"workflow-desc\">Documentation, warranty, training, and client sign-off</div></div></div>\n    <div class=\"workflow-step\"><div class=\"workflow-num\">7</div><div class=\"workflow-content\"><div class=\"workflow-title\">Ongoing Support</div><div class=\"workflow-desc\">Dedicated account manager, AMC options, and 24/7 emergency line for active project clients</div></div></div>\n  </div>\n  <span class=\"page-num\">Page 7</span>\n</div>\n\n<!-- ════════════════ PAGE 8 — SERVICES (Part 1) ════════════════ -->"
+    },
+    {
+      "page_id": 8,
+      "page_type": "service_pages_a",
+      "label": "Services 01–05",
+      "section": "06A",
+      "title": "Service Pages — Divisions 01 to 05",
+      "subtitle": "Each page follows: Hero · Overview · Benefits · Process · Industries · Technologies · Gallery · FAQs · CTA · Contact Form",
+      "page_template_sections": [
+        "Hero Section",
+        "Service Overview",
+        "Key Benefits",
+        "Process Workflow",
+        "Industries Served",
+        "Technologies Used",
+        "Project Gallery",
+        "FAQs",
+        "Call-to-Action",
+        "Contact Form"
+      ],
+      "divisions": [
+        {
+          "id": "DIV01",
+          "name": "Construction & Civil Works",
+          "description": "Complete building solutions from foundation to finishing — residential, commercial, and industrial projects. Licensed engineers, on-time delivery, 1-year structural warranty.",
+          "services": [
+            "Residential Construction",
+            "Commercial Construction",
+            "Renovation & Remodeling",
+            "Turnkey Projects",
+            "Civil Works",
+            "Structural Design",
+            "Finishing Works",
+            "Electrical & Plumbing"
+          ],
+          "tools": [
+            "AutoCAD",
+            "Revit",
+            "MS Project",
+            "Primavera P6"
+          ],
+          "url": "/construction"
+        },
+        {
+          "id": "DIV02",
+          "name": "Interior Design & Home Décor",
+          "description": "3D visualisation, material selection, premium custom furniture sourcing, and full turnkey execution for homes and offices.",
+          "services": [
+            "Living Room Design",
+            "Bedroom & Kitchen",
+            "Office Interiors",
+            "Luxury Solutions",
+            "3D Visualisation",
+            "Turnkey Execution"
+          ],
+          "tools": [
+            "AutoCAD",
+            "SketchUp",
+            "3ds Max",
+            "Lumion",
+            "V-Ray"
+          ],
+          "url": "/interior-design"
+        },
+        {
+          "id": "DIV03",
+          "name": "Home Appliances",
+          "description": "Supply, installation, and maintenance of premium home and office appliances with smart home integration and AMC options.",
+          "services": [
+            "Appliance Supply & Install",
+            "Smart Home Integration",
+            "Energy-Efficient Systems",
+            "Commercial Kitchen Equipment",
+            "HVAC Systems",
+            "AMC Packages"
+          ],
+          "tech": [
+            "Samsung SmartThings",
+            "Google Home",
+            "Amazon Alexa",
+            "KNX"
+          ],
+          "url": "/home-appliances"
+        },
+        {
+          "id": "DIV04",
+          "name": "CCTV & Security Solutions",
+          "description": "Comprehensive surveillance for homes, offices, and factories — IP cameras, NVR/DVR, remote monitoring, access control.",
+          "services": [
+            "Indoor & Outdoor CCTV",
+            "IP Camera Systems",
+            "Remote Monitoring",
+            "NVR & DVR Config",
+            "Access Control",
+            "Alarm Systems",
+            "Security Consultation"
+          ],
+          "brands": [
+            "Hikvision",
+            "Dahua",
+            "Axis",
+            "Milestone VMS",
+            "ONVIF"
+          ],
+          "url": "/cctv-security"
+        },
+        {
+          "id": "DIV05",
+          "name": "IT Solutions & Web Development",
+          "description": "Custom websites, ecommerce stores, CRM/ERP, cloud solutions, and web applications for Pakistani businesses.",
+          "services": [
+            "Corporate Websites",
+            "Ecommerce Stores",
+            "CRM & ERP",
+            "Web Applications",
+            "Cloud Solutions",
+            "API Integration"
+          ],
+          "stack": [
+            "React",
+            "Node.js",
+            "Laravel",
+            "Python",
+            "AWS"
+          ],
+          "url": "/it-solutions"
+        }
+      ],
+      "animation_spec": {
+        "division_cards": "flip_card reveal — front shows name/desc, back shows services + tech on hover rotateY(180deg)",
+        "card_header": "gold shimmer sweep on entry",
+        "service_pills": "staggered scale_in 0.05s each on card flip",
+        "tech_pills": "emerald-green pills bounce_in from bottom on card flip",
+        "card_entry": "staggered fade_up 0.12s each card",
+        "page_template_strip": "horizontal scrolling ticker with 10 section names, gold separator dots"
+      },
+      "html_content": "<div class=\"page\" id=\"page-8\" data-label=\"Services A\">\n  <div class=\"section-tag\">Section 06 — Part A</div>\n  <h1 class=\"page-title\">Service Pages — Divisions 01–05</h1>\n  <p class=\"page-sub\">Each service page follows a 10-section blueprint: Hero · Overview · Benefits · Process · Industries · Technologies · Gallery · FAQs · CTA · Contact Form</p>\n\n  <div class=\"division-card\">\n    <div class=\"division-card-header\"><span class=\"division-card-title\">01 — Construction & Civil Works</span><span class=\"division-card-num\">Division 01</span></div>\n    <div class=\"division-card-body\">\n      <div class=\"division-card-desc\">Complete building solutions from foundation to finishing — residential, commercial, and industrial projects across Pakistan. Licensed engineers, on-time delivery guarantee, 1-year structural warranty.</div>\n      <div class=\"division-services\"><span class=\"pill\">Residential Construction</span><span class=\"pill\">Commercial</span><span class=\"pill\">Renovation</span><span class=\"pill\">Turnkey Projects</span><span class=\"pill\">Civil Works</span><span class=\"pill\">Structural Design</span></div>\n      <div class=\"division-tech-row\"><span class=\"tech-label\">Tools</span><span class=\"pill gold\">AutoCAD</span><span class=\"pill gold\">Revit</span><span class=\"pill gold\">MS Project</span><span class=\"pill gold\">Primavera P6</span></div>\n    </div>\n  </div>\n\n  <div class=\"division-card\">\n    <div class=\"division-card-header\"><span class=\"division-card-title\">02 — Interior Design & Home Décor</span><span class=\"division-card-num\">Division 02</span></div>\n    <div class=\"division-card-body\">\n      <div class=\"division-card-desc\">Transform any space into a stunning, functional environment. 3D visualization, material selection, premium custom furniture sourcing, and full turnkey execution.</div>\n      <div class=\"division-services\"><span class=\"pill\">Living Room Design</span><span class=\"pill\">Bedroom & Kitchen</span><span class=\"pill\">Office Interiors</span><span class=\"pill\">Luxury Solutions</span><span class=\"pill\">3D Walkthrough</span></div>\n      <div class=\"division-tech-row\"><span class=\"tech-label\">Tools</span><span class=\"pill gold\">AutoCAD</span><span class=\"pill gold\">SketchUp</span><span class=\"pill gold\">3ds Max</span><span class=\"pill gold\">Lumion</span></div>\n    </div>\n  </div>\n\n  <div class=\"division-card\">\n    <div class=\"division-card-header\"><span class=\"division-card-title\">03 — Home Appliances</span><span class=\"division-card-num\">Division 03</span></div>\n    <div class=\"division-card-body\">\n      <div class=\"division-card-desc\">Supply, installation, and maintenance of premium home and office appliances — with smart home integration and annual maintenance contracts.</div>\n      <div class=\"division-services\"><span class=\"pill\">Appliance Supply</span><span class=\"pill\">Smart Home Integration</span><span class=\"pill\">HVAC Systems</span><span class=\"pill\">AMC Packages</span></div>\n      <div class=\"division-tech-row\"><span class=\"tech-label\">Tech</span><span class=\"pill gold\">Samsung SmartThings</span><span class=\"pill gold\">Google Home</span><span class=\"pill gold\">KNX</span></div>\n    </div>\n  </div>\n\n  <div class=\"division-card\">\n    <div class=\"division-card-header\"><span class=\"division-card-title\">04 — CCTV & Security Solutions</span><span class=\"division-card-num\">Division 04</span></div>\n    <div class=\"division-card-body\">\n      <div class=\"division-card-desc\">Comprehensive surveillance for homes, offices, factories, and commercial properties — remote monitoring, NVR/DVR, access control, and alarm systems.</div>\n      <div class=\"division-services\"><span class=\"pill\">IP Camera Systems</span><span class=\"pill\">Remote Monitoring</span><span class=\"pill\">NVR/DVR Config</span><span class=\"pill\">Access Control</span><span class=\"pill\">Alarm Systems</span></div>\n      <div class=\"division-tech-row\"><span class=\"tech-label\">Brands</span><span class=\"pill gold\">Hikvision</span><span class=\"pill gold\">Dahua</span><span class=\"pill gold\">Axis</span><span class=\"pill gold\">ONVIF</span></div>\n    </div>\n  </div>\n\n  <div class=\"division-card\">\n    <div class=\"division-card-header\"><span class=\"division-card-title\">05 — IT Solutions & Web Development</span><span class=\"division-card-num\">Division 05</span></div>\n    <div class=\"division-card-body\">\n      <div class=\"division-card-desc\">Custom websites, ecommerce stores, CRM/ERP systems, cloud solutions, and web applications built for Pakistani businesses.</div>\n      <div class=\"division-services\"><span class=\"pill\">Corporate Websites</span><span class=\"pill\">Ecommerce</span><span class=\"pill\">CRM & ERP</span><span class=\"pill\">Cloud Solutions</span><span class=\"pill\">API Integration</span></div>\n      <div class=\"division-tech-row\"><span class=\"tech-label\">Stack</span><span class=\"pill gold\">React</span><span class=\"pill gold\">Node.js</span><span class=\"pill gold\">Laravel</span><span class=\"pill gold\">AWS</span><span class=\"pill gold\">Docker</span></div>\n    </div>\n  </div>\n  <span class=\"page-num\">Page 8</span>\n</div>\n\n<!-- ════════════════ PAGE 9 — SERVICES (Part 2) ════════════════ -->"
+    },
+    {
+      "page_id": 9,
+      "page_type": "service_pages_b",
+      "label": "Services 06–11",
+      "section": "06B",
+      "title": "Service Pages — Divisions 06 to 11",
+      "subtitle": "Continued from previous page — remaining service divisions.",
+      "divisions": [
+        {
+          "id": "DIV06",
+          "name": "Mobile App Development",
+          "description": "Native and cross-platform mobile apps with agile methodology, bi-weekly sprint reviews, UI/UX design, App Store submission.",
+          "services": [
+            "Android Development",
+            "iOS Development",
+            "React Native / Flutter",
+            "UI/UX Design",
+            "App Store Submission",
+            "Push Notifications",
+            "Backend API",
+            "Post-Launch Support"
+          ],
+          "stack": [
+            "React Native",
+            "Flutter",
+            "Swift",
+            "Kotlin",
+            "Firebase"
+          ],
+          "url": "/mobile-apps"
+        },
+        {
+          "id": "DIV07",
+          "name": "Software Development",
+          "description": "Custom business software with full documentation, source code ownership, and knowledge transfer to your team.",
+          "services": [
+            "Custom Business Software",
+            "Desktop Applications",
+            "Database Design",
+            "Legacy Migration",
+            "SaaS Development",
+            "QA & Testing",
+            "Technical Consulting"
+          ],
+          "stack": [
+            "Python",
+            "C# / .NET",
+            "Java",
+            "PostgreSQL",
+            "SQL Server"
+          ],
+          "url": "/software-development"
+        },
+        {
+          "id": "DIV08",
+          "name": "Data Analytics & Business Intelligence",
+          "description": "Turn business data into actionable insights — BI dashboards, KPI tracking, ETL pipelines, and predictive analytics.",
+          "services": [
+            "BI Dashboards",
+            "KPI Tracking",
+            "Data Warehousing",
+            "ETL Pipelines",
+            "Predictive Analytics",
+            "Sales Reporting",
+            "Data Strategy"
+          ],
+          "tools": [
+            "Power BI",
+            "Tableau",
+            "Python",
+            "SQL",
+            "Azure Data Factory"
+          ],
+          "url": "/data-analytics"
+        },
+        {
+          "id": "DIV09",
+          "name": "Digital Marketing",
+          "description": "Data-driven campaigns with monthly ROI reports — SEO, Google Ads, Facebook & Instagram, content, lead gen.",
+          "services": [
+            "SEO",
+            "Google Ads / PPC",
+            "Facebook & Instagram Ads",
+            "Content Marketing",
+            "Lead Generation",
+            "Email Automation",
+            "Brand Reputation"
+          ],
+          "tools": [
+            "Google Analytics 4",
+            "Meta Ads Manager",
+            "SEMrush",
+            "Ahrefs",
+            "HubSpot"
+          ],
+          "url": "/digital-marketing"
+        },
+        {
+          "id": "DIV10",
+          "name": "Solar Energy Solutions",
+          "description": "Cut electricity bills by up to 70% with on-grid, off-grid, and hybrid solar systems — fully installed and maintained.",
+          "services": [
+            "On-Grid & Net Metering",
+            "Off-Grid Systems",
+            "Hybrid Systems",
+            "Solar Panel Supply",
+            "Inverter & Battery",
+            "Monitoring Setup",
+            "Annual Maintenance"
+          ],
+          "brands": [
+            "Longi",
+            "JA Solar",
+            "Huawei Inverters",
+            "Victron",
+            "SolarEdge"
+          ],
+          "url": "/solar-solutions"
+        }
+      ],
+      "animation_spec": {
+        "division_cards": "same flip_card pattern as page 8 for consistency",
+        "solar_card_special": "animated sun-ray glow behind card header — rotating conic-gradient, opacity 0.15",
+        "data_card_special": "animated bar-chart lines grow upward in card background, subtle",
+        "entry_animation": "staggered fade_up 0.12s each card, cards stagger from left-to-right"
+      },
+      "html_content": "<div class=\"page\" id=\"page-9\" data-label=\"Services B\">\n  <div class=\"section-tag\">Section 06 — Part B</div>\n  <h1 class=\"page-title\">Service Pages — Divisions 06–11</h1>\n  <p class=\"page-sub\">Continued from previous page — remaining six service divisions.</p>\n\n  <div class=\"division-card\">\n    <div class=\"division-card-header\"><span class=\"division-card-title\">06 — Mobile App Development</span><span class=\"division-card-num\">Division 06</span></div>\n    <div class=\"division-card-body\">\n      <div class=\"division-card-desc\">Native and cross-platform mobile applications. Agile methodology with bi-weekly sprint reviews, UI/UX design, App Store & Play Store submission.</div>\n      <div class=\"division-services\"><span class=\"pill\">Android</span><span class=\"pill\">iOS</span><span class=\"pill\">React Native</span><span class=\"pill\">Flutter</span><span class=\"pill\">UI/UX Design</span><span class=\"pill\">Backend API</span></div>\n      <div class=\"division-tech-row\"><span class=\"tech-label\">Stack</span><span class=\"pill gold\">Flutter</span><span class=\"pill gold\">React Native</span><span class=\"pill gold\">Swift</span><span class=\"pill gold\">Firebase</span></div>\n    </div>\n  </div>\n\n  <div class=\"division-card\">\n    <div class=\"division-card-header\"><span class=\"division-card-title\">07 — Software Development</span><span class=\"division-card-num\">Division 07</span></div>\n    <div class=\"division-card-body\">\n      <div class=\"division-card-desc\">Custom business software, desktop applications, legacy migrations, SaaS products — all with full documentation, source code ownership, and knowledge transfer.</div>\n      <div class=\"division-services\"><span class=\"pill\">Custom Software</span><span class=\"pill\">Desktop Apps</span><span class=\"pill\">Legacy Migration</span><span class=\"pill\">SaaS Development</span><span class=\"pill\">QA & Testing</span></div>\n      <div class=\"division-tech-row\"><span class=\"tech-label\">Stack</span><span class=\"pill gold\">Python</span><span class=\"pill gold\">C# / .NET</span><span class=\"pill gold\">Java</span><span class=\"pill gold\">PostgreSQL</span></div>\n    </div>\n  </div>\n\n  <div class=\"division-card\">\n    <div class=\"division-card-header\"><span class=\"division-card-title\">08 — Data Analytics</span><span class=\"division-card-num\">Division 08</span></div>\n    <div class=\"division-card-body\">\n      <div class=\"division-card-desc\">Turn business data into actionable insights — BI dashboards, KPI tracking, ETL pipelines, predictive analytics, and real-time performance reporting.</div>\n      <div class=\"division-services\"><span class=\"pill\">BI Dashboards</span><span class=\"pill\">KPI Tracking</span><span class=\"pill\">Data Warehousing</span><span class=\"pill\">ETL Pipelines</span><span class=\"pill\">Predictive Analytics</span></div>\n      <div class=\"division-tech-row\"><span class=\"tech-label\">Tools</span><span class=\"pill gold\">Power BI</span><span class=\"pill gold\">Tableau</span><span class=\"pill gold\">Python</span><span class=\"pill gold\">SQL</span></div>\n    </div>\n  </div>\n\n  <div class=\"division-card\">\n    <div class=\"division-card-header\"><span class=\"division-card-title\">09 — Digital Marketing</span><span class=\"division-card-num\">Division 09</span></div>\n    <div class=\"division-card-body\">\n      <div class=\"division-card-desc\">Data-driven digital marketing generating real leads, traffic, and revenue. Monthly performance reports with clear ROI metrics for Pakistani businesses.</div>\n      <div class=\"division-services\"><span class=\"pill\">SEO</span><span class=\"pill\">Google Ads</span><span class=\"pill\">Facebook Ads</span><span class=\"pill\">Content Marketing</span><span class=\"pill\">Email Automation</span></div>\n      <div class=\"division-tech-row\"><span class=\"tech-label\">Tools</span><span class=\"pill gold\">Google Analytics 4</span><span class=\"pill gold\">SEMrush</span><span class=\"pill gold\">HubSpot</span><span class=\"pill gold\">Meta Ads</span></div>\n    </div>\n  </div>\n\n  <div class=\"division-card\">\n    <div class=\"division-card-header\"><span class=\"division-card-title\">10 — Solar Energy Solutions</span><span class=\"division-card-num\">Division 10</span></div>\n    <div class=\"division-card-body\">\n      <div class=\"division-card-desc\">Cut electricity bills by up to 70%. On-grid, off-grid, and hybrid systems designed, supplied, installed, and maintained for homes, businesses, and factories.</div>\n      <div class=\"division-services\"><span class=\"pill\">On-Grid & Net Metering</span><span class=\"pill\">Off-Grid</span><span class=\"pill\">Hybrid Systems</span><span class=\"pill\">Battery Backup</span><span class=\"pill\">Monitoring</span></div>\n      <div class=\"division-tech-row\"><span class=\"tech-label\">Brands</span><span class=\"pill gold\">Longi</span><span class=\"pill gold\">JA Solar</span><span class=\"pill gold\">Huawei Inverters</span><span class=\"pill gold\">Victron</span></div>\n    </div>\n  </div>\n\n  <div class=\"division-card\">\n    <div class=\"division-card-header\" style=\"background:var(--green)\"><span class=\"division-card-title\">11 — General Summary</span><span class=\"division-card-num\">Page Template</span></div>\n    <div class=\"division-card-body\">\n      <p style=\"font-size:.8rem;margin:0\">Every division page follows: <strong>Hero → Service Overview → Key Benefits → Process → Industries → Technologies → Gallery → FAQs → CTA → Contact Form</strong></p>\n    </div>\n  </div>\n  <span class=\"page-num\">Page 9</span>\n</div>\n\n<!-- ════════════════ PAGE 10 — PORTFOLIO ════════════════ -->"
+    },
+    {
+      "page_id": 10,
+      "page_type": "portfolio",
+      "label": "Portfolio",
+      "section": "07",
+      "title": "Portfolio & Case Studies",
+      "subtitle": "Showcasing proof of expertise across all 11 divisions.",
+      "portfolio_structure": {
+        "filter_tabs": [
+          "All",
+          "Construction",
+          "IT & Software",
+          "Interior",
+          "Solar",
+          "CCTV",
+          "Marketing"
+        ],
+        "project_card": "project image, name, category badge, client industry, brief description, 'View Case Study' link",
+        "gallery_types": [
+          "Before/After sliders (Construction/Interior)",
+          "Screenshots (IT)",
+          "Installation photos (Solar/CCTV)"
+        ],
+        "client_logos": "Showcase client logos (with permission) — builds credibility and social proof",
+        "results_metrics": "Always show measurable outcomes: % bill reduction, time saved, leads generated, traffic increase"
+      },
+      "case_study_template": {
+        "sections": [
+          "01 — Project Brief",
+          "02 — Challenge",
+          "03 — Solution",
+          "04 — Technologies / Materials",
+          "05 — Results & Metrics",
+          "06 — Client Quote",
+          "07 — Before & After Gallery"
+        ]
+      },
+      "sample_case_study": {
+        "title": "100kW Hybrid Solar Installation, Karachi",
+        "client": "Medium-scale textile factory, Karachi",
+        "timeline": "Completed in 12 days",
+        "challenge": "Monthly electricity bills exceeding PKR 800,000 with load-shedding disrupting production",
+        "system": "100kW hybrid solar + battery backup + net metering registration",
+        "equipment": "Longi 400W Panels x250, Huawei 100kW Inverter, Pylontech Battery Bank",
+        "monitoring": "Cloud-based monitoring portal with mobile app",
+        "results": {
+          "bill_reduction": "72%",
+          "roi_timeline": "3.8 years",
+          "downtime_incidents": "0"
+        },
+        "client_quote": "The team was professional from day one. Installation completed in 12 days and we started saving immediately. — Factory Owner, Karachi"
+      },
+      "animation_spec": {
+        "filter_tabs": "active tab has gold slide-underline; clicking tab triggers grid reshuffle with scale + fade transition",
+        "project_cards": "hover reveals overlay with project details sliding up from bottom (translateY)",
+        "before_after_slider": "drag handle with spring animation; images cross-fade on drag",
+        "results_metrics": "counter animation on scroll — numbers count up",
+        "client_quote": "fade_up with italic emphasis, left gold border animates in",
+        "masonry_entry": "staggered scale_in 0.08s each card on tab switch or page entry"
+      },
+      "html_content": "<div class=\"page\" id=\"page-10\" data-label=\"Portfolio\">\n  <div class=\"section-tag\">Section 07</div>\n  <h1 class=\"page-title\">Portfolio & Case Studies</h1>\n  <p class=\"page-sub\">Showcasing proof of expertise across all 11 divisions.</p>\n\n  <h3>Portfolio Page Structure</h3>\n  <div class=\"card-grid col2\">\n    <div class=\"card navy-accent\"><div class=\"card-title\">Filter Navigation</div><div class=\"card-desc\">Tabs: All · Construction · IT & Software · Interior · Solar · CCTV · Marketing</div></div>\n    <div class=\"card navy-accent\"><div class=\"card-title\">Project Cards</div><div class=\"card-desc\">Project image · name · category badge · client industry · description · \"View Case Study\" link</div></div>\n    <div class=\"card navy-accent\"><div class=\"card-title\">Gallery Types</div><div class=\"card-desc\">Before/After sliders (Construction/Interior) · Screenshots (IT) · Installation photos (Solar/CCTV)</div></div>\n    <div class=\"card navy-accent\"><div class=\"card-title\">Results Metrics</div><div class=\"card-desc\">Always show measurable outcomes: % reduction, time saved, traffic increase, units produced</div></div>\n  </div>\n\n  <div class=\"section-rule\"></div>\n  <h3>Case Study Template — 7 Sections</h3>\n  <div class=\"process-row\">\n    <div class=\"process-step-item\"><div class=\"process-circle\">1</div><div class=\"process-label\">Project Brief</div></div>\n    <div class=\"process-step-item\"><div class=\"process-circle\">2</div><div class=\"process-label\">Challenge</div></div>\n    <div class=\"process-step-item\"><div class=\"process-circle\">3</div><div class=\"process-label\">Solution</div></div>\n    <div class=\"process-step-item\"><div class=\"process-circle\">4</div><div class=\"process-label\">Tech / Materials</div></div>\n    <div class=\"process-step-item\"><div class=\"process-circle\">5</div><div class=\"process-label\">Results</div></div>\n    <div class=\"process-step-item\"><div class=\"process-circle\">6</div><div class=\"process-label\">Client Quote</div></div>\n    <div class=\"process-step-item\"><div class=\"process-circle\">7</div><div class=\"process-label\">Before & After</div></div>\n  </div>\n\n  <div class=\"section-rule\"></div>\n  <h3>Sample Case Study — 100kW Solar Installation</h3>\n  <div class=\"division-card\">\n    <div class=\"division-card-header\"><span class=\"division-card-title\">100kW Hybrid Solar System — Textile Factory, Karachi</span><span class=\"division-card-num\">Solar Division</span></div>\n    <div class=\"division-card-body\">\n      <div class=\"card-grid col2\" style=\"gap:10px\">\n        <div><div class=\"card-label\">Client</div><div class=\"card-value\">Medium-scale textile factory, Karachi</div></div>\n        <div><div class=\"card-label\">Challenge</div><div class=\"card-value\">Monthly bills exceeding PKR 800,000 with frequent load-shedding disrupting production</div></div>\n        <div><div class=\"card-label\">Solution</div><div class=\"card-value\">100kW hybrid system + battery backup + net metering registration</div></div>\n        <div><div class=\"card-label\">Timeline</div><div class=\"card-value\">Completed in 12 days from site survey to commissioning</div></div>\n      </div>\n      <div class=\"section-rule\" style=\"margin:12px 0\"></div>\n      <div class=\"card-grid col3\" style=\"gap:10px\">\n        <div class=\"metric-box\"><div class=\"metric-num\">72%</div><div class=\"metric-label\">Bill Reduction</div></div>\n        <div class=\"metric-box\"><div class=\"metric-num\">3.8 yrs</div><div class=\"metric-label\" style=\"font-size:.62rem\">Full ROI Timeline</div></div>\n        <div class=\"metric-box\"><div class=\"metric-num\">0</div><div class=\"metric-label\">Downtime Incidents</div></div>\n      </div>\n      <div class=\"callout\" style=\"margin-top:12px\"><p>\"The team was professional from day one. Installation completed in 12 days and we started saving immediately.\" — Factory Owner</p></div>\n    </div>\n  </div>\n  <span class=\"page-num\">Page 10</span>\n</div>\n\n<!-- ════════════════ PAGE 11 — BLOG STRATEGY ════════════════ -->"
+    },
+    {
+      "page_id": 11,
+      "page_type": "blog_strategy",
+      "label": "Blog Strategy",
+      "section": "08",
+      "title": "Blog Strategy — Content Calendar",
+      "subtitle": "Weekly SEO content to drive organic traffic, build authority, and generate leads.",
+      "content_categories": [
+        {
+          "category": "Construction & Renovation",
+          "posts": [
+            "How Much Does House Construction Cost in Karachi? (2025 Guide)",
+            "Renovation vs. Rebuild: Which Option is Right for You?",
+            "Top 10 Interior Design Trends in Pakistan for 2025",
+            "Complete Guide to Turnkey Construction Projects"
+          ]
+        },
+        {
+          "category": "Solar Energy",
+          "posts": [
+            "How Much Can You Save with Solar Panels in Pakistan?",
+            "On-Grid vs Off-Grid vs Hybrid Solar: Which is Best for Your Home?",
+            "Net Metering in Pakistan: Complete Guide for Homeowners",
+            "Best Solar Panels Available in Pakistan in 2025"
+          ]
+        },
+        {
+          "category": "IT & Software",
+          "posts": [
+            "Why Every Pakistani Business Needs a Custom ERP System",
+            "How to Choose a Software Development Company in Pakistan",
+            "Mobile App Development Cost in Pakistan: Full Breakdown",
+            "Business Intelligence for SMEs: Getting Started with Data Analytics"
+          ]
+        },
+        {
+          "category": "Digital Marketing",
+          "posts": [
+            "How to Rank Your Business on Google in Pakistan",
+            "Facebook Ads vs Google Ads: Which Works Better in Pakistan?",
+            "Complete Guide to Social Media Marketing for Pakistani Brands",
+            "How We Generated 500+ Leads for a Karachi Real Estate Company"
+          ]
+        }
+      ],
+      "blog_post_template": [
+        "01 — SEO Title (60 chars) + Meta Description (155 chars)",
+        "02 — Introduction — Hook with problem/question + promise of answer",
+        "03 — Key Takeaways Box — bullet summary for scanners",
+        "04 — Body — H2/H3 structured sections with data, examples, images",
+        "05 — Pakistan-specific examples and local market context",
+        "06 — Related Services CTA — link to relevant service page",
+        "07 — FAQ Section — targets 'People Also Ask' in Google",
+        "08 — Call-to-Action — 'Get a free consultation from Markaz Enterprises'"
+      ],
+      "animation_spec": {
+        "category_headers": "gold left-border slides in, title fade_left",
+        "post_list_items": "staggered fade_up 0.07s each",
+        "post_hover": "arrow icon translates right 4px + gold color, background tints amber 3%",
+        "template_steps": "numbered steps count in with scale_in staggered",
+        "blog_card_preview": "3D tilt on hover (ReactBits tilt card) — subtle perspective shift follows mouse"
+      },
+      "html_content": "<div class=\"page\" id=\"page-11\" data-label=\"Blog\">\n  <div class=\"section-tag\">Section 08</div>\n  <h1 class=\"page-title\">Blog Strategy — Content Calendar</h1>\n  <p class=\"page-sub\">Weekly SEO content to drive organic traffic, build authority, and generate leads.</p>\n\n  <div class=\"card-grid col2\">\n    <div>\n      <div class=\"blog-cat\">\n        <div class=\"blog-cat-title\">Construction & Renovation</div>\n        <ul>\n          <li>How Much Does House Construction Cost in Karachi? (2025 Guide)</li>\n          <li>Renovation vs. Rebuild: Which Option is Right for You?</li>\n          <li>Top 10 Interior Design Trends in Pakistan for 2025</li>\n          <li>Complete Guide to Turnkey Construction Projects</li>\n        </ul>\n      </div>\n      <div class=\"blog-cat\">\n        <div class=\"blog-cat-title\">Solar Energy</div>\n        <ul>\n          <li>How Much Can You Save with Solar Panels in Pakistan?</li>\n          <li>On-Grid vs Off-Grid vs Hybrid Solar: Which is Best?</li>\n          <li>Net Metering in Pakistan: Complete Guide for Homeowners</li>\n          <li>Best Solar Panels Available in Pakistan in 2025</li>\n        </ul>\n      </div>\n    </div>\n    <div>\n      <div class=\"blog-cat\">\n        <div class=\"blog-cat-title\">IT & Software</div>\n        <ul>\n          <li>Why Every Pakistani Business Needs a Custom ERP System</li>\n          <li>How to Choose a Software Development Company in Pakistan</li>\n          <li>Mobile App Development Cost in Pakistan: Full Breakdown</li>\n          <li>Business Intelligence for SMEs: Getting Started</li>\n        </ul>\n      </div>\n      <div class=\"blog-cat\">\n        <div class=\"blog-cat-title\">Digital Marketing</div>\n        <ul>\n          <li>How to Rank Your Business on Google in Pakistan</li>\n          <li>Facebook Ads vs Google Ads: Which Works Better in Pakistan?</li>\n          <li>Complete Guide to Social Media Marketing for Pakistani Brands</li>\n          <li>How We Generated 500+ Leads for a Karachi Real Estate Co.</li>\n        </ul>\n      </div>\n    </div>\n  </div>\n\n  <div class=\"section-rule\"></div>\n  <h3>Blog Post Template Structure</h3>\n  <div class=\"workflow-steps\">\n    <div class=\"workflow-step\"><div class=\"workflow-num\">1</div><div class=\"workflow-content\"><div class=\"workflow-title\">SEO Title (60 chars) + Meta Description (155 chars)</div></div></div>\n    <div class=\"workflow-step\"><div class=\"workflow-num\">2</div><div class=\"workflow-content\"><div class=\"workflow-title\">Introduction</div><div class=\"workflow-desc\">Hook with problem/question + promise of answer</div></div></div>\n    <div class=\"workflow-step\"><div class=\"workflow-num\">3</div><div class=\"workflow-content\"><div class=\"workflow-title\">Key Takeaways Box</div><div class=\"workflow-desc\">Bullet summary for scanner readers</div></div></div>\n    <div class=\"workflow-step\"><div class=\"workflow-num\">4</div><div class=\"workflow-content\"><div class=\"workflow-title\">Body — H2/H3 Structured Sections</div><div class=\"workflow-desc\">Data, examples, images, Pakistan-specific context</div></div></div>\n    <div class=\"workflow-step\"><div class=\"workflow-num\">5</div><div class=\"workflow-content\"><div class=\"workflow-title\">Related Services CTA</div><div class=\"workflow-desc\">Link to relevant service page</div></div></div>\n    <div class=\"workflow-step\"><div class=\"workflow-num\">6</div><div class=\"workflow-content\"><div class=\"workflow-title\">FAQ Section</div><div class=\"workflow-desc\">Targets \"People Also Ask\" in Google</div></div></div>\n    <div class=\"workflow-step\"><div class=\"workflow-num\">7</div><div class=\"workflow-content\"><div class=\"workflow-title\">Call-to-Action</div><div class=\"workflow-desc\">\"Get a free consultation from Markaz Enterprises\"</div></div></div>\n  </div>\n  <span class=\"page-num\">Page 11</span>\n</div>\n\n<!-- ════════════════ PAGE 12 — CONTACT ════════════════ -->"
+    },
+    {
+      "page_id": 12,
+      "page_type": "contact_lead",
+      "label": "Contact & Leads",
+      "section": "09",
+      "title": "Contact Page & Lead Generation",
+      "subtitle": "Multiple touchpoints to convert visitors into qualified leads.",
+      "contact_info": {
+        "heading": "Let's Build Something Great Together",
+        "subheading": "Our team typically responds within 2 business hours. Free consultations, no commitment required.",
+        "phone": "0334-3660833",
+        "email": "themarkazenterprises@gmail.com",
+        "office": "House #85, Street #10, Sec 11 1/2, Lal Shahbaz Nagar, Orangi Town, Karachi",
+        "hours": "Mon–Sat: 9:00 AM – 6:00 PM PKT · Emergency: 24/7 for active project clients",
+        "whatsapp_cta": "+923343660833 — auto-opens with pre-filled message",
+        "quote_calculator": "Select service → enter parameters → get instant estimate range",
+        "lead_capture": "Downloadable brochure (PDF) — requires name + email"
+      },
+      "contact_form_fields": [
+        {
+          "field": "Full Name",
+          "required": true
+        },
+        {
+          "field": "Company Name",
+          "required": false
+        },
+        {
+          "field": "Phone Number",
+          "required": true
+        },
+        {
+          "field": "Email Address",
+          "required": false
+        },
+        {
+          "field": "Service Required",
+          "required": false,
+          "type": "dropdown",
+          "options": "all 11 services"
+        },
+        {
+          "field": "Project Budget Range",
+          "required": false
+        },
+        {
+          "field": "Project Description",
+          "required": false
+        },
+        {
+          "field": "Preferred Contact Method",
+          "required": false,
+          "options": [
+            "Call",
+            "WhatsApp",
+            "Email"
+          ]
+        }
+      ],
+      "lead_nurturing_workflow": [
+        {
+          "step": 1,
+          "title": "Form Submission",
+          "desc": "Auto-reply email confirming receipt sent immediately"
+        },
+        {
+          "step": 2,
+          "title": "CRM Entry",
+          "desc": "Lead enters CRM; sales team notified via WhatsApp & email"
+        },
+        {
+          "step": 3,
+          "title": "2-Hour Call-Back",
+          "desc": "Sales rep contacts lead via call or WhatsApp within 2 hours"
+        },
+        {
+          "step": 4,
+          "title": "Consultation Scheduled",
+          "desc": "Calendar invite + pre-consultation questionnaire sent"
+        },
+        {
+          "step": 5,
+          "title": "Proposal Delivered",
+          "desc": "Detailed scope and pricing proposal emailed within 48 hours"
+        },
+        {
+          "step": 6,
+          "title": "Follow-Up Sequence",
+          "desc": "Weekly follow-up email for 4 weeks if no decision"
+        },
+        {
+          "step": 7,
+          "title": "Converted",
+          "desc": "Project kickoff document + client welcome package delivered"
+        }
+      ],
+      "animation_spec": {
+        "contact_info_cards": "staggered fade_left 0.1s each card",
+        "contact_icons": "scale_in with bounce (cubic-bezier spring) on entry",
+        "whatsapp_button": "pulse_ring animation — expanding box-shadow ring, 1.5s loop, green color",
+        "form_fields": "focus state: label floats up (CSS float label pattern) + gold underline expands",
+        "form_submit": "shimmer sweep + loading spinner morphs to checkmark on success",
+        "workflow_steps": "vertical timeline with connecting line drawing downward on scroll; each step fades_left when reached",
+        "workflow_active": "current step glows with emerald-green pulse"
+      },
+      "html_content": "<div class=\"page\" id=\"page-12\" data-label=\"Contact\">\n  <div class=\"section-tag\">Section 09</div>\n  <h1 class=\"page-title\">Contact Page & Lead Generation</h1>\n  <p class=\"page-sub\">Multiple touchpoints to convert visitors into qualified leads.</p>\n\n  <div class=\"card-grid col2\">\n    <div>\n      <h3>Contact Details</h3>\n      <div class=\"contact-row\"><div class=\"contact-icon\">📞</div><div><div class=\"contact-label\">Phone</div><div class=\"contact-value\">0334-3660833</div></div></div>\n      <div class=\"contact-row\"><div class=\"contact-icon\">✉️</div><div><div class=\"contact-label\">Email</div><div class=\"contact-value\">themarkazenterprises@gmail.com</div></div></div>\n      <div class=\"contact-row\"><div class=\"contact-icon\">📍</div><div><div class=\"contact-label\">Office</div><div class=\"contact-value\">House #85, Street #10, Sec 11 1/2, Lal Shahbaz Nagar, Orangi Town, Karachi</div></div></div>\n      <div class=\"contact-row\"><div class=\"contact-icon\">🕐</div><div><div class=\"contact-label\">Business Hours</div><div class=\"contact-value\">Mon–Sat: 9:00 AM – 6:00 PM PKT</div></div></div>\n      <div style=\"background:#25D366;color:#fff;padding:12px 16px;border-radius:8px;font-weight:700;font-size:.85rem;text-align:center;margin-top:8px\">💬 WhatsApp — Chat Now on +923343660833</div>\n    </div>\n    <div>\n      <h3>Contact Form Fields</h3>\n      <div class=\"form-preview\">\n        <div class=\"form-field\">Full Name *</div>\n        <div class=\"form-field\">Company Name</div>\n        <div class=\"form-field\">Phone Number *</div>\n        <div class=\"form-field\">Email Address</div>\n        <div class=\"form-field form-select\">Service Required (dropdown — all 11 services)</div>\n        <div class=\"form-field form-select\">Project Budget Range</div>\n        <div class=\"form-field form-textarea\">Project Description</div>\n        <div class=\"form-field form-select\">Preferred Contact Method</div>\n        <div class=\"form-submit-preview\">Send Inquiry →</div>\n      </div>\n    </div>\n  </div>\n\n  <div class=\"section-rule\"></div>\n  <h3>Lead Nurturing Workflow</h3>\n  <div class=\"workflow-steps\">\n    <div class=\"workflow-step\"><div class=\"workflow-num\">1</div><div class=\"workflow-content\"><div class=\"workflow-title\">Form Submission</div><div class=\"workflow-desc\">Auto-reply email confirming receipt sent immediately</div></div></div>\n    <div class=\"workflow-step\"><div class=\"workflow-num\">2</div><div class=\"workflow-content\"><div class=\"workflow-title\">CRM Entry</div><div class=\"workflow-desc\">Lead enters CRM; sales team notified via WhatsApp & email</div></div></div>\n    <div class=\"workflow-step\"><div class=\"workflow-num\">3</div><div class=\"workflow-content\"><div class=\"workflow-title\">2-Hour Call-Back</div><div class=\"workflow-desc\">Sales rep contacts lead via call or WhatsApp within 2 hours</div></div></div>\n    <div class=\"workflow-step\"><div class=\"workflow-num\">4</div><div class=\"workflow-content\"><div class=\"workflow-title\">Consultation Scheduled</div><div class=\"workflow-desc\">Calendar invite + pre-consultation questionnaire sent</div></div></div>\n    <div class=\"workflow-step\"><div class=\"workflow-num\">5</div><div class=\"workflow-content\"><div class=\"workflow-title\">Follow-Up Sequence</div><div class=\"workflow-desc\">Weekly follow-up email for 4 weeks if no decision reached</div></div></div>\n    <div class=\"workflow-step\"><div class=\"workflow-num\">6</div><div class=\"workflow-content\"><div class=\"workflow-title\">Converted</div><div class=\"workflow-desc\">Project kickoff document + client welcome package delivered</div></div></div>\n  </div>\n  <span class=\"page-num\">Page 12</span>\n</div>\n\n<!-- ════════════════ PAGE 13 — SEO STRATEGY ════════════════ -->"
+    },
+    {
+      "page_id": 13,
+      "page_type": "seo_strategy",
+      "label": "SEO Strategy",
+      "section": "10",
+      "title": "SEO Strategy & Keywords",
+      "subtitle": "Comprehensive keyword targeting for local and national Pakistani search traffic.",
+      "primary_keywords": [
+        "Construction Company Karachi",
+        "Construction Company Pakistan",
+        "Solar Installation Karachi",
+        "Solar Panel Installation Pakistan",
+        "Web Development Company Pakistan",
+        "Software Development Company Karachi",
+        "Mobile App Development Pakistan",
+        "CCTV Installation Karachi",
+        "Interior Design Karachi",
+        "Digital Marketing Agency Pakistan",
+        "Data Analytics Services Pakistan",
+        "ERP Software Pakistan"
+      ],
+      "long_tail_keywords": {
+        "Construction": [
+          "house construction cost per sq ft Karachi",
+          "commercial building contractor Karachi",
+          "turnkey construction company Pakistan",
+          "best construction company in Karachi 2025"
+        ],
+        "Solar Energy": [
+          "solar panel price in Pakistan 2025",
+          "net metering solar Karachi",
+          "hybrid solar system for home Pakistan",
+          "solar installation company near me Karachi"
+        ],
+        "IT & Software": [
+          "custom ERP software development Pakistan",
+          "ecommerce website development Karachi",
+          "React developer Pakistan",
+          "affordable CRM system for small business Pakistan"
+        ],
+        "Digital Marketing": [
+          "SEO agency Karachi",
+          "affordable Facebook ads expert Pakistan",
+          "Google Ads management Karachi",
+          "social media marketing restaurants Karachi"
+        ]
+      },
+      "animation_spec": {
+        "primary_keyword_pills": "staggered scale_in 0.04s each; hover lifts with gold glow box-shadow",
+        "keyword_pill_hover": "background shifts to rgba(232,160,32,0.15), border goes gold",
+        "long_tail_sections": "staggered fade_up by category 0.15s",
+        "section_title_bar": "gold line expands left-to-right on entry",
+        "background": "subtle keyword-cloud visual in background at 3% opacity, static"
+      },
+      "html_content": "<div class=\"page\" id=\"page-13\" data-label=\"SEO\">\n  <div class=\"section-tag\">Section 10</div>\n  <h1 class=\"page-title\">SEO Strategy & Keywords</h1>\n  <p class=\"page-sub\">Comprehensive keyword targeting for local and national Pakistani search traffic.</p>\n\n  <h3>Primary Target Keywords</h3>\n  <div class=\"pill-list\" style=\"margin-bottom:20px\">\n    <span class=\"pill gold\">Construction Company Karachi</span>\n    <span class=\"pill gold\">Construction Company Pakistan</span>\n    <span class=\"pill gold\">Solar Installation Karachi</span>\n    <span class=\"pill gold\">Solar Panel Installation Pakistan</span>\n    <span class=\"pill gold\">Web Development Company Pakistan</span>\n    <span class=\"pill gold\">Software Development Company Karachi</span>\n    <span class=\"pill gold\">Mobile App Development Pakistan</span>\n    <span class=\"pill gold\">CCTV Installation Karachi</span>\n    <span class=\"pill gold\">Interior Design Karachi</span>\n    <span class=\"pill gold\">Digital Marketing Agency Pakistan</span>\n    <span class=\"pill gold\">Data Analytics Services Pakistan</span>\n    <span class=\"pill gold\">ERP Software Pakistan</span>\n  </div>\n\n  <div class=\"section-rule\"></div>\n  <h3>Long-Tail Keywords by Division</h3>\n  <div class=\"card-grid col2\">\n    <div>\n      <div class=\"keyword-section\">\n        <div class=\"keyword-title\">Construction</div>\n        <div class=\"pill-list\">\n          <span class=\"pill\">house construction cost per sq ft Karachi</span>\n          <span class=\"pill\">commercial building contractor Karachi</span>\n          <span class=\"pill\">turnkey construction company Pakistan</span>\n          <span class=\"pill\">best construction company in Karachi 2025</span>\n        </div>\n      </div>\n      <div class=\"keyword-section\">\n        <div class=\"keyword-title\">Solar Energy</div>\n        <div class=\"pill-list\">\n          <span class=\"pill\">solar panel price in Pakistan 2025</span>\n          <span class=\"pill\">net metering solar Karachi</span>\n          <span class=\"pill\">hybrid solar system for home Pakistan</span>\n          <span class=\"pill\">solar installation company near me Karachi</span>\n        </div>\n      </div>\n    </div>\n    <div>\n      <div class=\"keyword-section\">\n        <div class=\"keyword-title\">IT & Software</div>\n        <div class=\"pill-list\">\n          <span class=\"pill\">custom ERP software development Pakistan</span>\n          <span class=\"pill\">ecommerce website development Karachi</span>\n          <span class=\"pill\">React developer Pakistan affordable</span>\n          <span class=\"pill\">CRM system for small business Pakistan</span>\n        </div>\n      </div>\n      <div class=\"keyword-section\">\n        <div class=\"keyword-title\">Digital Marketing</div>\n        <div class=\"pill-list\">\n          <span class=\"pill\">SEO agency Karachi affordable</span>\n          <span class=\"pill\">Facebook ads expert Pakistan</span>\n          <span class=\"pill\">Google Ads management Karachi</span>\n          <span class=\"pill\">social media marketing restaurants Karachi</span>\n        </div>\n      </div>\n    </div>\n  </div>\n  <span class=\"page-num\">Page 13</span>\n</div>\n\n<!-- ════════════════ PAGE 14 — TECHNICAL SEO ════════════════ -->"
+    },
+    {
+      "page_id": 14,
+      "page_type": "technical_seo",
+      "label": "Technical SEO",
+      "section": "11",
+      "title": "Technical SEO & Page Speed",
+      "subtitle": "Technical requirements for optimal search engine crawling and user experience.",
+      "core_web_vitals": [
+        {
+          "metric": "LCP",
+          "target": "< 2.5s",
+          "label": "Largest Contentful Paint"
+        },
+        {
+          "metric": "FID",
+          "target": "< 100ms",
+          "label": "First Input Delay"
+        },
+        {
+          "metric": "CLS",
+          "target": "< 0.1",
+          "label": "Cumulative Layout Shift"
+        }
+      ],
+      "technical_requirements": [
+        {
+          "requirement": "Schema Markup",
+          "spec": "Organization, LocalBusiness, Service, FAQPage, BreadcrumbList, Review — JSON-LD on all relevant pages"
+        },
+        {
+          "requirement": "XML Sitemap",
+          "spec": "Auto-generated sitemap.xml submitted to Google Search Console and Bing Webmaster Tools"
+        },
+        {
+          "requirement": "Robots.txt",
+          "spec": "Block admin, staging, and duplicate pages. Allow all service and blog pages."
+        },
+        {
+          "requirement": "Canonical Tags",
+          "spec": "Set canonical URLs on all pages to prevent duplicate content issues"
+        },
+        {
+          "requirement": "SSL / HTTPS",
+          "spec": "Full HTTPS with valid SSL. HTTP → HTTPS redirects on all URLs."
+        },
+        {
+          "requirement": "Mobile Optimization",
+          "spec": "Responsive design, touch-friendly buttons (min 44px), body font min 16px"
+        },
+        {
+          "requirement": "Image Optimization",
+          "spec": "WebP format, lazy loading, descriptive alt tags with keywords, max 150KB per image"
+        },
+        {
+          "requirement": "Internal Linking",
+          "spec": "Every service page links to 3+ related pages. Blog posts link to relevant service pages."
+        },
+        {
+          "requirement": "Page Speed",
+          "spec": "Minify CSS/JS, enable browser caching, use CDN, compress images, server response < 200ms"
+        },
+        {
+          "requirement": "Local SEO",
+          "spec": "Google Business Profile optimization, NAP consistency, local citations on Pakistan directories"
+        },
+        {
+          "requirement": "Google Search Console",
+          "spec": "Submit sitemap, monitor Core Web Vitals, fix crawl errors weekly"
+        }
+      ],
+      "animation_spec": {
+        "core_vitals_cards": "animated circular progress rings draw from 0 to 100% on scroll entry, green fill",
+        "vital_number": "counter rolls up on entry",
+        "requirements_table": "rows staggered fade_left 0.06s each",
+        "table_row_hover": "left gold border appears with slide-down animation",
+        "background": "faint grid/blueprint pattern at 4% opacity — nod to technical precision"
+      },
+      "html_content": "<div class=\"page\" id=\"page-14\" data-label=\"Technical\">\n  <div class=\"section-tag\">Section 11</div>\n  <h1 class=\"page-title\">Technical SEO & Page Speed</h1>\n  <p class=\"page-sub\">Technical requirements for optimal search engine crawling and user experience.</p>\n\n  <div class=\"card-grid col3\" style=\"margin-bottom:20px\">\n    <div class=\"metric-box\"><div class=\"metric-num\" style=\"font-size:1.1rem\">LCP &lt;2.5s</div><div class=\"metric-label\">Largest Contentful Paint</div></div>\n    <div class=\"metric-box\"><div class=\"metric-num\" style=\"font-size:1.1rem\">FID &lt;100ms</div><div class=\"metric-label\">First Input Delay</div></div>\n    <div class=\"metric-box\"><div class=\"metric-num\" style=\"font-size:1.1rem\">CLS &lt;0.1</div><div class=\"metric-label\">Cumulative Layout Shift</div></div>\n  </div>\n\n  <table class=\"data-table\">\n    <thead><tr><th>Requirement</th><th>Specification</th></tr></thead>\n    <tbody>\n      <tr><td>Schema Markup</td><td>Organization, LocalBusiness, Service, FAQPage, BreadcrumbList, Review — JSON-LD on all pages</td></tr>\n      <tr><td>XML Sitemap</td><td>Auto-generated sitemap.xml submitted to Google Search Console & Bing Webmaster Tools</td></tr>\n      <tr><td>Robots.txt</td><td>Block admin/staging/duplicate pages. Allow all service and blog pages.</td></tr>\n      <tr><td>Canonical Tags</td><td>Set canonical URLs on all pages to prevent duplicate content issues</td></tr>\n      <tr><td>SSL / HTTPS</td><td>Full HTTPS with valid SSL. HTTP → HTTPS redirects on all URLs</td></tr>\n      <tr><td>Mobile</td><td>Responsive design, touch-friendly buttons (min 44px), body font min 16px</td></tr>\n      <tr><td>Image Optimization</td><td>WebP format, lazy loading, descriptive alt tags with keywords, max 150KB per image</td></tr>\n      <tr><td>Internal Linking</td><td>Every service page links to 3+ related pages. Blog posts link to relevant service pages.</td></tr>\n      <tr><td>Page Speed</td><td>Minify CSS/JS, browser caching, CDN, compress images, server response &lt;200ms</td></tr>\n      <tr><td>Local SEO</td><td>Google Business Profile optimization, NAP consistency, local citations on Pakistan directories</td></tr>\n      <tr><td>Google Search Console</td><td>Submit sitemap, monitor Core Web Vitals, fix crawl errors weekly</td></tr>\n    </tbody>\n  </table>\n  <span class=\"page-num\">Page 14</span>\n</div>\n\n<!-- ════════════════ PAGE 15 — META TAGS ════════════════ -->"
+    },
+    {
+      "page_id": 15,
+      "page_type": "meta_tags",
+      "label": "Meta Tags",
+      "section": "13",
+      "title": "Meta Tags — All Key Pages",
+      "subtitle": "Optimized meta titles and descriptions for every major page.",
+      "meta_tags": [
+        {
+          "page": "Home",
+          "meta_title": "Markaz Enterprises | Construction, IT & Solar Solutions Pakistan",
+          "meta_description": "Professional construction, interior design, CCTV, software development, web design, mobile apps, digital marketing, data analytics and solar energy solutions across Pakistan."
+        },
+        {
+          "page": "About",
+          "meta_title": "About Markaz Enterprises | Pakistan's Multi-Industry Solutions Provider",
+          "meta_description": "Learn about Markaz Enterprises — a decade of delivering construction, technology, and solar energy solutions across Pakistan with 500+ completed projects."
+        },
+        {
+          "page": "Construction",
+          "meta_title": "Construction Company in Karachi | Markaz Enterprises",
+          "meta_description": "Trusted construction company in Karachi offering residential, commercial, renovation, and turnkey projects. Licensed engineers, transparent pricing, on-time delivery."
+        },
+        {
+          "page": "Interior Design",
+          "meta_title": "Interior Design Services Karachi | Markaz Enterprises",
+          "meta_description": "Transform your home or office with premium interior design services in Karachi. Modern, luxury, and contemporary designs for residential and commercial spaces."
+        },
+        {
+          "page": "CCTV Security",
+          "meta_title": "CCTV Installation Karachi | Security Camera Systems | Markaz",
+          "meta_description": "Professional CCTV installation and security camera systems in Karachi. IP cameras, remote monitoring, NVR/DVR setup for homes, offices, and commercial properties."
+        },
+        {
+          "page": "IT Solutions",
+          "meta_title": "Web Development & IT Solutions Pakistan | Markaz Enterprises",
+          "meta_description": "Custom web development, ERP systems, CRM, ecommerce, and cloud solutions for Pakistani businesses. Expert developers, affordable pricing, on-time delivery."
+        },
+        {
+          "page": "Mobile Apps",
+          "meta_title": "Mobile App Development Pakistan | Android & iOS | Markaz",
+          "meta_description": "Professional Android, iOS, and cross-platform mobile app development in Pakistan. UI/UX design, backend development, App Store deployment. Free quote available."
+        },
+        {
+          "page": "Data Analytics",
+          "meta_title": "Data Analytics & Business Intelligence Pakistan | Markaz",
+          "meta_description": "Turn your business data into insights with Power BI dashboards, KPI reporting, and data warehousing solutions. Serving businesses across Pakistan."
+        },
+        {
+          "page": "Digital Marketing",
+          "meta_title": "Digital Marketing Agency Pakistan | SEO, Ads & Social Media",
+          "meta_description": "Results-driven digital marketing in Pakistan. SEO, Google Ads, Facebook Ads, social media management, and content marketing that generates real leads and revenue."
+        },
+        {
+          "page": "Solar Solutions",
+          "meta_title": "Solar Panel Installation Karachi Pakistan | Markaz Enterprises",
+          "meta_description": "On-grid, off-grid, and hybrid solar energy systems in Karachi and across Pakistan. Net metering, premium panels, professional installation. Reduce bills by 70%."
+        },
+        {
+          "page": "Portfolio",
+          "meta_title": "Our Projects & Portfolio | Markaz Enterprises Pakistan",
+          "meta_description": "Explore 500+ completed projects across construction, IT software, solar installation, and interior design. Case studies, before-and-after galleries, and client testimonials."
+        },
+        {
+          "page": "Blog",
+          "meta_title": "Blog | Construction, Solar, Tech & Marketing Insights | Markaz",
+          "meta_description": "Expert insights on construction costs, solar energy, software development, and digital marketing in Pakistan. Weekly articles from the Markaz Enterprises team."
+        },
+        {
+          "page": "Contact",
+          "meta_title": "Contact Markaz Enterprises | Free Consultation Pakistan",
+          "meta_description": "Contact Markaz Enterprises for a free project consultation. Construction, IT, solar, and digital marketing experts available Mon–Sat in Karachi, Pakistan."
+        }
+      ],
+      "animation_spec": {
+        "table_header": "fade_in 0.3s",
+        "meta_rows": "staggered fade_left 0.06s each row",
+        "page_badge": "navy pill scale_in on entry",
+        "title_cell": "text appears with typewriter cursor effect, then cursor fades",
+        "description_cell": "fade_in 0.3s after title completes",
+        "row_hover": "full row background tints gold 3%; title cell color shifts to navy"
+      },
+      "html_content": "<div class=\"page\" id=\"page-15\" data-label=\"Meta Tags\">\n  <div class=\"section-tag\">Section 13</div>\n  <h1 class=\"page-title\">Meta Tags — All Key Pages</h1>\n  <p class=\"page-sub\">Optimized meta titles and descriptions for every major page.</p>\n\n  <div style=\"display:flex;flex-direction:column;gap:0\">\n    <div class=\"meta-row\"><span class=\"meta-page\">Page</span><span class=\"meta-title-cell\">Meta Title (60 chars)</span><span class=\"meta-desc-cell\">Meta Description (155 chars)</span></div>\n    <div class=\"meta-row\"><span class=\"meta-page\">Home</span><span class=\"meta-title-cell\">Markaz Enterprises | Construction, IT & Solar Solutions Pakistan</span><span class=\"meta-desc-cell\">Professional construction, interior design, CCTV, software development, web design, mobile apps, digital marketing, data analytics and solar energy solutions across Pakistan.</span></div>\n    <div class=\"meta-row\"><span class=\"meta-page\">About</span><span class=\"meta-title-cell\">About Markaz Enterprises | Pakistan's Multi-Industry Solutions Provider</span><span class=\"meta-desc-cell\">Learn about Markaz Enterprises — a decade of delivering construction, technology, and solar energy solutions across Pakistan with 500+ completed projects.</span></div>\n    <div class=\"meta-row\"><span class=\"meta-page\">Construction</span><span class=\"meta-title-cell\">Construction Company in Karachi | Markaz Enterprises</span><span class=\"meta-desc-cell\">Trusted construction company in Karachi offering residential, commercial, renovation, and turnkey projects. Licensed engineers, transparent pricing, on-time delivery.</span></div>\n    <div class=\"meta-row\"><span class=\"meta-page\">Interior</span><span class=\"meta-title-cell\">Interior Design Services Karachi | Markaz Enterprises</span><span class=\"meta-desc-cell\">Transform your home or office with premium interior design services in Karachi. Modern, luxury, and contemporary designs for residential and commercial spaces.</span></div>\n    <div class=\"meta-row\"><span class=\"meta-page\">CCTV</span><span class=\"meta-title-cell\">CCTV Installation Karachi | Security Camera Systems | Markaz</span><span class=\"meta-desc-cell\">Professional CCTV installation and security camera systems in Karachi. IP cameras, remote monitoring, NVR/DVR setup for homes, offices, and commercial properties.</span></div>\n    <div class=\"meta-row\"><span class=\"meta-page\">IT Solutions</span><span class=\"meta-title-cell\">Web Development & IT Solutions Pakistan | Markaz Enterprises</span><span class=\"meta-desc-cell\">Custom web development, ERP systems, CRM, ecommerce, and cloud solutions for Pakistani businesses. Expert developers, affordable pricing, on-time delivery.</span></div>\n    <div class=\"meta-row\"><span class=\"meta-page\">Mobile Apps</span><span class=\"meta-title-cell\">Mobile App Development Pakistan | Android & iOS | Markaz</span><span class=\"meta-desc-cell\">Professional Android, iOS, and cross-platform mobile app development in Pakistan. UI/UX design, backend development, App Store deployment. Free quote available.</span></div>\n    <div class=\"meta-row\"><span class=\"meta-page\">Analytics</span><span class=\"meta-title-cell\">Data Analytics & Business Intelligence Pakistan | Markaz</span><span class=\"meta-desc-cell\">Turn your business data into insights with Power BI dashboards, KPI reporting, and data warehousing solutions. Serving businesses across Pakistan.</span></div>\n    <div class=\"meta-row\"><span class=\"meta-page\">Digital Mkt</span><span class=\"meta-title-cell\">Digital Marketing Agency Pakistan | SEO, Ads & Social Media</span><span class=\"meta-desc-cell\">Results-driven digital marketing in Pakistan. SEO, Google Ads, Facebook Ads, social media management, and content marketing that generates real leads and revenue.</span></div>\n    <div class=\"meta-row\"><span class=\"meta-page\">Solar</span><span class=\"meta-title-cell\">Solar Panel Installation Karachi Pakistan | Markaz Enterprises</span><span class=\"meta-desc-cell\">On-grid, off-grid, and hybrid solar energy systems in Karachi and across Pakistan. Net metering, premium panels, professional installation. Reduce bills by 70%.</span></div>\n    <div class=\"meta-row\"><span class=\"meta-page\">Portfolio</span><span class=\"meta-title-cell\">Our Projects & Portfolio | Markaz Enterprises Pakistan</span><span class=\"meta-desc-cell\">Explore 500+ completed projects across construction, IT software, solar installation, and interior design. Case studies and client testimonials.</span></div>\n    <div class=\"meta-row\"><span class=\"meta-page\">Blog</span><span class=\"meta-title-cell\">Blog | Construction, Solar, Tech & Marketing Insights | Markaz</span><span class=\"meta-desc-cell\">Expert insights on construction costs, solar energy, software development, and digital marketing in Pakistan. Weekly articles from the Markaz team.</span></div>\n    <div class=\"meta-row\"><span class=\"meta-page\">Contact</span><span class=\"meta-title-cell\">Contact Markaz Enterprises | Free Consultation Pakistan</span><span class=\"meta-desc-cell\">Contact Markaz Enterprises for a free project consultation. Construction, IT, solar, and digital marketing experts available Mon–Sat in Karachi, Pakistan.</span></div>\n  </div>\n  <span class=\"page-num\">Page 15</span>\n</div>\n\n<!-- ════════════════ PAGE 16 — IMPLEMENTATION ROADMAP ════════════════ -->"
+    },
+    {
+      "page_id": 16,
+      "page_type": "implementation_roadmap",
+      "label": "Roadmap",
+      "section": "14",
+      "title": "Implementation Roadmap",
+      "subtitle": "Phase-by-phase website build plan from discovery to launch and ongoing growth.",
+      "phases": [
+        {
+          "phase": 1,
+          "title": "Discovery & Planning",
+          "timeline": "Weeks 1–2",
+          "color": "navy",
+          "tasks": [
+            "Finalise brand guidelines (colors, fonts, logo variations)",
+            "Confirm sitemap and URL structure with all stakeholders",
+            "Gather portfolio images, project photos, team photos",
+            "Collect client testimonials and review content",
+            "Set up Google Analytics 4, Search Console, and Tag Manager",
+            "Register domain, set up hosting, SSL certificate"
+          ]
+        },
+        {
+          "phase": 2,
+          "title": "Design",
+          "timeline": "Weeks 3–5",
+          "color": "navy",
+          "tasks": [
+            "Create homepage wireframe and high-fidelity mockups",
+            "Design all service page templates",
+            "Design portfolio gallery, blog, and contact page",
+            "Design mobile-responsive versions of all templates",
+            "Client review and design approval",
+            "Prepare all icons, illustrations, and graphic assets"
+          ]
+        },
+        {
+          "phase": 3,
+          "title": "Development",
+          "timeline": "Weeks 6–10",
+          "color": "navy",
+          "tasks": [
+            "Front-end development: homepage, service pages, blog",
+            "CMS integration (WordPress or headless CMS)",
+            "Contact forms, WhatsApp integration, lead capture",
+            "Portfolio gallery with filter functionality",
+            "Implement schema markup and technical SEO",
+            "Page speed optimisation and mobile testing"
+          ]
+        },
+        {
+          "phase": 4,
+          "title": "Content & SEO",
+          "timeline": "Weeks 9–12",
+          "color": "navy",
+          "tasks": [
+            "Write and publish all 16+ service pages with full content",
+            "Optimise all meta titles and descriptions",
+            "Create 8 initial blog posts targeting priority keywords",
+            "Build internal linking structure across all pages",
+            "Submit sitemap to Google and Bing",
+            "Set up Google Business Profile and local citations"
+          ]
+        },
+        {
+          "phase": 5,
+          "title": "Launch & Growth",
+          "timeline": "Week 13+",
+          "color": "emerald_green",
+          "tasks": [
+            "Final QA testing on all devices and browsers",
+            "Soft launch with team review and feedback",
+            "Official launch — social media announcement",
+            "Begin weekly blog publishing schedule",
+            "Monthly SEO audit and keyword ranking review",
+            "Quarterly website performance and content refresh"
+          ]
+        }
+      ],
+      "closing_note": "This document was prepared exclusively for Markaz Enterprises. All strategies, content frameworks, and keyword targets are tailored to the Pakistani market and Markaz Enterprises' specific service divisions. Implement in phases as outlined above for maximum impact. Review and update quarterly as the business grows.",
+      "animation_spec": {
+        "phase_blocks": "staggered fade_up 0.15s each block",
+        "phase_header": "left-border of phase number draws downward on entry",
+        "timeline_badge": "gold pill bounces_in from right",
+        "tasks": "staggered fade_left within each phase, 0.06s each",
+        "task_checkmark": "on hover, bullet square rotates to checkmark with green color transition",
+        "phase5_header": "emerald-green gradient header with subtle shimmer — marks completion",
+        "connecting_line": "vertical progress line on the left side grows as user scrolls through phases",
+        "callout_box": "fade_up with gold left-border animating in from top on entry",
+        "overall_page": "horizontal progress bar at top of page advances as user scrolls"
+      },
+      "html_content": "<div class=\"page\" id=\"page-16\" data-label=\"Roadmap\">\n  <div class=\"section-tag\">Section 14</div>\n  <h1 class=\"page-title\">Implementation Roadmap</h1>\n  <p class=\"page-sub\">Phase-by-phase website build plan from discovery to launch and ongoing growth.</p>\n\n  <div class=\"phase-block\">\n    <div class=\"phase-header\"><span class=\"phase-title\">Phase 1 — Discovery & Planning</span><span class=\"phase-weeks\">Weeks 1–2</span></div>\n    <div class=\"phase-tasks\">\n      <div class=\"phase-task\">Finalize brand guidelines (colors, fonts, logo variations)</div>\n      <div class=\"phase-task\">Confirm sitemap and URL structure with stakeholders</div>\n      <div class=\"phase-task\">Gather portfolio images, project photos, team photos</div>\n      <div class=\"phase-task\">Collect client testimonials and review content</div>\n      <div class=\"phase-task\">Set up Google Analytics 4, Search Console, Tag Manager</div>\n      <div class=\"phase-task\">Register domain, set up hosting, SSL certificate</div>\n    </div>\n  </div>\n\n  <div class=\"phase-block\">\n    <div class=\"phase-header\"><span class=\"phase-title\">Phase 2 — Design</span><span class=\"phase-weeks\">Weeks 3–5</span></div>\n    <div class=\"phase-tasks\">\n      <div class=\"phase-task\">Create homepage wireframe and high-fidelity mockups</div>\n      <div class=\"phase-task\">Design all service page templates</div>\n      <div class=\"phase-task\">Design portfolio gallery, blog, and contact page</div>\n      <div class=\"phase-task\">Design mobile-responsive versions of all templates</div>\n      <div class=\"phase-task\">Client review and design approval</div>\n      <div class=\"phase-task\">Prepare all icons, illustrations, and graphic assets</div>\n    </div>\n  </div>\n\n  <div class=\"phase-block\">\n    <div class=\"phase-header\"><span class=\"phase-title\">Phase 3 — Development</span><span class=\"phase-weeks\">Weeks 6–10</span></div>\n    <div class=\"phase-tasks\">\n      <div class=\"phase-task\">Front-end development: homepage, service pages, blog</div>\n      <div class=\"phase-task\">CMS integration (WordPress or headless CMS)</div>\n      <div class=\"phase-task\">Contact forms, WhatsApp integration, lead capture</div>\n      <div class=\"phase-task\">Portfolio gallery with filter functionality</div>\n      <div class=\"phase-task\">Implement schema markup and technical SEO</div>\n      <div class=\"phase-task\">Page speed optimization and mobile testing</div>\n    </div>\n  </div>\n\n  <div class=\"phase-block\">\n    <div class=\"phase-header\"><span class=\"phase-title\">Phase 4 — Content & SEO</span><span class=\"phase-weeks\">Weeks 9–12</span></div>\n    <div class=\"phase-tasks\">\n      <div class=\"phase-task\">Write and publish all 16+ service pages with full content</div>\n      <div class=\"phase-task\">Optimize all meta titles and descriptions</div>\n      <div class=\"phase-task\">Create 8 initial blog posts targeting priority keywords</div>\n      <div class=\"phase-task\">Build internal linking structure across all pages</div>\n      <div class=\"phase-task\">Submit sitemap to Google and Bing</div>\n      <div class=\"phase-task\">Set up Google Business Profile and local citations</div>\n    </div>\n  </div>\n\n  <div class=\"phase-block\">\n    <div class=\"phase-header\" style=\"background:var(--green)\"><span class=\"phase-title\">Phase 5 — Launch & Growth</span><span class=\"phase-weeks\">Week 13+</span></div>\n    <div class=\"phase-tasks\">\n      <div class=\"phase-task\">Final QA testing on all devices and browsers</div>\n      <div class=\"phase-task\">Soft launch with team review and feedback</div>\n      <div class=\"phase-task\">Official launch — social media announcement</div>\n      <div class=\"phase-task\">Begin weekly blog publishing schedule</div>\n      <div class=\"phase-task\">Monthly SEO audit and keyword ranking review</div>\n      <div class=\"phase-task\">Quarterly website performance and content refresh</div>\n    </div>\n  </div>\n\n  <div class=\"callout\" style=\"margin-top:20px\"><p><strong>Note:</strong> This document was prepared exclusively for Markaz Enterprises. All strategies, content frameworks, and keyword targets are tailored to the Pakistani market. Implement in phases as outlined above for maximum impact. Review and update quarterly as the business grows.</p></div>\n  <span class=\"page-num\">Page 16</span>\n</div>\n\n</div><!-- /doc-wrapper -->\n\n<script>\n// Build sidebar nav dots\nconst pages = document.querySelectorAll('.page[id]');\nconst nav = document.getElementById('sideNav');\npages.forEach((page, i) => {\n  const btn = document.createElement('button');\n  btn.className = 'side-dot';\n  btn.title = page.dataset.label || `Page ${i+1}`;\n  btn.onclick = () => page.scrollIntoView({ behavior: 'smooth', block: 'start' });\n  nav.appendChild(btn);\n});\n\n// Highlight active dot on scroll\nconst dots = nav.querySelectorAll('.side-dot');\nconst observer = new IntersectionObserver((entries) => {\n  entries.forEach(entry => {\n    if (entry.isIntersecting) {\n      const idx = Array.from(pages).indexOf(entry.target);\n      dots.forEach((d, i) => d.classList.toggle('active', i === idx));\n    }\n  });\n}, { threshold: 0.3 });\npages.forEach(p => observer.observe(p));\n</script>"
+    }
+  ],
+  "global_animation_library": {
+    "keyframes": {
+      "float_orb": "@keyframes float-orb { 0%,100% { transform: translate(0,0) scale(1); } 33% { transform: translate(30px,-20px) scale(1.05); } 66% { transform: translate(-20px,15px) scale(0.97); } }",
+      "drift_slow": "@keyframes drift-slow { 0%,100% { transform: translate(0,0); } 50% { transform: translate(-15px,10px); } }",
+      "pulse_glow": "@keyframes pulse-glow { 0%,100% { opacity: 0.08; transform: scale(1); } 50% { opacity: 0.15; transform: scale(1.08); } }",
+      "shimmer_sweep": "@keyframes shimmer { 0% { background-position: -200% center; } 100% { background-position: 200% center; } }",
+      "pulse_ring": "@keyframes pulse-ring { 0% { box-shadow: 0 0 0 0 rgba(13,155,118,0.4); } 70% { box-shadow: 0 0 0 16px rgba(13,155,118,0); } 100% { box-shadow: 0 0 0 0 rgba(13,155,118,0); } }",
+      "counter_roll": "JS-driven: requestAnimationFrame, easeOutExpo timing, 1500ms duration",
+      "line_draw": "@keyframes line-draw { from { width: 0; } to { width: 100%; } }",
+      "timeline_grow": "@keyframes timeline-grow { from { height: 0; } to { height: 100%; } }"
+    },
+    "intersection_observer_config": {
+      "threshold": 0.15,
+      "rootMargin": "0px 0px -40px 0px",
+      "once": true
+    },
+    "reactbits_patterns": [
+      "SpotlightCard — radial-gradient follows cursor for service cards",
+      "InfiniteMarquee — testimonials and client logos",
+      "FlipCard — division cards front/back reveal",
+      "GlassCard — glassmorphism cards with backdrop-filter",
+      "TiltCard — 3D perspective tilt on mouse move (blog cards)",
+      "CounterUp — stat numbers animate from 0 on scroll entry",
+      "TextReveal — H1 text animates in word by word or character by character",
+      "AnimatedBorder — gradient border that rotates around cards on hover",
+      "ParticleBackground — subtle dot grid or floating particles in dark sections"
+    ],
+    "performance_notes": [
+      "All animations use transform and opacity only (GPU compositing layer, no layout reflow)",
+      "will-change: transform applied to animated elements",
+      "Animations disabled for prefers-reduced-motion media query",
+      "IntersectionObserver used instead of scroll event listeners",
+      "CSS animations preferred over JS for simple effects",
+      "Heavy effects (particles, 3D tilt) lazy-initialized on user interaction"
+    ]
+  },
+  "prompt_execution_instructions": {
+    "how_to_use_this_file": [
+      "This JSON is a complete prompt-ready data source for building the Markaz Enterprises website.",
+      "Each 'pages' array item maps to one page/section of the master plan.",
+      "Pass individual page objects as context to your AI/code generation tool.",
+      "The 'animation_spec' field in each page tells your AI exactly what animations to implement.",
+      "The 'global_animation_library' contains reusable keyframes and ReactBits patterns.",
+      "The 'design_system' object must be passed in every page prompt as shared context."
+    ],
+    "suggested_prompt_template": "Using the design_system and animations defined in the global config, build the [page.title] page for Markaz Enterprises. Content: [page content fields]. Animations: [page.animation_spec]. Use ReactBits-style card patterns: [relevant global_animation_library.reactbits_patterns]. Ensure all animations use GPU-accelerated transforms only.",
+    "page_count": 16,
+    "section_count": 14,
+    "total_divisions": 10,
+    "total_service_pages": 10,
+    "total_blog_posts_planned": 16,
+    "implementation_phases": 5
+  },
+  "html_head": "<head>\n<meta charset=\"UTF-8\"/>\n<meta name=\"viewport\" content=\"width=device-width,initial-scale=1.0\"/>\n<title>Markaz Enterprises — Website Master Plan</title>\n<link href=\"https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;900&display=swap\" rel=\"stylesheet\"/>\n<style>\n:root {\n  --navy: #1A2B5F;\n  --gold: #E8A020;\n  --green: #0D9B76;\n  --bg: #F4F6FB;\n  --dark: #1C1C2E;\n  --body: #3D3D55;\n  --muted: #8890A8;\n  --border: #D0D8EE;\n  --white: #FFFFFF;\n}\n\n* { box-sizing: border-box; margin: 0; padding: 0; }\nhtml { font-size: 16px; scroll-behavior: smooth; }\nbody {\n  font-family: 'Inter', sans-serif;\n  background: #E8EDF5;\n  color: var(--body);\n  line-height: 1.6;\n}\n\n/* ── Document shell ── */\n.doc-wrapper {\n  max-width: 900px;\n  margin: 0 auto;\n  padding: 32px 20px 80px;\n  display: flex;\n  flex-direction: column;\n  gap: 0;\n}\n\n/* ── Page ── */\n.page {\n  background: var(--white);\n  width: 100%;\n  min-height: 1040px;\n  padding: 64px 72px;\n  position: relative;\n  box-shadow: 0 2px 16px rgba(26,43,95,.10);\n  margin-bottom: 12px;\n  border-top: 4px solid var(--navy);\n  page-break-after: always;\n}\n\n.page:first-child { border-top: none; }\n\n/* Page number badge */\n.page-num {\n  position: absolute;\n  bottom: 28px;\n  right: 40px;\n  font-size: .72rem;\n  font-weight: 700;\n  color: var(--muted);\n  letter-spacing: .1em;\n  text-transform: uppercase;\n}\n\n/* ── Cover page ── */\n.cover {\n  background: var(--navy);\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: flex-start;\n  min-height: 1040px;\n  border-top: none;\n  position: relative;\n  overflow: hidden;\n}\n.cover::before {\n  content: '';\n  position: absolute;\n  top: -120px;\n  right: -120px;\n  width: 480px;\n  height: 480px;\n  border-radius: 50%;\n  background: rgba(232,160,32,.12);\n  pointer-events: none;\n}\n.cover::after {\n  content: '';\n  position: absolute;\n  bottom: -80px;\n  left: -60px;\n  width: 340px;\n  height: 340px;\n  border-radius: 50%;\n  background: rgba(232,160,32,.07);\n  pointer-events: none;\n}\n.cover-tag {\n  display: inline-block;\n  background: rgba(232,160,32,.18);\n  border: 1px solid rgba(232,160,32,.4);\n  color: var(--gold);\n  font-size: .72rem;\n  font-weight: 700;\n  letter-spacing: .16em;\n  text-transform: uppercase;\n  padding: 7px 18px;\n  border-radius: 50px;\n  margin-bottom: 28px;\n}\n.cover-title {\n  font-family: 'Playfair Display', serif;\n  font-size: 3.6rem;\n  font-weight: 900;\n  color: #fff;\n  line-height: 1.08;\n  margin-bottom: 10px;\n  position: relative;\n  z-index: 1;\n}\n.cover-title span { color: var(--gold); }\n.cover-sub {\n  font-size: 1rem;\n  color: rgba(255,255,255,.65);\n  margin-bottom: 48px;\n  max-width: 480px;\n  position: relative;\n  z-index: 1;\n}\n.cover-divider {\n  width: 64px;\n  height: 3px;\n  background: var(--gold);\n  border-radius: 2px;\n  margin-bottom: 40px;\n}\n.cover-meta {\n  display: flex;\n  flex-direction: column;\n  gap: 10px;\n  position: relative;\n  z-index: 1;\n}\n.cover-meta-row {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n}\n.cover-meta-label {\n  font-size: .72rem;\n  font-weight: 700;\n  letter-spacing: .12em;\n  text-transform: uppercase;\n  color: rgba(255,255,255,.4);\n  width: 120px;\n  flex-shrink: 0;\n}\n.cover-meta-value {\n  font-size: .88rem;\n  font-weight: 600;\n  color: rgba(255,255,255,.85);\n}\n.cover-badge {\n  position: absolute;\n  bottom: 52px;\n  right: 72px;\n  background: rgba(255,255,255,.06);\n  border: 1px solid rgba(255,255,255,.12);\n  border-radius: 12px;\n  padding: 18px 24px;\n  z-index: 1;\n}\n.cover-badge-num {\n  font-size: 2.2rem;\n  font-weight: 900;\n  color: var(--gold);\n  line-height: 1;\n}\n.cover-badge-label {\n  font-size: .72rem;\n  color: rgba(255,255,255,.5);\n  margin-top: 3px;\n  letter-spacing: .06em;\n  text-transform: uppercase;\n}\n.cover-badge-row {\n  display: flex;\n  gap: 32px;\n}\n\n/* ── TOC page ── */\n.toc-title {\n  font-size: 1.6rem;\n  font-weight: 900;\n  color: var(--navy);\n  margin-bottom: 8px;\n}\n.toc-sub {\n  font-size: .88rem;\n  color: var(--muted);\n  margin-bottom: 36px;\n}\n.toc-list {\n  display: flex;\n  flex-direction: column;\n  gap: 0;\n}\n.toc-item {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 14px 0;\n  border-bottom: 1px solid var(--border);\n  cursor: pointer;\n  transition: background .15s;\n  text-decoration: none;\n}\n.toc-item:hover .toc-item-title { color: var(--gold); }\n.toc-item-left {\n  display: flex;\n  align-items: center;\n  gap: 16px;\n}\n.toc-item-num {\n  width: 36px;\n  height: 36px;\n  border-radius: 8px;\n  background: var(--bg);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: .75rem;\n  font-weight: 800;\n  color: var(--navy);\n  flex-shrink: 0;\n}\n.toc-item-title {\n  font-size: .95rem;\n  font-weight: 700;\n  color: var(--dark);\n  transition: color .15s;\n}\n.toc-item-desc {\n  font-size: .8rem;\n  color: var(--muted);\n  margin-top: 1px;\n}\n.toc-item-page {\n  font-size: .8rem;\n  font-weight: 700;\n  color: var(--muted);\n  flex-shrink: 0;\n}\n\n/* ── Section header ── */\n.section-tag {\n  display: inline-block;\n  background: rgba(232,160,32,.12);\n  border: 1px solid rgba(232,160,32,.3);\n  color: #B07510;\n  font-size: .68rem;\n  font-weight: 800;\n  letter-spacing: .14em;\n  text-transform: uppercase;\n  padding: 5px 14px;\n  border-radius: 50px;\n  margin-bottom: 14px;\n}\n.section-tag.green {\n  background: rgba(13,155,118,.1);\n  border-color: rgba(13,155,118,.25);\n  color: #0A7A5C;\n}\n.page-title {\n  font-size: 1.65rem;\n  font-weight: 900;\n  color: var(--navy);\n  line-height: 1.18;\n  margin-bottom: 6px;\n}\n.page-sub {\n  font-size: .9rem;\n  color: var(--muted);\n  margin-bottom: 36px;\n  line-height: 1.6;\n}\n.section-rule {\n  width: 100%;\n  height: 1px;\n  background: var(--border);\n  margin: 28px 0;\n}\n\n/* ── Content blocks ── */\np { font-size: .9rem; line-height: 1.75; color: var(--body); margin-bottom: 14px; }\n\nh3 {\n  font-size: 1rem;\n  font-weight: 800;\n  color: var(--navy);\n  margin-bottom: 10px;\n  margin-top: 24px;\n}\nh4 {\n  font-size: .85rem;\n  font-weight: 700;\n  color: var(--navy);\n  margin-bottom: 6px;\n}\n\n/* Cards */\n.card-grid {\n  display: grid;\n  gap: 16px;\n}\n.card-grid.col2 { grid-template-columns: 1fr 1fr; }\n.card-grid.col3 { grid-template-columns: 1fr 1fr 1fr; }\n.card-grid.col4 { grid-template-columns: 1fr 1fr 1fr 1fr; }\n\n.card {\n  background: var(--bg);\n  border: 1px solid var(--border);\n  border-radius: 10px;\n  padding: 18px;\n}\n.card.navy-accent { border-left: 3px solid var(--navy); }\n.card.gold-accent { border-left: 3px solid var(--gold); }\n.card.green-accent { border-left: 3px solid var(--green); }\n.card-label {\n  font-size: .67rem;\n  font-weight: 800;\n  letter-spacing: .12em;\n  text-transform: uppercase;\n  color: var(--muted);\n  margin-bottom: 6px;\n}\n.card-value {\n  font-size: .88rem;\n  font-weight: 600;\n  color: var(--dark);\n  line-height: 1.5;\n}\n.card-title {\n  font-size: .88rem;\n  font-weight: 800;\n  color: var(--navy);\n  margin-bottom: 5px;\n}\n.card-desc {\n  font-size: .8rem;\n  color: var(--body);\n  line-height: 1.6;\n}\n\n/* Values grid */\n.values-grid {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  gap: 14px;\n}\n.value-item {\n  display: flex;\n  align-items: flex-start;\n  gap: 12px;\n  padding: 14px 16px;\n  background: var(--bg);\n  border-radius: 8px;\n  border: 1px solid var(--border);\n}\n.value-dot {\n  width: 8px;\n  height: 8px;\n  border-radius: 50%;\n  background: var(--gold);\n  flex-shrink: 0;\n  margin-top: 5px;\n}\n.value-title {\n  font-size: .82rem;\n  font-weight: 800;\n  color: var(--navy);\n  margin-bottom: 2px;\n}\n.value-desc {\n  font-size: .78rem;\n  color: var(--body);\n  line-height: 1.5;\n}\n\n/* Pill list */\n.pill-list {\n  display: flex;\n  flex-wrap: wrap;\n  gap: 8px;\n  margin-top: 8px;\n}\n.pill {\n  padding: 5px 14px;\n  background: var(--bg);\n  border: 1px solid var(--border);\n  border-radius: 50px;\n  font-size: .78rem;\n  font-weight: 600;\n  color: var(--navy);\n}\n.pill.gold { background: rgba(232,160,32,.1); border-color: rgba(232,160,32,.3); color: #8A5F0A; }\n.pill.green { background: rgba(13,155,118,.08); border-color: rgba(13,155,118,.25); color: #0A7A5C; }\n\n/* Table */\n.data-table {\n  width: 100%;\n  border-collapse: collapse;\n  font-size: .8rem;\n}\n.data-table th {\n  background: var(--navy);\n  color: #fff;\n  padding: 10px 12px;\n  text-align: left;\n  font-weight: 700;\n  font-size: .72rem;\n  letter-spacing: .04em;\n}\n.data-table th:first-child { border-radius: 6px 0 0 0; }\n.data-table th:last-child { border-radius: 0 6px 0 0; }\n.data-table td {\n  padding: 9px 12px;\n  border-bottom: 1px solid var(--border);\n  color: var(--body);\n  vertical-align: top;\n  line-height: 1.5;\n}\n.data-table tr:nth-child(even) td { background: var(--bg); }\n.data-table tr:hover td { background: rgba(232,160,32,.05); }\n.data-table .badge {\n  display: inline-block;\n  padding: 2px 9px;\n  border-radius: 50px;\n  font-size: .68rem;\n  font-weight: 700;\n  background: rgba(26,43,95,.08);\n  color: var(--navy);\n}\n\n/* Keyword boxes */\n.keyword-section { margin-bottom: 20px; }\n.keyword-title {\n  font-size: .8rem;\n  font-weight: 800;\n  color: var(--navy);\n  margin-bottom: 8px;\n  display: flex;\n  align-items: center;\n  gap: 6px;\n}\n.keyword-title::before {\n  content: '';\n  width: 10px;\n  height: 3px;\n  background: var(--gold);\n  border-radius: 2px;\n  display: inline-block;\n}\n\n/* Process steps */\n.process-row {\n  display: flex;\n  gap: 0;\n  margin: 20px 0;\n  position: relative;\n}\n.process-row::before {\n  content: '';\n  position: absolute;\n  top: 18px;\n  left: 18px;\n  right: 18px;\n  height: 2px;\n  background: var(--border);\n  z-index: 0;\n}\n.process-step-item {\n  flex: 1;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  text-align: center;\n  position: relative;\n  z-index: 1;\n}\n.process-circle {\n  width: 36px;\n  height: 36px;\n  border-radius: 50%;\n  background: var(--navy);\n  border: 2px solid var(--gold);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: .72rem;\n  font-weight: 900;\n  color: var(--gold);\n  margin-bottom: 8px;\n  flex-shrink: 0;\n}\n.process-label {\n  font-size: .72rem;\n  font-weight: 700;\n  color: var(--navy);\n  margin-bottom: 3px;\n}\n.process-desc-sm {\n  font-size: .68rem;\n  color: var(--muted);\n  line-height: 1.45;\n}\n\n/* Division card */\n.division-card {\n  border: 1px solid var(--border);\n  border-radius: 12px;\n  overflow: hidden;\n  margin-bottom: 20px;\n}\n.division-card-header {\n  background: var(--navy);\n  padding: 14px 20px;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n}\n.division-card-title {\n  font-size: .92rem;\n  font-weight: 800;\n  color: #fff;\n}\n.division-card-num {\n  font-size: .7rem;\n  font-weight: 700;\n  color: var(--gold);\n  letter-spacing: .1em;\n  text-transform: uppercase;\n}\n.division-card-body {\n  padding: 16px 20px;\n  background: var(--bg);\n}\n.division-card-desc {\n  font-size: .8rem;\n  color: var(--body);\n  line-height: 1.6;\n  margin-bottom: 10px;\n}\n.division-services {\n  display: flex;\n  flex-wrap: wrap;\n  gap: 6px;\n  margin-bottom: 10px;\n}\n.division-tech-row {\n  display: flex;\n  align-items: center;\n  gap: 6px;\n}\n.tech-label {\n  font-size: .68rem;\n  font-weight: 700;\n  color: var(--muted);\n  text-transform: uppercase;\n  letter-spacing: .08em;\n  margin-right: 4px;\n}\n\n/* Color swatch */\n.swatch-grid { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 12px; }\n.swatch {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 6px;\n}\n.swatch-block {\n  width: 56px;\n  height: 44px;\n  border-radius: 8px;\n  border: 1px solid rgba(0,0,0,.08);\n}\n.swatch-hex { font-size: .65rem; font-weight: 700; color: var(--muted); }\n.swatch-name { font-size: .65rem; color: var(--muted); }\n\n/* Typography spec */\n.type-row {\n  display: flex;\n  align-items: baseline;\n  gap: 16px;\n  padding: 10px 0;\n  border-bottom: 1px solid var(--border);\n}\n.type-preview { flex: 1; min-width: 0; }\n.type-spec {\n  font-size: .72rem;\n  color: var(--muted);\n  white-space: nowrap;\n}\n\n/* Phase */\n.phase-block {\n  border-radius: 10px;\n  border: 1px solid var(--border);\n  overflow: hidden;\n  margin-bottom: 14px;\n}\n.phase-header {\n  padding: 12px 18px;\n  background: var(--navy);\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n}\n.phase-title { font-size: .88rem; font-weight: 800; color: #fff; }\n.phase-weeks { font-size: .72rem; font-weight: 700; color: var(--gold); }\n.phase-tasks {\n  padding: 14px 18px;\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  gap: 6px;\n}\n.phase-task {\n  display: flex;\n  align-items: flex-start;\n  gap: 8px;\n  font-size: .78rem;\n  color: var(--body);\n  line-height: 1.5;\n}\n.phase-task::before {\n  content: '■';\n  font-size: .5rem;\n  color: var(--gold);\n  flex-shrink: 0;\n  margin-top: 4px;\n}\n\n/* Metric stat */\n.metric-row {\n  display: grid;\n  grid-template-columns: repeat(4, 1fr);\n  gap: 14px;\n  margin: 20px 0;\n}\n.metric-box {\n  background: var(--bg);\n  border: 1px solid var(--border);\n  border-radius: 10px;\n  padding: 16px;\n  text-align: center;\n}\n.metric-num {\n  font-size: 1.6rem;\n  font-weight: 900;\n  color: var(--navy);\n  line-height: 1;\n  margin-bottom: 4px;\n}\n.metric-label {\n  font-size: .7rem;\n  font-weight: 600;\n  color: var(--muted);\n  text-transform: uppercase;\n  letter-spacing: .06em;\n}\n\n/* Workflow */\n.workflow-steps {\n  display: flex;\n  flex-direction: column;\n  gap: 0;\n}\n.workflow-step {\n  display: flex;\n  gap: 14px;\n  padding: 12px 0;\n  border-bottom: 1px solid var(--border);\n  align-items: flex-start;\n}\n.workflow-step:last-child { border-bottom: none; }\n.workflow-num {\n  width: 26px;\n  height: 26px;\n  border-radius: 50%;\n  background: var(--navy);\n  color: #fff;\n  font-size: .7rem;\n  font-weight: 800;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-shrink: 0;\n}\n.workflow-content {}\n.workflow-title { font-size: .84rem; font-weight: 700; color: var(--navy); margin-bottom: 2px; }\n.workflow-desc { font-size: .78rem; color: var(--body); line-height: 1.5; }\n\n/* CTA row */\n.cta-box {\n  background: var(--navy);\n  border-radius: 10px;\n  padding: 20px 24px;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 16px;\n  margin-top: 28px;\n}\n.cta-box-text { color: #fff; font-size: .9rem; font-weight: 700; }\n.cta-box-sub { color: rgba(255,255,255,.6); font-size: .78rem; margin-top: 2px; }\n.cta-btn {\n  background: var(--gold);\n  color: var(--navy);\n  font-size: .82rem;\n  font-weight: 800;\n  padding: 10px 20px;\n  border-radius: 6px;\n  white-space: nowrap;\n  flex-shrink: 0;\n}\n\n/* ── Print / sidebar nav ── */\n.side-nav {\n  position: fixed;\n  top: 50%;\n  right: 14px;\n  transform: translateY(-50%);\n  display: flex;\n  flex-direction: column;\n  gap: 6px;\n  z-index: 100;\n}\n.side-dot {\n  width: 8px;\n  height: 8px;\n  border-radius: 50%;\n  background: rgba(26,43,95,.2);\n  transition: all .2s;\n  cursor: pointer;\n  border: none;\n  outline: none;\n}\n.side-dot.active, .side-dot:hover { background: var(--navy); transform: scale(1.4); }\n\n/* Contact row */\n.contact-row {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n  padding: 12px 16px;\n  background: var(--bg);\n  border-radius: 8px;\n  border: 1px solid var(--border);\n  margin-bottom: 10px;\n}\n.contact-icon {\n  width: 36px;\n  height: 36px;\n  border-radius: 8px;\n  background: rgba(26,43,95,.08);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-shrink: 0;\n  font-size: 1rem;\n}\n.contact-label { font-size: .72rem; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .08em; margin-bottom: 2px; }\n.contact-value { font-size: .88rem; font-weight: 600; color: var(--navy); }\n\n/* Meta table rows */\n.meta-row { display: grid; grid-template-columns: 120px 1fr 1fr; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--border); }\n.meta-row:first-child { font-weight: 800; font-size: .72rem; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); padding-bottom: 8px; }\n.meta-page { font-size: .82rem; font-weight: 700; color: var(--navy); }\n.meta-title-cell { font-size: .78rem; color: var(--body); line-height: 1.5; }\n.meta-desc-cell { font-size: .75rem; color: var(--muted); line-height: 1.5; }\n\n/* Highlight callout */\n.callout {\n  background: rgba(232,160,32,.08);\n  border: 1px solid rgba(232,160,32,.25);\n  border-left: 3px solid var(--gold);\n  border-radius: 8px;\n  padding: 14px 16px;\n  margin: 16px 0;\n}\n.callout p { margin-bottom: 0; font-size: .85rem; }\n.callout strong { color: var(--navy); }\n\n/* Blog cat */\n.blog-cat { margin-bottom: 16px; }\n.blog-cat-title { font-size: .82rem; font-weight: 800; color: var(--navy); margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }\n.blog-cat-title::after { content: ''; flex: 1; height: 1px; background: var(--border); }\n.blog-cat ul { display: flex; flex-direction: column; gap: 5px; }\n.blog-cat li { font-size: .8rem; color: var(--body); padding-left: 14px; position: relative; }\n.blog-cat li::before { content: '→'; position: absolute; left: 0; color: var(--gold); font-size: .72rem; }\n\n/* Form field preview */\n.form-preview { display: flex; flex-direction: column; gap: 8px; margin-top: 12px; }\n.form-field { padding: 9px 12px; background: var(--bg); border: 1px solid var(--border); border-radius: 6px; font-size: .8rem; color: var(--muted); }\n.form-select { display: flex; align-items: center; justify-content: space-between; }\n.form-select::after { content: '▾'; color: var(--muted); }\n.form-textarea { min-height: 60px; }\n.form-submit-preview { background: var(--navy); color: #fff; padding: 11px 16px; border-radius: 6px; font-size: .82rem; font-weight: 700; text-align: center; }\n\n@media (max-width: 720px) {\n  .page { padding: 36px 28px; min-height: auto; }\n  .card-grid.col2, .card-grid.col3, .card-grid.col4 { grid-template-columns: 1fr; }\n  .values-grid { grid-template-columns: 1fr; }\n  .metric-row { grid-template-columns: 1fr 1fr; }\n  .phase-tasks { grid-template-columns: 1fr; }\n  .process-row { flex-direction: column; gap: 16px; }\n  .process-row::before { display: none; }\n  .cover-title { font-size: 2.4rem; }\n  .meta-row { grid-template-columns: 80px 1fr; }\n  .meta-desc-cell { display: none; }\n  .side-nav { display: none; }\n}\n</style>\n</head>"
+}

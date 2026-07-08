@@ -200,7 +200,7 @@ export default async function DivisionPage({ params }: Props) {
   const imgs = DIVISION_IMAGES[slug] || DEFAULT_IMAGES;
 
   return (
-    <div className="min-h-screen flex flex-col text-slate-100" style={{ background: "#060c1a" }}>
+    <div className="min-h-screen flex flex-col text-slate-100 overflow-x-hidden" style={{ background: "#060c1a" }}>
       <main className="flex-1" style={{ background: "#060c1a" }}>
         {/* Breadcrumb */}
         <div className="border-b border-slate-800/60 py-3.5 px-6" style={{ background: "#080f1d" }}>
@@ -333,7 +333,8 @@ export default async function DivisionPage({ params }: Props) {
             </div>
 
             {/* Sidebar */}
-            <div className="spac              <BorderGlow
+            <div className="space-y-5">
+              <BorderGlow
                 edgeSensitivity={20}
                 glowColor="220 80 60"
                 backgroundColor="#0d1526"
@@ -369,7 +370,7 @@ export default async function DivisionPage({ params }: Props) {
                     </Link>
                   </div>
                 </div>
-              </BorderGlow>orderGlow>
+              </BorderGlow>
 
               {siteDiv?.brands && siteDiv.brands.length > 0 && (
                 <div className="bg-slate-50 border border-slate-100 rounded-2xl p-5 space-y-3">

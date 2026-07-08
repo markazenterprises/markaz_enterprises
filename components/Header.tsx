@@ -41,14 +41,30 @@ export default function Header() {
       <div className="bg-slate-950 text-slate-300 text-[11px] py-1.5 px-4 border-b border-slate-800/80">
         <div className="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
           <div className="flex items-center gap-4">
-            <span className="flex items-center gap-1.5">
-              <Phone className="w-3 h-3 text-blue-400 flex-shrink-0" />
-              <a
-                href={`tel:${SITE_INFO.contact.phone}`}
-                className="hover:text-blue-400 transition-colors font-semibold"
-              >
-                {SITE_INFO.contact.phone}
-              </a>
+            <span className="flex items-center gap-2">
+              <span className="flex items-center gap-1">
+                <Phone className="w-3 h-3 text-emerald-400 flex-shrink-0" />
+                <a
+                  href={`https://wa.me/${SITE_INFO.contact.whatsapp.replace('+', '')}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-emerald-400 transition-colors font-semibold"
+                >
+                  {SITE_INFO.contact.phone}
+                </a>
+              </span>
+              <span className="text-slate-700">|</span>
+              <span className="flex items-center gap-1">
+                <Phone className="w-3 h-3 text-emerald-400 flex-shrink-0" />
+                <a
+                  href={`https://wa.me/${SITE_INFO.contact.whatsapp2.replace('+', '')}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-emerald-400 transition-colors font-semibold"
+                >
+                  {SITE_INFO.contact.phone2}
+                </a>
+              </span>
             </span>
             <span className="hidden sm:flex items-center gap-1.5">
               <Mail className="w-3 h-3 text-amber-400 flex-shrink-0" />

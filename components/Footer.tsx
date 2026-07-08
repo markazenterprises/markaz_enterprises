@@ -81,18 +81,20 @@ export default function Footer() {
             </div>
             <div className="flex flex-wrap gap-3 justify-center">
               <a
-                href={`https://wa.me/${SITE_INFO.contact.whatsapp}?text=Hello%20Markaz%20Enterprises%2C%20I%20would%20like%20to%20start%20a%20project.`}
+                href={`https://wa.me/${SITE_INFO.contact.whatsapp.replace('+', '')}?text=Hello%20Markaz%20Enterprises%2C%20I%20would%20like%20to%20start%20a%20project.`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 px-5 py-2.5 rounded-xl font-black text-xs uppercase tracking-wider bg-gradient-to-r from-green-600 to-emerald-600 text-white shadow-lg shadow-green-900/30 hover:shadow-green-900/50 hover:-translate-y-0.5 transition-all"
+                className="flex items-center gap-2 px-5 py-2.5 rounded-xl font-black text-xs uppercase tracking-wider bg-gradient-to-r from-green-600 to-emerald-600 text-white shadow-lg shadow-green-900/30 hover:shadow-green-900/50 hover:-translate-y-0.5 transition-all animate-pulse"
               >
-                <MessageCircle className="w-4 h-4" /> WhatsApp Now
+                <MessageCircle className="w-4 h-4" /> WhatsApp 1: {SITE_INFO.contact.phone}
               </a>
               <a
-                href={`tel:${SITE_INFO.contact.phone}`}
-                className="flex items-center gap-2 px-5 py-2.5 rounded-xl font-black text-xs uppercase tracking-wider bg-gradient-to-r from-blue-600 to-indigo-700 text-white shadow-lg shadow-blue-900/30 hover:shadow-blue-900/50 hover:-translate-y-0.5 transition-all"
+                href={`https://wa.me/${SITE_INFO.contact.whatsapp2.replace('+', '')}?text=Hello%20Markaz%20Enterprises%2C%20I%20would%20like%20to%20start%20a%20project.`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-5 py-2.5 rounded-xl font-black text-xs uppercase tracking-wider bg-gradient-to-r from-emerald-600 to-green-650 text-white shadow-lg shadow-green-900/30 hover:shadow-green-900/50 hover:-translate-y-0.5 transition-all"
               >
-                <Phone className="w-4 h-4" /> Call: {SITE_INFO.contact.phone}
+                <MessageCircle className="w-4 h-4" /> WhatsApp 2: {SITE_INFO.contact.phone2}
               </a>
               <Link
                 href="/contact"
@@ -129,11 +131,17 @@ export default function Footer() {
 
             {/* Contact quick access */}
             <div className="space-y-2.5">
-              <a href={`tel:${SITE_INFO.contact.phone}`} className="flex items-center gap-2.5 text-xs text-slate-300 hover:text-blue-400 transition-colors font-semibold group">
-                <div className="w-7 h-7 rounded-lg bg-blue-600/20 border border-blue-800/40 flex items-center justify-center group-hover:bg-blue-600/30 transition-colors">
-                  <Phone className="w-3.5 h-3.5 text-blue-400" />
+              <a href={`https://wa.me/${SITE_INFO.contact.whatsapp.replace('+', '')}`} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2.5 text-xs text-slate-300 hover:text-emerald-400 transition-colors font-semibold group">
+                <div className="w-7 h-7 rounded-lg bg-emerald-600/20 border border-emerald-800/40 flex items-center justify-center group-hover:bg-emerald-600/30 transition-colors font-bold">
+                  <MessageCircle className="w-3.5 h-3.5 text-emerald-400" />
                 </div>
-                {SITE_INFO.contact.phone}
+                WhatsApp 1: {SITE_INFO.contact.phone}
+              </a>
+              <a href={`https://wa.me/${SITE_INFO.contact.whatsapp2.replace('+', '')}`} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2.5 text-xs text-slate-300 hover:text-emerald-400 transition-colors font-semibold group">
+                <div className="w-7 h-7 rounded-lg bg-emerald-600/20 border border-emerald-800/40 flex items-center justify-center group-hover:bg-emerald-600/30 transition-colors font-bold">
+                  <MessageCircle className="w-3.5 h-3.5 text-emerald-400" />
+                </div>
+                WhatsApp 2: {SITE_INFO.contact.phone2}
               </a>
               <a href={`mailto:${SITE_INFO.contact.email}`} className="flex items-center gap-2.5 text-xs text-slate-300 hover:text-amber-400 transition-colors font-semibold group">
                 <div className="w-7 h-7 rounded-lg bg-amber-600/20 border border-amber-800/40 flex items-center justify-center group-hover:bg-amber-600/30 transition-colors">

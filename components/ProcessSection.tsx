@@ -87,9 +87,8 @@ export default function ProcessSection() {
               <button
                 key={i}
                 onClick={() => setActiveImg(i)}
-                className={`relative aspect-[16/10] rounded-lg overflow-hidden border-2 transition-all ${
-                  activeImg === i ? "border-blue-500 shadow-sm scale-102" : "border-transparent opacity-65 hover:opacity-90"
-                }`}
+                className={`relative aspect-[16/10] rounded-lg overflow-hidden border-2 transition-all ${activeImg === i ? "border-blue-500 shadow-sm scale-102" : "border-transparent opacity-65 hover:opacity-90"
+                  }`}
               >
                 <img src={img.src} alt={img.label} className="object-cover w-full h-full" />
               </button>
@@ -157,11 +156,10 @@ export default function ProcessSection() {
                 <button
                   key={idx}
                   onClick={() => setActiveQaStep(idx)}
-                  className={`text-xs font-extrabold pb-2.5 transition-all border-b-2 px-2.5 whitespace-nowrap -mb-px ${
-                    activeQaStep === idx
+                  className={`text-xs font-extrabold pb-2.5 transition-all border-b-2 px-2.5 whitespace-nowrap -mb-px ${activeQaStep === idx
                       ? "border-blue-500 text-blue-600"
                       : "border-transparent text-slate-400 hover:text-slate-700"
-                  }`}
+                    }`}
                 >
                   Stage {step.num || idx + 1}
                 </button>
@@ -196,11 +194,10 @@ export default function ProcessSection() {
                 <button
                   key={idx}
                   onClick={() => setActivePmStep(idx)}
-                  className={`text-xs font-extrabold pb-2.5 transition-all border-b-2 px-2.5 whitespace-nowrap -mb-px ${
-                    activePmStep === idx
+                  className={`text-xs font-extrabold pb-2.5 transition-all border-b-2 px-2.5 whitespace-nowrap -mb-px ${activePmStep === idx
                       ? "border-blue-500 text-blue-500"
                       : "border-transparent text-slate-400 hover:text-slate-700"
-                  }`}
+                    }`}
                 >
                   P{step.step || idx + 1}
                 </button>

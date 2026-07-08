@@ -50,7 +50,7 @@ export default function SidebarNav({ isOpen, onToggle }: SidebarNavProps) {
         className={`lg:hidden fixed top-4 left-4 z-[60] p-2.5 rounded-xl transition-all duration-300 shadow-lg ${
           isOpen
             ? "bg-blue-600 text-white"
-            : "bg-white text-slate-700 border border-slate-200"
+            : "bg-slate-900 text-white border border-slate-800"
         }`}
       >
         {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -71,7 +71,7 @@ export default function SidebarNav({ isOpen, onToggle }: SidebarNavProps) {
         aria-label="Main navigation"
       >
         {/* Logo */}
-        <div className="p-6 border-b border-slate-100">
+        <div className="p-6 border-b border-slate-800">
           <Link href="/" className="flex items-center gap-3 group" onClick={() => { if (isOpen) onToggle(); }}>
             <div className="relative w-11 h-11 rounded-xl overflow-hidden border-2 border-blue-500 shadow-md shadow-blue-500/20 transition-transform group-hover:scale-105">
               <Image
@@ -84,10 +84,10 @@ export default function SidebarNav({ isOpen, onToggle }: SidebarNavProps) {
               />
             </div>
             <div>
-              <span className="font-black text-xl tracking-tight text-slate-900 block leading-tight">
+              <span className="font-black text-xl tracking-tight text-white block leading-tight">
                 MARKAZ
               </span>
-              <span className="text-[10px] font-black tracking-[0.25em] text-blue-500 block">
+              <span className="text-[10px] font-black tracking-[0.25em] text-blue-400 block">
                 ENTERPRISES
               </span>
             </div>
@@ -95,14 +95,27 @@ export default function SidebarNav({ isOpen, onToggle }: SidebarNavProps) {
         </div>
 
         {/* Quick contact strip */}
-        <div className="px-5 py-3 bg-blue-50 border-b border-blue-100">
-          <a
-            href={`tel:${SITE_INFO.contact.phone}`}
-            className="flex items-center gap-2 text-xs font-semibold text-blue-700 hover:text-blue-900 transition-colors"
-          >
-            <Phone className="w-3.5 h-3.5" />
-            {SITE_INFO.contact.phone}
-          </a>
+        <div className="px-5 py-3 border-b border-slate-800/80" style={{ background: "rgba(10,17,32,0.6)" }}>
+          <div className="flex flex-col gap-1.5">
+            <a
+              href={`https://wa.me/${SITE_INFO.contact.whatsapp.replace('+', '')}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-xs font-semibold text-emerald-400 hover:text-emerald-300 transition-colors"
+            >
+              <MessageCircle className="w-3.5 h-3.5" />
+              {SITE_INFO.contact.phone}
+            </a>
+            <a
+              href={`https://wa.me/${SITE_INFO.contact.whatsapp2.replace('+', '')}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-xs font-semibold text-emerald-400 hover:text-emerald-300 transition-colors"
+            >
+              <MessageCircle className="w-3.5 h-3.5" />
+              {SITE_INFO.contact.phone2}
+            </a>
+          </div>
         </div>
 
         {/* Nav Links */}

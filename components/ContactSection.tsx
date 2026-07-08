@@ -31,72 +31,85 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-14 bg-slate-50 text-slate-900 relative border-b border-slate-200">
+    <section id="contact" className="py-14 border-b border-slate-800/60 relative" style={{ background: "#060c1a" }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           {/* Contact Details Left */}
           <div className="lg:col-span-5 space-y-4">
             <div className="space-y-2">
-              <h2 className="text-sm font-black tracking-widest text-blue-500 uppercase">
+              <h2 className="text-sm font-black tracking-widest text-blue-400 uppercase">
                 Get In Touch
               </h2>
-              <h3 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900">
+              <h3 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-white">
                 Request a Consultation
               </h3>
-              <p className="text-slate-500 text-sm leading-relaxed">
+              <p className="text-slate-400 text-sm leading-relaxed">
                 Whether you need a hybrid solar audit, turnkey construction estimate, software development proposal, or CCTV installation, our team is ready to connect.
               </p>
             </div>
 
             <div className="space-y-3">
-              <div className="flex items-start gap-4 p-4 rounded-2xl bg-white border border-blue-100 shadow-sm">
+              <div className="flex items-start gap-4 p-4 rounded-2xl border border-slate-700/50 shadow-sm" style={{ background: "rgba(15,23,42,0.8)" }}>
                 <div className="p-3 bg-blue-500/20 text-blue-400 rounded-xl">
                   <Phone className="w-6 h-6" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-sm text-slate-900">Phone & WhatsApp</h4>
-                  <a href={`tel:${SITE_INFO.contact.phone}`} className="text-xs font-semibold text-slate-500 hover:text-blue-600 block">
-                    {SITE_INFO.contact.phone}
+                  <h4 className="font-bold text-sm text-white">WhatsApp Support</h4>
+                  <a href={`https://wa.me/${SITE_INFO.contact.whatsapp.replace('+', '')}`} target="_blank" rel="noopener noreferrer" className="text-xs font-semibold text-slate-400 hover:text-blue-400 block">
+                    {SITE_INFO.contact.phone} (Primary)
+                  </a>
+                  <a href={`https://wa.me/${SITE_INFO.contact.whatsapp2.replace('+', '')}`} target="_blank" rel="noopener noreferrer" className="text-xs font-semibold text-slate-400 hover:text-blue-400 block mt-0.5">
+                    {SITE_INFO.contact.phone2} (Secondary)
                   </a>
                 </div>
               </div>
 
-              <div className="flex items-start gap-4 p-4 rounded-2xl bg-white border border-blue-100 shadow-sm">
+              <div className="flex items-start gap-4 p-4 rounded-2xl border border-slate-700/50 shadow-sm" style={{ background: "rgba(15,23,42,0.8)" }}>
                 <div className="p-3 bg-amber-500/20 text-amber-400 rounded-xl">
                   <Mail className="w-6 h-6" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-sm text-slate-900">Email Address</h4>
-                  <a href={`mailto:${SITE_INFO.contact.email}`} className="text-xs font-semibold text-slate-500 hover:text-blue-600 block">
+                  <h4 className="font-bold text-sm text-white">Email Address</h4>
+                  <a href={`mailto:${SITE_INFO.contact.email}`} className="text-xs font-semibold text-slate-400 hover:text-blue-400 block">
                     {SITE_INFO.contact.email}
                   </a>
                 </div>
               </div>
 
-              <div className="flex items-start gap-4 p-4 rounded-2xl bg-white border border-blue-100 shadow-sm">
+              <div className="flex items-start gap-4 p-4 rounded-2xl border border-slate-700/50 shadow-sm" style={{ background: "rgba(15,23,42,0.8)" }}>
                 <div className="p-3 bg-emerald-500/20 text-emerald-400 rounded-xl">
                   <MapPin className="w-6 h-6" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-sm text-slate-900">Karachi Head Office</h4>
-                  <p className="text-xs font-semibold text-slate-500 leading-relaxed">
+                  <h4 className="font-bold text-sm text-white">Karachi Head Office</h4>
+                  <p className="text-xs font-semibold text-slate-400 leading-relaxed">
                     {SITE_INFO.contact.address}
                   </p>
                 </div>
               </div>
             </div>
 
-            <div className="p-6 bg-blue-600 text-white rounded-3xl space-y-3">
-              <span className="text-[10px] font-black text-blue-200 uppercase tracking-widest block">Direct Executive Connect</span>
+            <div className="p-6 bg-slate-900/80 border border-slate-800 text-white rounded-3xl space-y-3">
+              <span className="text-[10px] font-black text-blue-400 uppercase tracking-widest block">Direct Executive Connect</span>
               <h5 className="font-extrabold text-sm">Need immediate assistance for a commercial RFP?</h5>
-              <a
-                href={`https://wa.me/${SITE_INFO.contact.whatsapp.replace('+', '')}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-extrabold text-xs rounded-xl transition-colors shadow-lg"
-              >
-                <MessageSquare className="w-4 h-4" /> Connect via WhatsApp
-              </a>
+              <div className="flex flex-wrap gap-2 pt-1">
+                <a
+                  href={`https://wa.me/${SITE_INFO.contact.whatsapp.replace('+', '')}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-4 py-2.5 bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-extrabold text-xs rounded-xl transition-colors shadow-lg"
+                >
+                  <MessageSquare className="w-3.5 h-3.5" /> WhatsApp 1
+                </a>
+                <a
+                  href={`https://wa.me/${SITE_INFO.contact.whatsapp2.replace('+', '')}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-4 py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold text-xs rounded-xl transition-colors shadow-lg"
+                >
+                  <MessageSquare className="w-3.5 h-3.5" /> WhatsApp 2
+                </a>
+              </div>
             </div>
           </div>
 
@@ -105,21 +118,21 @@ export default function ContactSection() {
             <BorderGlow
               edgeSensitivity={30}
               glowColor="210 90 60"
-              backgroundColor="#FFFFFF"
+              backgroundColor="#0d1526"
               borderRadius={28}
               glowRadius={40}
               colors={['#3b82f6', '#8b5cf6', '#f59e0b']}
               className="w-full h-full"
             >
-              <div className="p-8 sm:p-10 text-slate-900 space-y-6">
+              <div className="p-8 sm:p-10 text-white space-y-6" style={{ background: "rgba(10,17,32,0.97)" }}>
                 {formSubmitted ? (
                   <div className="py-12 text-center space-y-4">
                     <div className="w-16 h-16 bg-emerald-500/20 text-emerald-400 rounded-full flex items-center justify-center mx-auto border border-emerald-500/30">
                       <CheckCircle2 className="w-10 h-10" />
                     </div>
-                    <h4 className="text-2xl font-extrabold text-slate-900">Consultation Request Received!</h4>
-                    <p className="text-xs text-slate-500 max-w-md mx-auto">
-                      Thank you, <span className="font-bold text-blue-600">{formData.name}</span>. Our division specialist will contact you via {formData.contactMethod} shortly.
+                    <h4 className="text-2xl font-extrabold text-white">Consultation Request Received!</h4>
+                    <p className="text-xs text-slate-400 max-w-md mx-auto">
+                      Thank you, <span className="font-bold text-blue-400">{formData.name}</span>. Our division specialist will contact you via {formData.contactMethod} shortly.
                     </p>
                     <button
                       onClick={() => setFormSubmitted(false)}
@@ -140,44 +153,44 @@ export default function ContactSection() {
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
-                        <label className="text-xs font-bold text-slate-600 block mb-1.5">Full Name *</label>
+                        <label className="text-xs font-bold text-slate-400 block mb-1.5">Full Name *</label>
                         <input
                           type="text"
                           placeholder="e.g. Athar Siddiqui"
                           value={formData.name}
                           onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        className="w-full px-4 py-3 rounded-xl bg-white border border-slate-200 text-xs font-semibold text-slate-900 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+                          className="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700 text-xs font-semibold text-white focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20"
                         />
                       </div>
                       <div>
-                        <label className="text-xs font-bold text-slate-600 block mb-1.5">Phone / WhatsApp *</label>
+                        <label className="text-xs font-bold text-slate-400 block mb-1.5">Phone / WhatsApp *</label>
                         <input
                           type="text"
-                          placeholder="0334-XXXXXXX"
+                          placeholder="0343-XXXXXXX"
                           value={formData.phone}
                           onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                          className="w-full px-4 py-3 rounded-xl bg-white border border-slate-200 text-xs font-semibold text-slate-900 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+                          className="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700 text-xs font-semibold text-white focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20"
                         />
                       </div>
                     </div>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
-                        <label className="text-xs font-bold text-slate-600 block mb-1.5">Email Address</label>
+                        <label className="text-xs font-bold text-slate-400 block mb-1.5">Email Address</label>
                         <input
                           type="email"
                           placeholder="name@company.com"
                           value={formData.email}
                           onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                          className="w-full px-4 py-3 rounded-xl bg-white border border-slate-200 text-xs font-semibold text-slate-900 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+                          className="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700 text-xs font-semibold text-white focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20"
                         />
                       </div>
                       <div>
-                        <label className="text-xs font-bold text-slate-600 block mb-1.5">Target Division</label>
+                        <label className="text-xs font-bold text-slate-400 block mb-1.5">Target Division</label>
                         <select
                           value={formData.service}
                           onChange={(e) => setFormData({ ...formData, service: e.target.value })}
-                          className="w-full px-4 py-3 rounded-xl bg-white border border-slate-200 text-xs font-semibold text-slate-900 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+                          className="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700 text-xs font-semibold text-white focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20"
                         >
                           <option value="Solar Energy Solutions">Solar Energy Solutions</option>
                           <option value="Construction & Civil Works">Construction & Civil Works</option>
@@ -190,13 +203,13 @@ export default function ContactSection() {
                     </div>
 
                     <div>
-                      <label className="text-xs font-bold text-slate-600 block mb-1.5">Project Details / Scope</label>
+                      <label className="text-xs font-bold text-slate-400 block mb-1.5">Project Details / Scope</label>
                       <textarea
                         rows={4}
                         placeholder="Briefly describe your scope, location in Pakistan, and required timeline..."
                         value={formData.description}
                         onChange={(e) => setFormData({ ...formData, description: e.target.value })}
-                        className="w-full px-4 py-3 rounded-xl bg-white border border-slate-200 text-xs font-semibold text-slate-900 focus:outline-none focus:border-blue-500 resize-none focus:ring-2 focus:ring-blue-100"
+                        className="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700 text-xs font-semibold text-white focus:outline-none focus:border-blue-500 resize-none focus:ring-2 focus:ring-blue-500/20"
                       ></textarea>
                     </div>
 

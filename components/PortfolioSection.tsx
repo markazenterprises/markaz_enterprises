@@ -146,9 +146,9 @@ export default function PortfolioSection() {
   const filteredProjects = activeTab === "All"
     ? PORTFOLIO_PROJECTS
     : PORTFOLIO_PROJECTS.filter(p =>
-        p.category.toLowerCase().includes(activeTab.toLowerCase()) ||
-        activeTab.toLowerCase().includes(p.category.toLowerCase())
-      );
+      p.category.toLowerCase().includes(activeTab.toLowerCase()) ||
+      activeTab.toLowerCase().includes(p.category.toLowerCase())
+    );
 
   return (
     <section id="portfolio" className="py-14 bg-slate-50 text-slate-900 border-b border-slate-200">
@@ -170,11 +170,10 @@ export default function PortfolioSection() {
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
-                className={`px-4 py-2 text-xs font-extrabold rounded-xl border transition-all ${
-                  activeTab === tab
+                className={`px-4 py-2 text-xs font-extrabold rounded-xl border transition-all ${activeTab === tab
                     ? "bg-blue-600 border-blue-600 text-white shadow-md shadow-blue-500/20"
                     : "bg-white border-slate-200 text-slate-600 hover:border-blue-400 hover:text-blue-600"
-                }`}
+                  }`}
               >
                 {tab}
               </button>

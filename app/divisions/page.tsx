@@ -65,8 +65,8 @@ const divisionSlugs: Record<string, string> = {
 
 export default function DivisionsPage() {
   return (
-    <div className="min-h-screen flex flex-col text-slate-900">
-      <main className="flex-1">
+    <div className="min-h-screen flex flex-col text-slate-100" style={{ background: "#060c1a" }}>
+      <main className="flex-1" style={{ background: "#060c1a" }}>
         {/* Full-Screen Hero with Image */}
         <section className="relative min-h-[300px] lg:min-h-[360px] flex items-center overflow-hidden">
           <div
@@ -181,7 +181,7 @@ export default function DivisionsPage() {
               <Link href="/contact" className="px-8 py-3 bg-white text-blue-700 hover:bg-blue-50 font-bold rounded-xl text-sm uppercase tracking-wide transition-all hover:scale-105 shadow-md">
                 Request Free Consultation
               </Link>
-              <a href={`https://wa.me/923343660833`} target="_blank" rel="noopener noreferrer" className="px-8 py-3 bg-emerald-500 hover:bg-emerald-400 text-white font-bold rounded-xl text-sm uppercase tracking-wide transition-all hover:scale-105 shadow-md">
+              <a href={`https://wa.me/92343660833`} target="_blank" rel="noopener noreferrer" className="px-8 py-3 bg-emerald-500 hover:bg-emerald-400 text-white font-bold rounded-xl text-sm uppercase tracking-wide transition-all hover:scale-105 shadow-md">
                 WhatsApp Us Now
               </a>
             </div>

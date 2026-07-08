@@ -9,13 +9,13 @@ export const metadata: Metadata = {
 
 export default function TermsPage() {
   return (
-    <div className="min-h-screen flex flex-col bg-white text-slate-900">
-      <main className="flex-1 py-16 px-6">
+    <div className="min-h-screen flex flex-col text-slate-100" style={{ background: "#060c1a" }}>
+      <main className="flex-1 py-16 px-6" style={{ background: "#060c1a" }}>
         <div className="max-w-3xl mx-auto space-y-10">
           <div className="space-y-3">
             <span className="text-xs font-black tracking-widest text-blue-600 uppercase">Legal</span>
-            <h1 className="text-4xl font-black text-slate-900">Terms of Service</h1>
-            <p className="text-slate-500 text-sm">Last Updated: June 2026</p>
+            <h1 className="text-4xl font-black text-white">Terms of Service</h1>
+            <p className="text-slate-400 text-sm">Last Updated: June 2026</p>
           </div>
 
           {[
@@ -49,12 +49,12 @@ export default function TermsPage() {
             },
             {
               title: "8. Contact",
-              body: "For questions about these terms, contact us at themarkazenterprises@gmail.com or 0334-3660833."
+              body: "For questions about these terms, contact us at themarkazenterprises@gmail.com or via WhatsApp at +9234-3660833 or +92341-2899849."
             }
           ].map((section, i) => (
-            <div key={i} className="bg-slate-50 border border-slate-100 rounded-2xl p-6 space-y-2">
-              <h2 className="text-lg font-black text-slate-900">{section.title}</h2>
-              <p className="text-slate-600 text-sm leading-relaxed">{section.body}</p>
+            <div key={i} className="border rounded-2xl p-6 space-y-2" style={{ background: "rgba(13,21,38,0.85)", borderColor: "rgba(59,130,246,0.15)" }}>
+              <h2 className="text-lg font-black text-white">{section.title}</h2>
+              <p className="text-slate-300 text-sm leading-relaxed">{section.body}</p>
             </div>
           ))}
         </div>

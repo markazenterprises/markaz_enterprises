@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <div className="min-h-screen flex flex-col bg-white text-slate-900">
+    <div className="min-h-screen flex flex-col text-slate-100" style={{ background: "#060c1a" }}>
       <main className="flex-1">
         {/* Hero with image */}
         <section className="relative min-h-[52vh] flex items-center overflow-hidden">
@@ -38,11 +38,11 @@ export default function ContactPage() {
               Free project consultations. No commitment required. Our team responds within 2 business hours.
             </p>
             <div className="flex flex-wrap justify-center gap-4 pt-2">
-              <a href="tel:03343660833" className="px-6 py-3 bg-blue-500 hover:bg-blue-400 text-white font-black rounded-xl text-sm uppercase tracking-wide transition-all hover:scale-105 shadow-md">
-                📞 Call: 0334-3660833
+              <a href="https://wa.me/92343660833?text=Hello%20Markaz%20Enterprises%2C%20I%20would%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener noreferrer" className="px-6 py-3 bg-emerald-500 hover:bg-emerald-400 text-white font-black rounded-xl text-sm uppercase tracking-wide transition-all hover:scale-105 shadow-md">
+                💬 WhatsApp 1: +9234-3660833
               </a>
-              <a href="https://wa.me/923343660833?text=Hello%20Markaz%20Enterprises%2C%20I%20would%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener noreferrer" className="px-6 py-3 bg-emerald-500 hover:bg-emerald-400 text-white font-black rounded-xl text-sm uppercase tracking-wide transition-all hover:scale-105 shadow-md">
-                💬 WhatsApp Us Now
+              <a href="https://wa.me/923412899849?text=Hello%20Markaz%20Enterprises%2C%20I%20would%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener noreferrer" className="px-6 py-3 bg-emerald-600 hover:bg-emerald-500 text-white font-black rounded-xl text-sm uppercase tracking-wide transition-all hover:scale-105 shadow-md">
+                💬 WhatsApp 2: +92341-2899849
               </a>
             </div>
           </div>

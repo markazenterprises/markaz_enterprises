@@ -93,14 +93,15 @@ const organizationSchema = {
     "Pakistan's multi-industry solutions provider delivering Construction, Solar Energy, IT Software, CCTV Security, Interior Design, and Digital Marketing across Pakistan.",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "House #85, Street #10, Sec 11 1/2, Lal Shahbaz Nagar, Orangi Town",
+    streetAddress: "Banglow # D-96, Block 5, F.B Area, Gulberg Town",
     addressLocality: "Karachi",
     addressRegion: "Sindh",
+    postalCode: "75950",
     addressCountry: "PK",
   },
   contactPoint: {
     "@type": "ContactPoint",
-    telephone: "+92-334-3660833",
+    telephone: "+92-34-3660833",
     contactType: "customer service",
     areaServed: "PK",
     availableLanguage: ["en", "ur"],

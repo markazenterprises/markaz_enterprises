@@ -200,16 +200,16 @@ export default async function DivisionPage({ params }: Props) {
   const imgs = DIVISION_IMAGES[slug] || DEFAULT_IMAGES;
 
   return (
-    <div className="min-h-screen flex flex-col bg-white text-slate-900">
-      <main className="flex-1">
+    <div className="min-h-screen flex flex-col text-slate-100" style={{ background: "#060c1a" }}>
+      <main className="flex-1" style={{ background: "#060c1a" }}>
         {/* Breadcrumb */}
-        <div className="bg-white border-b border-slate-100 py-3.5 px-6">
-          <div className="max-w-7xl mx-auto flex items-center gap-2 text-xs text-slate-500 font-medium">
-            <Link href="/" className="hover:text-blue-600 transition-colors">Home</Link>
-            <ChevronLeft className="w-3 h-3 rotate-180 text-slate-400" />
-            <Link href="/divisions" className="hover:text-blue-600 transition-colors">Divisions</Link>
-            <ChevronLeft className="w-3 h-3 rotate-180 text-slate-400" />
-            <span className="text-slate-700 font-semibold">{data.h1}</span>
+        <div className="border-b border-slate-800/60 py-3.5 px-6" style={{ background: "#080f1d" }}>
+          <div className="max-w-7xl mx-auto flex items-center gap-2 text-xs text-slate-400 font-medium">
+            <Link href="/" className="hover:text-blue-400 transition-colors">Home</Link>
+            <ChevronLeft className="w-3 h-3 rotate-180 text-slate-650" />
+            <Link href="/divisions" className="hover:text-blue-400 transition-colors">Divisions</Link>
+            <ChevronLeft className="w-3 h-3 rotate-180 text-slate-650" />
+            <span className="text-white font-semibold">{data.h1}</span>
           </div>
         </div>
 
@@ -234,15 +234,22 @@ export default async function DivisionPage({ params }: Props) {
                 {data.subtitle}
               </p>
               <div className="flex flex-wrap gap-3 pt-1">
-                <Link href="/contact" className="px-5 py-2.5 bg-blue-500 hover:bg-blue-400 text-white font-bold rounded-xl text-xs uppercase tracking-wide transition-all hover:scale-105 shadow-lg shadow-blue-500/30">
+                <Link href="/contact" className="px-5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-xl text-xs uppercase tracking-wide transition-all hover:scale-105 shadow-lg shadow-blue-500/30">
                   Get Free Consultation
                 </Link>
                 <a
-                  href={`https://wa.me/${SITE_INFO.contact.whatsapp}?text=Hello%20Markaz%20Enterprises%2C%20I%20am%20interested%20in%20${encodeURIComponent(data.h1)}.`}
+                  href={`https://wa.me/${SITE_INFO.contact.whatsapp.replace('+', '')}?text=Hello%20Markaz%20Enterprises%2C%20I%20am%20interested%20in%20${encodeURIComponent(data.h1)}.`}
                   target="_blank" rel="noopener noreferrer"
                   className="px-5 py-2.5 bg-emerald-500 hover:bg-emerald-400 text-white font-bold rounded-xl text-xs uppercase tracking-wide transition-all hover:scale-105 shadow-md"
                 >
-                  💬 WhatsApp Enquiry
+                  💬 WhatsApp 1
+                </a>
+                <a
+                  href={`https://wa.me/${SITE_INFO.contact.whatsapp2.replace('+', '')}?text=Hello%20Markaz%20Enterprises%2C%20I%20am%20interested%20in%20${encodeURIComponent(data.h1)}.`}
+                  target="_blank" rel="noopener noreferrer"
+                  className="px-5 py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-xl text-xs uppercase tracking-wide transition-all hover:scale-105 shadow-md"
+                >
+                  💬 WhatsApp 2
                 </a>
               </div>
             </div>
@@ -326,11 +333,10 @@ export default async function DivisionPage({ params }: Props) {
             </div>
 
             {/* Sidebar */}
-            <div className="space-y-5">
-              <BorderGlow
+            <div className="spac              <BorderGlow
                 edgeSensitivity={20}
                 glowColor="220 80 60"
-                backgroundColor="#FFFFFF"
+                backgroundColor="#0d1526"
                 borderRadius={16}
                 glowRadius={40}
                 glowIntensity={0.9}
@@ -338,28 +344,32 @@ export default async function DivisionPage({ params }: Props) {
                 animated={true}
                 colors={["#3b82f6", "#6366f1", "#10b981"]}
               >
-                <div className="p-6 space-y-5 text-slate-900">
-                  <h3 className="text-lg font-black text-slate-900">Request a Free Quote</h3>
-                  <p className="text-slate-500 text-sm leading-relaxed">
+                <div className="p-6 space-y-5 text-white" style={{ background: "rgba(10,17,32,0.97)" }}>
+                  <h3 className="text-lg font-black text-white">Request a Free Quote</h3>
+                  <p className="text-slate-400 text-sm leading-relaxed">
                     Get a detailed scope and pricing proposal from our specialist team within 48 hours.
                   </p>
                   <div className="space-y-3">
-                    <a href={`tel:${SITE_INFO.contact.phone}`} className="flex items-center gap-3 w-full py-3 px-4 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-xl text-sm transition-colors shadow-sm">
-                      <Phone className="w-4 h-4" /> {SITE_INFO.contact.phone}
-                    </a>
                     <a
-                      href={`https://wa.me/${SITE_INFO.contact.whatsapp}?text=Hello%2C%20I%20need%20a%20quote%20for%20${encodeURIComponent(data.h1)}.`}
+                      href={`https://wa.me/${SITE_INFO.contact.whatsapp.replace('+', '')}?text=Hello%2C%20I%20need%20a%20quote%20for%20${encodeURIComponent(data.h1)}.`}
                       target="_blank" rel="noopener noreferrer"
                       className="flex items-center gap-3 w-full py-3 px-4 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-xl text-sm transition-colors shadow-sm"
                     >
-                      <MessageCircle className="w-4 h-4" /> WhatsApp Us
+                      <MessageCircle className="w-4 h-4" /> WhatsApp 1: {SITE_INFO.contact.phone}
                     </a>
-                    <Link href="/contact" className="block text-center py-3 px-4 bg-blue-50 hover:bg-blue-100/50 text-blue-600 font-bold rounded-xl text-sm transition-colors border border-blue-100">
+                    <a
+                      href={`https://wa.me/${SITE_INFO.contact.whatsapp2.replace('+', '')}?text=Hello%2C%20I%20need%20a%20quote%20for%20${encodeURIComponent(data.h1)}.`}
+                      target="_blank" rel="noopener noreferrer"
+                      className="flex items-center gap-3 w-full py-3 px-4 bg-emerald-700 hover:bg-emerald-650 text-white font-bold rounded-xl text-sm transition-colors shadow-sm"
+                    >
+                      <MessageCircle className="w-4 h-4" /> WhatsApp 2: {SITE_INFO.contact.phone2}
+                    </a>
+                    <Link href="/contact" className="block text-center py-3 px-4 bg-slate-800 hover:bg-slate-700 text-blue-400 font-bold rounded-xl text-sm transition-colors border border-slate-700">
                       Send Project Brief →
                     </Link>
                   </div>
                 </div>
-              </BorderGlow>
+              </BorderGlow>orderGlow>
 
               {siteDiv?.brands && siteDiv.brands.length > 0 && (
                 <div className="bg-slate-50 border border-slate-100 rounded-2xl p-5 space-y-3">

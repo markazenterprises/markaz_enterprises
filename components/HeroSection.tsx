@@ -35,9 +35,9 @@ export default function HeroSection() {
         }}
       />
 
-      {/* Dark glass overlay — image visible but tinted dark */}
+      {/* Dark glass overlay — deep navy tint */}
       <div className="absolute inset-0" style={{
-        background: "linear-gradient(135deg, rgba(2,6,23,0.82) 0%, rgba(15,23,42,0.72) 40%, rgba(30,27,75,0.78) 100%)",
+        background: "linear-gradient(135deg, rgba(11,30,61,0.90) 0%, rgba(19,44,84,0.78) 40%, rgba(11,30,61,0.88) 100%)",
         backdropFilter: "blur(2px) saturate(130%)",
       }} />
 
@@ -47,25 +47,25 @@ export default function HeroSection() {
       }} />
 
       {/* Subtle blue glow */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-64 bg-blue-600/8 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-64 bg-[#F5A623]/6 rounded-full blur-3xl pointer-events-none" />
 
       {/* Content */}
       <div className="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 py-16 sm:py-20">
         <div className="max-w-4xl mx-auto text-center space-y-6">
 
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/15 backdrop-blur-xl"
-            style={{ background: "rgba(255,255,255,0.07)" }}>
-            <span className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse" />
-            <span className="text-[10px] font-extrabold tracking-wider text-blue-200 uppercase">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#F5A623]/25 backdrop-blur-xl"
+            style={{ background: "rgba(245,166,35,0.08)" }}>
+            <span className="w-1.5 h-1.5 rounded-full bg-[#F5A623] animate-pulse" />
+            <span className="text-[10px] font-extrabold tracking-wider text-[#F5A623] uppercase">
               Multi-Industry Solutions · Pakistan
             </span>
           </div>
 
           {/* Heading */}
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-[1.05] tracking-tight">
-            Building, Powering &{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-indigo-300 to-blue-400">
+            Powering, Building &amp;{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-500">
               Digitizing
             </span>{" "}
             Businesses
@@ -73,34 +73,33 @@ export default function HeroSection() {
 
           {/* Subtext */}
           <p className="text-sm sm:text-base text-slate-300/90 max-w-2xl mx-auto font-normal leading-relaxed">
-            From turnkey commercial construction and premium interior works to custom software engineering,
-            security networks, and industrial solar energy — Markaz Enterprises is your single trusted partner.
+            Specializing in industrial solar power, custom LiFePO4 battery packs &amp; smart BMS integration — alongside turnkey commercial construction, executive interiors, and bespoke enterprise software across Pakistan.
           </p>
 
           {/* CTA */}
           <div className="flex flex-col sm:flex-row gap-3 pt-1 justify-center">
             <a
               href="#contact"
-              className="btn-shimmer inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-500 text-white font-extrabold px-7 py-3 rounded-xl shadow-xl shadow-blue-900/40 hover:shadow-blue-600/40 transition-all duration-300 group text-xs"
+              className="btn-shimmer inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#F5A623] to-[#E08E00] hover:from-[#E08E00] hover:to-[#c47600] text-[#0F172A] font-extrabold px-7 py-3 rounded-xl shadow-xl shadow-[#F5A623]/25 hover:shadow-[#F5A623]/40 transition-all duration-300 group text-xs"
             >
               Request Free Quote
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </a>
             <a
-              href="#portfolio"
-              className="inline-flex items-center justify-center gap-2 text-white border font-extrabold px-7 py-3 rounded-xl transition-all duration-300 text-xs backdrop-blur-xl"
+              href="/products"
+              className="inline-flex items-center justify-center gap-2 text-white border font-extrabold px-7 py-3 rounded-xl transition-all duration-300 text-xs backdrop-blur-xl hover:bg-amber-500/20 hover:border-amber-400/40"
               style={{ background: "rgba(255,255,255,0.08)", borderColor: "rgba(255,255,255,0.18)" }}
             >
-              View Our Work
-              <ArrowRight className="w-4 h-4 text-blue-300" />
+              Explore Battery Products
+              <ArrowRight className="w-4 h-4 text-amber-300" />
             </a>
           </div>
 
           {/* Stats */}
-          <div className="flex flex-wrap items-center justify-center gap-6 pt-1 text-[10px] font-bold text-blue-200/80 uppercase tracking-wider">
+          <div className="flex flex-wrap items-center justify-center gap-6 pt-1 text-[10px] font-bold text-[#F5A623]/80 uppercase tracking-wider">
             <span className="flex items-center gap-2"><span className="text-emerald-400 text-sm font-black">✓</span> 500+ Projects</span>
             <span className="w-px h-3 bg-white/15 hidden sm:block" />
-            <span className="flex items-center gap-2"><span className="text-emerald-400 text-sm font-black">✓</span> 10 Divisions</span>
+            <span className="flex items-center gap-2"><span className="text-emerald-400 text-sm font-black">✓</span> 11 Divisions</span>
             <span className="w-px h-3 bg-white/15 hidden sm:block" />
             <span className="flex items-center gap-2"><span className="text-emerald-400 text-sm font-black">✓</span> Pakistan-Wide</span>
           </div>
@@ -108,9 +107,9 @@ export default function HeroSection() {
           {/* Glass Feature Cards */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
             {[
-              { icon: Building2, color: "text-blue-300", bg: "rgba(59,130,246,0.15)", border: "rgba(59,130,246,0.25)", title: "One-Stop Solution", desc: "Eliminate coordinating between multiple contractors." },
-              { icon: Shield,    color: "text-emerald-300", bg: "rgba(16,185,129,0.15)", border: "rgba(16,185,129,0.25)", title: "5-Stage QA Protocol", desc: "ISO-level quality assurance and strict timelines." },
-              { icon: Cpu,       color: "text-indigo-300", bg: "rgba(99,102,241,0.15)", border: "rgba(99,102,241,0.25)", title: "Tech Integration", desc: "Modern frameworks, custom software & CCTV automation." },
+              { icon: Building2, color: "text-[#F5A623]",   bg: "rgba(245,166,35,0.15)",  border: "rgba(245,166,35,0.28)",  title: "One-Stop Solution",    desc: "Eliminate coordinating between multiple contractors." },
+              { icon: Shield,    color: "text-emerald-300", bg: "rgba(16,185,129,0.15)",  border: "rgba(16,185,129,0.25)", title: "5-Stage QA Protocol",  desc: "ISO-level quality assurance and strict timelines." },
+              { icon: Cpu,       color: "text-[#0EA5E9]",   bg: "rgba(14,165,233,0.15)",  border: "rgba(14,165,233,0.25)", title: "Tech Integration",    desc: "Modern frameworks, custom software & CCTV automation." },
             ].map((item) => (
               <div
                 key={item.title}

@@ -16,15 +16,19 @@ const BASE_URL = "https://www.markazenterprises.pk";
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
-    default: "Markaz Enterprises — Construction, Solar, Software & 10 Divisions | Karachi",
+    default: "Markaz Enterprises — Solar Energy, Lithium Battery Packs & 11 Divisions | Karachi",
     template: "%s | Markaz Enterprises",
   },
   description:
-    "Pakistan's leading multi-industry solutions provider in Karachi. Trusted by 500+ clients for Turnkey Construction, Commercial Solar Energy, IP CCTV, Custom ERP Software, Mobile Apps, Digital Marketing, and Interior Design.",
+    "Pakistan's premier multi-industry solutions provider in Karachi. Trusted by 500+ clients for Turnkey Solar Energy, Custom LiFePO4 Battery Systems, Smart BMS Integration, Turnkey Construction, CCTV Networks, and Custom Enterprise Software.",
   keywords: [
     "Markaz Enterprises",
-    "Construction Company Karachi",
     "Commercial Solar Energy Pakistan",
+    "Lithium Battery Pack Karachi",
+    "Custom LiFePO4 Battery Pakistan",
+    "BMS Supplier Pakistan",
+    "48V 100Ah Battery",
+    "Construction Company Karachi",
     "Software House Karachi",
     "CCTV Security Installation Karachi",
     "Interior Design Karachi",
@@ -54,9 +58,9 @@ export const metadata: Metadata = {
     locale: "en_PK",
     url: BASE_URL,
     siteName: "Markaz Enterprises",
-    title: "Markaz Enterprises — Multi-Industry Solutions Provider | Karachi, Pakistan",
+    title: "Markaz Enterprises — Solar Energy, Battery Storage & Multi-Industry Solutions | Karachi",
     description:
-      "Construction, Solar Energy, CCTV, Software, Mobile Apps, Interior Design & Digital Marketing — 500+ projects delivered across Pakistan.",
+      "Solar Energy, Custom LiFePO4 Battery Packs, Turnkey Construction, CCTV, Custom Software & Digital Marketing — 500+ projects delivered across Pakistan.",
     images: [
       {
         url: "/logo.svg",
@@ -107,7 +111,7 @@ const organizationSchema = {
   },
   contactPoint: {
     "@type": "ContactPoint",
-    telephone: "+92-34-3660833",
+    telephone: "+92-334-3660833",
     contactType: "customer service",
     areaServed: "PK",
     availableLanguage: ["en", "ur"],

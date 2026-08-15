@@ -19,6 +19,8 @@ const NAV_LINKS = [
 ];
 
 const DIVISION_LINKS = [
+  { name: "Solar Energy Solutions", href: "/divisions/solar", id: "DIV10" },
+  { name: "Batteries & Custom Packs", href: "/divisions/batteries", id: "DIV11" },
   { name: "Turnkey Construction", href: "/divisions/construction", id: "DIV01" },
   { name: "Interior Design & Décor", href: "/divisions/interior", id: "DIV02" },
   { name: "Home Appliances & HVAC", href: "/divisions/home-appliances", id: "DIV03" },
@@ -28,7 +30,6 @@ const DIVISION_LINKS = [
   { name: "Architecture & IT Infrastructure", href: "/divisions/software-development", id: "DIV07" },
   { name: "Data Analytics & BI", href: "/divisions/analytics", id: "DIV08" },
   { name: "Digital Marketing", href: "/divisions/marketing", id: "DIV09" },
-  { name: "Solar Energy Solutions", href: "/divisions/solar", id: "DIV10" },
 ];
 
 export default function Footer() {
@@ -37,10 +38,10 @@ export default function Footer() {
   };
 
   return (
-    <footer className="relative bg-[#020A0F] border-t border-white/[0.06] overflow-hidden">
-      {/* Ambient glow orbs — blue themed */}
-      <div className="absolute top-0 left-1/4 w-96 h-64 bg-blue-500/8 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 right-1/4 w-64 h-48 bg-indigo-500/6 rounded-full blur-3xl pointer-events-none" />
+    <footer className="relative bg-[#0B1E3D] border-t border-[#F5A623]/10 overflow-hidden">
+      {/* Ambient glow orbs — brand themed */}
+      <div className="absolute top-0 left-1/4 w-96 h-64 bg-[#F5A623]/6 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 right-1/4 w-64 h-48 bg-[#132C54]/80 rounded-full blur-3xl pointer-events-none" />
 
       {/* Newsletter Strip */}
       <div className="relative border-b border-white/[0.05]">
@@ -58,11 +59,11 @@ export default function Footer() {
                 type="email"
                 placeholder="your@email.com"
                 aria-label="Email for newsletter"
-                className="flex-1 sm:w-56 px-4 py-2.5 rounded-xl bg-white/10 border border-white/15 text-white text-xs font-semibold placeholder-slate-500 focus:outline-none focus:border-blue-500 focus:bg-white/15 transition-all"
+                className="flex-1 sm:w-56 px-4 py-2.5 rounded-xl bg-white/10 border border-white/15 text-white text-xs font-semibold placeholder-slate-500 focus:outline-none focus:border-[#F5A623] focus:bg-white/15 transition-all"
               />
               <button
                 type="submit"
-                className="px-5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white text-xs font-black rounded-xl transition-colors whitespace-nowrap"
+                className="px-5 py-2.5 bg-[#F5A623] hover:bg-[#E08E00] text-[#0F172A] text-xs font-black rounded-xl transition-colors whitespace-nowrap"
               >
                 Subscribe
               </button>
@@ -114,7 +115,7 @@ export default function Footer() {
           {/* Col 1: Brand — 4 cols */}
           <div className="md:col-span-4 space-y-5">
             <Link href="/" className="flex items-center gap-3 group w-fit">
-              <div className="relative w-11 h-11 rounded-xl overflow-hidden border-2 border-blue-600/70 shadow-lg shadow-blue-900/30 group-hover:border-amber-500 transition-colors">
+              <div className="relative w-11 h-11 rounded-xl overflow-hidden border-2 border-[#F5A623]/70 shadow-lg shadow-[#F5A623]/15 group-hover:border-[#E08E00] transition-colors">
                 <Image src="/logo.svg" alt="Markaz Enterprises Logo" fill sizes="44px" className="object-cover" />
               </div>
               <div>
@@ -174,9 +175,9 @@ export default function Footer() {
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="text-slate-400 text-xs font-medium hover:text-blue-400 transition-colors flex items-center gap-1.5 group"
+                    className="text-slate-400 text-xs font-medium hover:text-[#F5A623] transition-colors flex items-center gap-1.5 group"
                   >
-                    <span className="w-1 h-1 rounded-full bg-slate-700 group-hover:bg-amber-400 transition-colors flex-shrink-0" />
+                    <span className="w-1 h-1 rounded-full bg-slate-700 group-hover:bg-[#F5A623] transition-colors flex-shrink-0" />
                     {item.name}
                   </Link>
                 </li>
@@ -187,16 +188,16 @@ export default function Footer() {
           {/* Col 3: All Divisions — 3 cols */}
           <div className="md:col-span-3 space-y-4">
             <h4 className="text-white font-black text-xs uppercase tracking-widest">
-              All 10 Divisions
+              All 11 Divisions
             </h4>
             <ul className="space-y-2">
               {DIVISION_LINKS.map((div) => (
                 <li key={div.href}>
                   <Link
                     href={div.href}
-                    className="text-slate-400 text-xs font-medium hover:text-blue-400 transition-colors flex items-center gap-2 group"
+                    className="text-slate-400 text-xs font-medium hover:text-[#F5A623] transition-colors flex items-center gap-2 group"
                   >
-                    <span className="text-[10px] font-black text-slate-600 group-hover:text-blue-600 transition-colors w-10 flex-shrink-0">
+                    <span className="text-[10px] font-black text-slate-600 group-hover:text-[#E08E00] transition-colors w-10 flex-shrink-0">
                       {div.id}
                     </span>
                     <span className="group-hover:translate-x-0.5 transition-transform">{div.name}</span>
@@ -215,14 +216,14 @@ export default function Footer() {
               </h4>
               <ul className="space-y-2">
                 {[
+                  { name: "LiFePO4 Battery Catalogue", href: "/products" },
+                  { name: "Custom Battery Quote", href: "/custom-battery-quote" },
                   { name: "Solar Installation Karachi", href: "/services/solar-installation-karachi" },
                   { name: "NEPRA Net Metering License", href: "/services/net-metering-nepra-license" },
                   { name: "Grey Structure Construction", href: "/services/grey-structure-construction" },
                   { name: "Corporate Office Interior", href: "/services/corporate-office-interior" },
                   { name: "CCTV Installation", href: "/services/cctv-surveillance-installation" },
                   { name: "Custom ERP Software", href: "/services/custom-erp-software-pakistan" },
-                  { name: "Mobile App Development", href: "/services/mobile-app-development-karachi" },
-                  { name: "SEO & Lead Generation", href: "/services/seo-lead-generation-pakistan" },
                 ].map((svc) => (
                   <li key={svc.href}>
                     <Link
@@ -254,15 +255,15 @@ export default function Footer() {
               © {new Date().getFullYear()} Markaz Enterprises. All rights reserved.
             </span>
             <span className="hidden sm:inline text-slate-700">|</span>
-            <Link href="/privacy" className="hover:text-amber-400 transition-colors">Privacy Policy</Link>
-            <Link href="/terms" className="hover:text-amber-400 transition-colors">Terms of Service</Link>
-            <Link href="/sitemap.xml" target="_blank" className="hover:text-blue-400 transition-colors">Sitemap</Link>
+            <Link href="/privacy" className="hover:text-[#F5A623] transition-colors">Privacy Policy</Link>
+            <Link href="/terms" className="hover:text-[#F5A623] transition-colors">Terms of Service</Link>
+            <Link href="/sitemap.xml" target="_blank" className="hover:text-[#F5A623] transition-colors">Sitemap</Link>
           </div>
           <button
             onClick={scrollToTop}
             aria-label="Back to top"
             id="back-to-top"
-            className="flex items-center gap-1.5 px-4 py-2 rounded-xl glass-dark text-slate-300 hover:text-white font-bold text-xs transition-all hover:-translate-y-0.5 hover:border-blue-500/50"
+            className="flex items-center gap-1.5 px-4 py-2 rounded-xl glass-dark text-slate-300 hover:text-white font-bold text-xs transition-all hover:-translate-y-0.5 hover:border-[#F5A623]/50"
           >
             Top <ChevronUp className="w-3.5 h-3.5" />
           </button>

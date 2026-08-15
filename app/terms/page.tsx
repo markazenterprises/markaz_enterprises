@@ -49,7 +49,7 @@ export default function TermsPage() {
             },
             {
               title: "8. Contact",
-              body: "For questions about these terms, contact us at themarkazenterprises@gmail.com or via WhatsApp at +9234-3660833 or +92341-2899849."
+              body: "For questions about these terms, contact us at themarkazenterprises@gmail.com or via WhatsApp at +92334-3660833 or +92341-2899849."
             }
           ].map((section, i) => (
             <div key={i} className="border rounded-2xl p-6 space-y-2" style={{ background: "rgba(13,21,38,0.85)", borderColor: "rgba(59,130,246,0.15)" }}>

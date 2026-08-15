@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { DIVISIONS_DATA, SERVICES_DATA, PORTFOLIO_DATA, BLOG_DATA } from "@/app/data/routesData";
+import { DIVISIONS_DATA, SERVICES_DATA, PORTFOLIO_DATA, BLOG_DATA, PRODUCTS_DATA } from "@/app/data/routesData";
 
 const BASE_URL = "https://www.markazenterprises.pk";
 
@@ -13,6 +13,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: now,
       changeFrequency: "weekly",
       priority: 1.0,
+    },
+    {
+      url: `${BASE_URL}/products`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
+      url: `${BASE_URL}/custom-battery-quote`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.85,
     },
     {
       url: `${BASE_URL}/about`,
@@ -58,11 +70,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
-  // Dynamic Division pages (10)
+  // Dynamic Division pages (11)
   const divisionPages: MetadataRoute.Sitemap = Object.keys(DIVISIONS_DATA).map((slug) => ({
     url: `${BASE_URL}/divisions/${slug}`,
     lastModified: now,
     changeFrequency: "monthly" as const,
+    priority: 0.85,
+  }));
+
+  // Dynamic Product pages (16)
+  const productPages: MetadataRoute.Sitemap = Object.keys(PRODUCTS_DATA).map((slug) => ({
+    url: `${BASE_URL}/products/${slug}`,
+    lastModified: now,
+    changeFrequency: "weekly" as const,
     priority: 0.85,
   }));
 
@@ -93,6 +113,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     ...staticPages,
     ...divisionPages,
+    ...productPages,
     ...servicePages,
     ...portfolioPages,
     ...blogPages,

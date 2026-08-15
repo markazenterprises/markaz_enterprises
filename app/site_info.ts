@@ -4,16 +4,16 @@ export const SITE_INFO = {
   prepared_for: "Muhammad Athar Siddiqui, Founder & CEO",
   contact: {
     "email": "themarkazenterprises@gmail.com",
-    "phone": "+9234-3660833",
+    "phone": "+92334-3660833",
     "phone2": "+92341-2899849",
-    "whatsapp": "+92343660833",
+    "whatsapp": "+923343660833",
     "whatsapp2": "+923412899849",
     "address": "Banglow # D-96, Block 5, F.B Area, Gulberg Town, Karachi - 75950"
   },
   brand: {
-  "overview": "Markaz Enterprises is Pakistan's comprehensive multi-industry solutions provider, headquartered in Karachi. We deliver Construction, Interior Design, Home Décor, Home Appliances, CCTV & Security, IT Solutions, Software Development, Mobile App Development, Data Analytics, Digital Marketing, and Solar Energy Solutions — all under one trusted brand umbrella.",
-  "mission": "To deliver integrated, high-quality solutions across construction, technology, and energy sectors — empowering businesses and homes to grow sustainably through reliable expertise and innovation.",
-  "vision": "To be Pakistan's most trusted one-stop enterprise solutions brand — known for quality, innovation, and customer-centric service delivery in every market we serve.",
+  "overview": "Markaz Enterprises is Pakistan's premier solar energy, custom lithium battery solutions, and multi-industry corporate engineering provider, headquartered in Karachi. We lead in Industrial Solar Energy, Custom LiFePO4 Battery Systems, Smart BMS Integration, Turnkey Construction, Interior Design, Home Appliances, CCTV & Security Networks, IT Solutions, Software Development, Mobile Apps, Data Analytics, and Digital Marketing — delivering integrated excellence across Pakistan.",
+  "mission": "To deliver integrated, high-quality solutions across energy, technology, and construction sectors — empowering businesses and homes to achieve energy independence and sustainable growth through reliable engineering and innovation.",
+  "vision": "To be Pakistan's most trusted energy storage and one-stop enterprise solutions brand — renowned for precision engineering, Tier-1 hardware, and client-first execution.",
   "core_values": [
     {
       "name": "Quality First",
@@ -33,7 +33,7 @@ export const SITE_INFO = {
     },
     {
       "name": "Sustainability",
-      "desc": "Eco-friendly practices from solar energy to green construction."
+      "desc": "Eco-friendly practices from solar energy and lithium storage to green construction."
     },
     {
       "name": "Results-Oriented",
@@ -54,10 +54,10 @@ export const SITE_INFO = {
   "title": "Homepage — Full Content & SEO Blueprint",
   "subtitle": "Complete section-by-section content for the primary landing page.",
   "hero_section": {
-    "h1": "Building, Powering & Digitizing Businesses Across Pakistan",
-    "h2": "From construction and interior solutions to software development and solar energy — Markaz Enterprises helps clients transform ideas into successful, profitable projects.",
+    "h1": "Powering, Building & Digitizing Businesses Across Pakistan",
+    "h2": "From industrial solar energy and custom lithium battery systems to turnkey construction and software engineering — Markaz Enterprises helps clients achieve energy independence and sustainable operational scale.",
     "primary_cta": "Request a Free Quote →",
-    "secondary_cta": "Schedule a Consultation",
+    "secondary_cta": "Explore Battery Catalogue",
     "supporting_text": "Trusted by 500+ clients · 11 Service Divisions · Karachi-based, Pakistan-wide"
   },
   "trust_bar": [
@@ -127,7 +127,7 @@ export const SITE_INFO = {
     "heading": "Ready to Start Your Project?",
     "sub": "Talk to our experts today — free consultation, no obligation.",
     "cta1": "Get a Free Quote",
-    "cta2": "WhatsApp: +9234-3660833",
+    "cta2": "WhatsApp: +92334-3660833",
     "cta3": "WhatsApp: +92341-2899849"
   },
   "animation_spec": {
@@ -369,11 +369,11 @@ export const SITE_INFO = {
   "contact_info": {
     "heading": "Let's Build Something Great Together",
     "subheading": "Our team typically responds within 2 business hours. Free consultations, no commitment required.",
-    "phone": "+9234-3660833 / +92341-2899849",
+    "phone": "+92334-3660833 / +92341-2899849",
     "email": "themarkazenterprises@gmail.com",
     "office": "Banglow # D-96, Block 5, F.B Area, Gulberg Town, Karachi - 75950",
     "hours": "Mon–Sat: 9:00 AM – 6:00 PM PKT · Emergency: 24/7 for active project clients",
-    "whatsapp_cta": "+92343660833 or +923412899849 — auto-opens chat",
+    "whatsapp_cta": "+923343660833 or +923412899849 — auto-opens chat",
     "quote_calculator": "Select service → enter parameters → get instant estimate range",
     "lead_capture": "Downloadable brochure (PDF) — requires name + email"
   },
@@ -464,7 +464,7 @@ export const SITE_INFO = {
     "workflow_steps": "vertical timeline with connecting line drawing downward on scroll; each step fades_left when reached",
     "workflow_active": "current step glows with emerald-green pulse"
   },
-  "html_content": "<div class=\"page\" id=\"page-12\" data-label=\"Contact\">\n  <div class=\"section-tag\">Section 09</div>\n  <h1 class=\"page-title\">Contact Page & Lead Generation</h1>\n  <p class=\"page-sub\">Multiple touchpoints to convert visitors into qualified leads.</p>\n\n  <div class=\"card-grid col2\">\n    <div>\n      <h3>Contact Details</h3>\n      <div class=\"contact-row\"><div class=\"contact-icon\">📞</div><div><div class=\"contact-label\">WhatsApp Contact 1</div><div class=\"contact-value\"><a href=\"https://wa.me/92343660833\" style=\"color:#60a5fa;text-decoration:underline\">+9234-3660833</a></div></div></div>\n      <div class=\"contact-row\"><div class=\"contact-icon\">📞</div><div><div class=\"contact-label\">WhatsApp Contact 2</div><div class=\"contact-value\"><a href=\"https://wa.me/923412899849\" style=\"color:#60a5fa;text-decoration:underline\">+92341-2899849</a></div></div></div>\n      <div class=\"contact-row\"><div class=\"contact-icon\">✉️</div><div><div class=\"contact-label\">Email</div><div class=\"contact-value\">themarkazenterprises@gmail.com</div></div></div>\n      <div class=\"contact-row\"><div class=\"contact-icon\">📍</div><div><div class=\"contact-label\">Office</div><div class=\"contact-value\">Banglow # D-96, Block 5, F.B Area, Gulberg Town, Karachi - 75950</div></div></div>\n      <div class=\"contact-row\"><div class=\"contact-icon\">🕐</div><div><div class=\"contact-label\">Business Hours</div><div class=\"contact-value\">Mon–Sat: 9:00 AM – 6:00 PM PKT</div></div></div>\n      <div style=\"background:#25D366;color:#fff;padding:12px 16px;border-radius:8px;font-weight:700;font-size:.85rem;text-align:center;margin-top:8px\"><a href=\"https://wa.me/92343660833\" style=\"color:#fff;text-decoration:none\">💬 WhatsApp 1: +9234-3660833</a> | <a href=\"https://wa.me/923412899849\" style=\"color:#fff;text-decoration:none\">💬 WhatsApp 2: +92341-2899849</a></div>\n    </div>\n    <div>\n      <h3>Contact Form Fields</h3>\n      <div class=\"form-preview\">\n        <div class=\"form-field\">Full Name *</div>\n        <div class=\"form-field\">Company Name</div>\n        <div class=\"form-field\">Phone Number *</div>\n        <div class=\"form-field\">Email Address</div>\n        <div class=\"form-field form-select\">Service Required (dropdown — all 11 services)</div>\n        <div class=\"form-field form-select\">Project Budget Range</div>\n        <div class=\"form-field form-textarea\">Project Description</div>\n        <div class=\"form-field form-select\">Preferred Contact Method</div>\n        <div class=\"form-submit-preview\">Send Inquiry →</div>\n      </div>\n    </div>\n  </div>\n\n  <div class=\"section-rule\"></div>\n  <h3>Lead Nurturing Workflow</h3>\n  <div class=\"workflow-steps\">\n    <div class=\"workflow-step\"><div class=\"workflow-num\">1</div><div class=\"workflow-content\"><div class=\"workflow-title\">Form Submission</div><div class=\"workflow-desc\">Auto-reply email confirming receipt sent immediately</div></div></div>\n    <div class=\"workflow-step\"><div class=\"workflow-num\">2</div><div class=\"workflow-content\"><div class=\"workflow-title\">CRM Entry</div><div class=\"workflow-desc\">Lead enters CRM; sales team notified via WhatsApp & email</div></div></div>\n    <div class=\"workflow-step\"><div class=\"workflow-num\">3</div><div class=\"workflow-content\"><div class=\"workflow-title\">2-Hour Call-Back</div><div class=\"workflow-desc\">Sales rep contacts lead via call or WhatsApp within 2 hours</div></div></div>\n    <div class=\"workflow-step\"><div class=\"workflow-num\">4</div><div class=\"workflow-content\"><div class=\"workflow-title\">Consultation Scheduled</div><div class=\"workflow-desc\">Calendar invite + pre-consultation questionnaire sent</div></div></div>\n    <div class=\"workflow-step\"><div class=\"workflow-num\">5</div><div class=\"workflow-content\"><div class=\"workflow-title\">Follow-Up Sequence</div><div class=\"workflow-desc\">Weekly follow-up email for 4 weeks if no decision reached</div></div></div>\n    <div class=\"workflow-step\"><div class=\"workflow-num\">6</div><div class=\"workflow-content\"><div class=\"workflow-title\">Converted</div><div class=\"workflow-desc\">Project kickoff document + client welcome package delivered</div></div></div>\n  </div>\n  <span class=\"page-num\">Page 12</span>\n</div>\n\n<!-- ════════════════ PAGE 13 — SEO STRATEGY ════════════════ -->"
+  "html_content": "<div class=\"page\" id=\"page-12\" data-label=\"Contact\">\n  <div class=\"section-tag\">Section 09</div>\n  <h1 class=\"page-title\">Contact Page & Lead Generation</h1>\n  <p class=\"page-sub\">Multiple touchpoints to convert visitors into qualified leads.</p>\n\n  <div class=\"card-grid col2\">\n    <div>\n      <h3>Contact Details</h3>\n      <div class=\"contact-row\"><div class=\"contact-icon\">📞</div><div><div class=\"contact-label\">WhatsApp Contact 1</div><div class=\"contact-value\"><a href=\"https://wa.me/923343660833\" style=\"color:#60a5fa;text-decoration:underline\">+92334-3660833</a></div></div></div>\n      <div class=\"contact-row\"><div class=\"contact-icon\">📞</div><div><div class=\"contact-label\">WhatsApp Contact 2</div><div class=\"contact-value\"><a href=\"https://wa.me/923412899849\" style=\"color:#60a5fa;text-decoration:underline\">+92341-2899849</a></div></div></div>\n      <div class=\"contact-row\"><div class=\"contact-icon\">✉️</div><div><div class=\"contact-label\">Email</div><div class=\"contact-value\">themarkazenterprises@gmail.com</div></div></div>\n      <div class=\"contact-row\"><div class=\"contact-icon\">📍</div><div><div class=\"contact-label\">Office</div><div class=\"contact-value\">Banglow # D-96, Block 5, F.B Area, Gulberg Town, Karachi - 75950</div></div></div>\n      <div class=\"contact-row\"><div class=\"contact-icon\">🕐</div><div><div class=\"contact-label\">Business Hours</div><div class=\"contact-value\">Mon–Sat: 9:00 AM – 6:00 PM PKT</div></div></div>\n      <div style=\"background:#25D366;color:#fff;padding:12px 16px;border-radius:8px;font-weight:700;font-size:.85rem;text-align:center;margin-top:8px\"><a href=\"https://wa.me/923343660833\" style=\"color:#fff;text-decoration:none\">💬 WhatsApp 1: +92334-3660833</a> | <a href=\"https://wa.me/923412899849\" style=\"color:#fff;text-decoration:none\">💬 WhatsApp 2: +92341-2899849</a></div>\n    </div>\n    <div>\n      <h3>Contact Form Fields</h3>\n      <div class=\"form-preview\">\n        <div class=\"form-field\">Full Name *</div>\n        <div class=\"form-field\">Company Name</div>\n        <div class=\"form-field\">Phone Number *</div>\n        <div class=\"form-field\">Email Address</div>\n        <div class=\"form-field form-select\">Service Required (dropdown — all 11 services)</div>\n        <div class=\"form-field form-select\">Project Budget Range</div>\n        <div class=\"form-field form-textarea\">Project Description</div>\n        <div class=\"form-field form-select\">Preferred Contact Method</div>\n        <div class=\"form-submit-preview\">Send Inquiry →</div>\n      </div>\n    </div>\n  </div>\n\n  <div class=\"section-rule\"></div>\n  <h3>Lead Nurturing Workflow</h3>\n  <div class=\"workflow-steps\">\n    <div class=\"workflow-step\"><div class=\"workflow-num\">1</div><div class=\"workflow-content\"><div class=\"workflow-title\">Form Submission</div><div class=\"workflow-desc\">Auto-reply email confirming receipt sent immediately</div></div></div>\n    <div class=\"workflow-step\"><div class=\"workflow-num\">2</div><div class=\"workflow-content\"><div class=\"workflow-title\">CRM Entry</div><div class=\"workflow-desc\">Lead enters CRM; sales team notified via WhatsApp & email</div></div></div>\n    <div class=\"workflow-step\"><div class=\"workflow-num\">3</div><div class=\"workflow-content\"><div class=\"workflow-title\">2-Hour Call-Back</div><div class=\"workflow-desc\">Sales rep contacts lead via call or WhatsApp within 2 hours</div></div></div>\n    <div class=\"workflow-step\"><div class=\"workflow-num\">4</div><div class=\"workflow-content\"><div class=\"workflow-title\">Consultation Scheduled</div><div class=\"workflow-desc\">Calendar invite + pre-consultation questionnaire sent</div></div></div>\n    <div class=\"workflow-step\"><div class=\"workflow-num\">5</div><div class=\"workflow-content\"><div class=\"workflow-title\">Follow-Up Sequence</div><div class=\"workflow-desc\">Weekly follow-up email for 4 weeks if no decision reached</div></div></div>\n    <div class=\"workflow-step\"><div class=\"workflow-num\">6</div><div class=\"workflow-content\"><div class=\"workflow-title\">Converted</div><div class=\"workflow-desc\">Project kickoff document + client welcome package delivered</div></div></div>\n  </div>\n  <span class=\"page-num\">Page 12</span>\n</div>\n\n<!-- ════════════════ PAGE 13 — SEO STRATEGY ════════════════ -->"
 },
   divisions: [
   {
@@ -657,6 +657,41 @@ export const SITE_INFO = {
       "SolarEdge"
     ],
     "features": []
+  },
+  {
+    "id": "DIV11",
+    "title": "Battery Systems & Custom Packs",
+    "tagline": "Custom LiFePO4 Battery Packs, Smart BMS & Industrial Energy Storage",
+    "intro": "Turnkey engineering of custom lithium battery packs, active balancing smart BMS integration, and solar-storage systems in Pakistan.",
+    "services": [
+      "Custom LiFePO4 Pack Assembly",
+      "Smart Inverter BMS Integration (CAN/RS485)",
+      "Wall-Mount & Rack ESS Systems",
+      "Active Balancing BMS Calibration",
+      "EVE Prismatic Cell Supply",
+      "Battery Capacity & Health Audits",
+      "Industrial & UPS Lithium Upgrades"
+    ],
+    "tech_stack": [
+      "CAN Bus Protocol",
+      "RS485 Dual Telemetry",
+      "UART Bluetooth App",
+      "JK Active Balancing",
+      "LiFePO4 Chemistry"
+    ],
+    "brands": [
+      "EVE Energy",
+      "JK Smart BMS",
+      "Deye Compatible",
+      "Growatt Compatible",
+      "Victron Compatible",
+      "FoxESS Compatible"
+    ],
+    "features": [
+      "Grade-A EVE LiFePO4 Cells",
+      "Smart Closed-Loop Inverter Communications",
+      "5-Year / 5000-Cycle Extended Warranty on Flagship Systems"
+    ]
   }
 ]
 };

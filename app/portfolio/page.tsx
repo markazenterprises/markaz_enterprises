@@ -36,7 +36,7 @@ export default function PortfolioPage() {
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-indigo-300">Speaks for Itself</span>
             </h1>
             <p className="text-blue-100 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed">
-              500+ completed projects across 10 specialist divisions — measurable results, transparent timelines, and client-verified outcomes.
+              500+ completed projects across 11 specialist divisions — measurable results, transparent timelines, and client-verified outcomes.
             </p>
           </div>
         </section>

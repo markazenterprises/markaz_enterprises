@@ -33,9 +33,17 @@ const DIVISION_IMAGES: Record<string, { hero: string; gallery: string[] }> = {
   solar: {
     hero: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=1600&auto=format&fit=crop&q=80",
     gallery: [
-      "https://images.unsplash.com/photo-1548337138-e87d889cc369?w=600&auto=format&fit=crop&q=70",
-      "https://images.unsplash.com/photo-1613665813446-82a78c468a1d?w=600&auto=format&fit=crop&q=70",
-      "https://images.unsplash.com/photo-1532601224476-15c79f2f7a51?w=600&auto=format&fit=crop&q=70",
+      "/projects/foxess-inverter-battery-installation.jpg",
+      "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1548337138-e87d889cc369?w=800&auto=format&fit=crop&q=80",
+    ]
+  },
+  batteries: {
+    hero: "/projects/foxess-inverter-battery-installation.jpg",
+    gallery: [
+      "/projects/foxess-inverter-battery-installation.jpg",
+      "/products/48v-100ah-lifepo4-wall-mount-system.png",
+      "/products/8s-16s-200a-smart-inverter-bms.png",
     ]
   },
   cctv: {
@@ -131,6 +139,7 @@ const DIVISION_CASE_STUDIES: Record<string, { slug: string; title: string; metri
   "construction": { slug: "gulshan-luxury-residence-construction", title: "500 Sq Yd Luxury Turnkey Residence", metric: "500 Sq Yd · 12 months" },
   "interior": { slug: "corporate-office-interior-clifton", title: "Premium Corporate Office Space", metric: "4,000 Sq Ft · 8 weeks" },
   "solar": { slug: "100kw-solar-textile-factory-karachi", title: "100kW Hybrid Solar Installation", metric: "PKR 500k/mo saved" },
+  "batteries": { slug: "100kw-solar-textile-factory-karachi", title: "Industrial Solar Storage & Battery Integration", metric: "5.0kWh – 100kWh Systems" },
   "cctv": { slug: "32-camera-ip-surveillance-port-qasim", title: "32-Camera IP Surveillance Network", metric: "24/7 coverage · 30-day DVR" },
   "software": { slug: "multi-channel-warehouse-erp-system", title: "Multi-Channel Warehouse ERP System", metric: "65% ops efficiency gain" },
   "mobile": { slug: "react-native-field-app-logistics", title: "React Native Rider Dispatch App", metric: "+40% delivery speed" },
@@ -151,8 +160,14 @@ const DIVISION_CROSS_LINKS: Record<string, { slug: string; name: string }[]> = {
     { slug: "home-appliances", name: "Home Appliances" }
   ],
   "solar": [
+    { slug: "batteries", name: "Battery Systems & Custom Packs" },
     { slug: "construction", name: "Turnkey Construction" },
     { slug: "analytics", name: "Data Analytics & BI" }
+  ],
+  "batteries": [
+    { slug: "solar", name: "Solar Energy Solutions" },
+    { slug: "analytics", name: "Data Analytics & Telemetry" },
+    { slug: "construction", name: "Turnkey Construction" }
   ],
   "cctv": [
     { slug: "software-development", name: "Architecture & IT" },
@@ -219,37 +234,40 @@ export default async function DivisionPage({ params }: Props) {
             className="absolute inset-0 bg-cover bg-center"
             style={{ backgroundImage: `url('${imgs.hero}')` }}
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-900/92 via-slate-900/55 to-blue-900/30" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0B1E3D]/95 via-[#0B1E3D]/70 to-[#0B1E3D]/40" />
           <div className="relative z-10 max-w-7xl mx-auto px-6 pb-12 pt-20 w-full">
             <div className="max-w-3xl space-y-3">
               {data.divisionId && (
-                <span className="inline-flex px-2.5 py-1 bg-blue-500/90 backdrop-blur-sm rounded-full text-[10px] font-black tracking-widest text-white uppercase">
+                <span className="inline-flex px-2.5 py-1 bg-[#F5A623] text-[#0F172A] backdrop-blur-sm rounded-full text-[10px] font-black tracking-widest uppercase">
                   {data.divisionId} — Specialist Division
                 </span>
               )}
               <h1 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white leading-tight">
                 {data.h1}
               </h1>
-              <p className="text-blue-100 text-xs sm:text-sm leading-relaxed max-w-2xl">
+              <p className="text-white/80 text-xs sm:text-sm leading-relaxed max-w-2xl">
                 {data.subtitle}
               </p>
               <div className="flex flex-wrap gap-3 pt-1">
-                <Link href="/contact" className="px-5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-xl text-xs uppercase tracking-wide transition-all hover:scale-105 shadow-lg shadow-blue-500/30">
+                <Link href="/contact" className="px-5 py-2.5 bg-[#F5A623] hover:bg-[#E08E00] text-[#0F172A] font-extrabold rounded-xl text-xs uppercase tracking-wide transition-all hover:scale-105 shadow-lg shadow-[#F5A623]/25">
                   Get Free Consultation
                 </Link>
+                {(slug === "batteries" || slug === "solar") && (
+                  <>
+                    <Link href="/products" className="px-5 py-2.5 bg-[#132C54] hover:bg-[#1e3d6e] border border-[#F5A623]/30 text-white font-black rounded-xl text-xs uppercase tracking-wide transition-all hover:scale-105 shadow-md">
+                      ⚡ Product Catalogue
+                    </Link>
+                    <Link href="/custom-battery-quote" className="px-5 py-2.5 bg-[#E08E00] hover:bg-[#F5A623] text-[#0F172A] font-extrabold rounded-xl text-xs uppercase tracking-wide transition-all hover:scale-105 shadow-md">
+                      🛠️ Custom Battery Sizing
+                    </Link>
+                  </>
+                )}
                 <a
                   href={`https://wa.me/${SITE_INFO.contact.whatsapp.replace('+', '')}?text=Hello%20Markaz%20Enterprises%2C%20I%20am%20interested%20in%20${encodeURIComponent(data.h1)}.`}
                   target="_blank" rel="noopener noreferrer"
                   className="px-5 py-2.5 bg-emerald-500 hover:bg-emerald-400 text-white font-bold rounded-xl text-xs uppercase tracking-wide transition-all hover:scale-105 shadow-md"
                 >
-                  💬 WhatsApp 1
-                </a>
-                <a
-                  href={`https://wa.me/${SITE_INFO.contact.whatsapp2.replace('+', '')}?text=Hello%20Markaz%20Enterprises%2C%20I%20am%20interested%20in%20${encodeURIComponent(data.h1)}.`}
-                  target="_blank" rel="noopener noreferrer"
-                  className="px-5 py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-xl text-xs uppercase tracking-wide transition-all hover:scale-105 shadow-md"
-                >
-                  💬 WhatsApp 2
+                  💬 WhatsApp
                 </a>
               </div>
             </div>
@@ -257,7 +275,7 @@ export default async function DivisionPage({ params }: Props) {
         </section>
 
         {/* Quick Stats Strip */}
-        <div className="bg-blue-600 py-6 border-y border-blue-700">
+        <div className="bg-[#0B1E3D] py-6 border-y border-[#F5A623]/20">
           <div className="max-w-5xl mx-auto px-6 grid grid-cols-3 gap-4 text-center text-white">
             {[
               { num: "500+", label: "Projects Done" },
@@ -265,8 +283,8 @@ export default async function DivisionPage({ params }: Props) {
               { num: "98%", label: "Satisfaction" },
             ].map((s, i) => (
               <div key={i} className="space-y-0.5">
-                <div className="text-2xl font-black">{s.num}</div>
-                <div className="text-blue-100 text-xs font-bold uppercase tracking-wider">{s.label}</div>
+                <div className="text-2xl font-black text-[#F5A623]">{s.num}</div>
+                <div className="text-white/70 text-xs font-bold uppercase tracking-wider">{s.label}</div>
               </div>
             ))}
           </div>
@@ -280,11 +298,25 @@ export default async function DivisionPage({ params }: Props) {
 
               {/* Image Gallery */}
               <div className="grid grid-cols-3 gap-3">
-                {imgs.gallery.map((src, i) => (
-                  <div key={i} className={`rounded-2xl overflow-hidden shadow-md ${i === 0 ? "col-span-2 row-span-1 aspect-[16/9]" : "aspect-square"}`}>
-                    <img src={src} alt={`${data.h1} ${i + 1}`} className="object-cover w-full h-full hover:scale-105 transition-transform duration-500" />
-                  </div>
-                ))}
+                {imgs.gallery.map((src, i) => {
+                  const isProductAsset = src.startsWith("/products/");
+                  return (
+                    <div
+                      key={i}
+                      className={`rounded-2xl overflow-hidden shadow-md ${
+                        i === 0 ? "col-span-2 row-span-1 aspect-[16/9]" : "aspect-square"
+                      } ${isProductAsset ? "bg-[#081222] border border-slate-800 p-4 flex items-center justify-center" : "bg-slate-100"}`}
+                    >
+                      <img
+                        src={src}
+                        alt={`${data.h1} ${i + 1}`}
+                        className={`${
+                          isProductAsset ? "object-contain max-h-full max-w-full" : "object-cover w-full h-full"
+                        } hover:scale-105 transition-transform duration-500`}
+                      />
+                    </div>
+                  );
+                })}
               </div>
 
               {data.features && data.features.length > 0 && (

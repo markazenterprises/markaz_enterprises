@@ -6,16 +6,17 @@ import { SITE_INFO } from "@/app/site_info";
 import type { Metadata } from "next";
 import {
   Building2, Palette, Cpu, Shield, Code2, Smartphone,
-  Layers, BarChart3, Megaphone, Sun, Wrench, LayoutDashboard
+  Layers, BarChart3, Megaphone, Sun, Wrench, LayoutDashboard, BatteryCharging
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "All 10 Service Divisions | Markaz Enterprises Karachi",
-  description: "Explore all 10 specialist divisions of Markaz Enterprises — from Turnkey Construction and Solar Energy to Custom Software, CCTV, Interior Design, and Digital Marketing across Pakistan.",
+  title: "All 11 Service Divisions | Markaz Enterprises Karachi",
+  description: "Explore all 11 specialist divisions of Markaz Enterprises — from Solar Energy & Custom LiFePO4 Battery Systems to Turnkey Construction, Custom Software, CCTV, Interior Design, and Digital Marketing across Pakistan.",
   keywords: [
     "Markaz Enterprises Divisions",
-    "Construction Company Karachi",
     "Solar Energy Pakistan",
+    "Lithium Battery Packs Karachi",
+    "Construction Company Karachi",
     "Software House Karachi",
     "CCTV Security Systems",
     "Interior Design Karachi",
@@ -35,19 +36,21 @@ const divisionIcons: Record<string, React.ReactNode> = {
   DIV08: <BarChart3 className="w-8 h-8" />,
   DIV09: <Megaphone className="w-8 h-8" />,
   DIV10: <Sun className="w-8 h-8" />,
+  DIV11: <BatteryCharging className="w-8 h-8" />,
 };
 
 const divisionColors: Record<string, string> = {
-  DIV01: "from-blue-600 to-blue-800",
-  DIV02: "from-indigo-600 to-indigo-800",
+  DIV01: "from-[#0B1E3D] to-[#132C54]",
+  DIV02: "from-[#132C54] to-[#1e3d6e]",
   DIV03: "from-slate-600 to-slate-800",
-  DIV04: "from-blue-700 to-indigo-900",
-  DIV05: "from-blue-600 to-indigo-700",
-  DIV06: "from-indigo-500 to-purple-600",
-  DIV07: "from-cyan-600 to-blue-700",
+  DIV04: "from-[#0B1E3D] to-[#132C54]",
+  DIV05: "from-[#132C54] to-[#0B1E3D]",
+  DIV06: "from-[#0B1E3D] to-[#132C54]",
+  DIV07: "from-[#0EA5E9]/80 to-[#0B1E3D]",
   DIV08: "from-emerald-600 to-teal-700",
   DIV09: "from-purple-600 to-pink-600",
-  DIV10: "from-blue-500 to-emerald-500",
+  DIV10: "from-[#F5A623] to-[#E08E00]",
+  DIV11: "from-emerald-600 to-teal-700",
 };
 
 const divisionSlugs: Record<string, string> = {
@@ -61,32 +64,33 @@ const divisionSlugs: Record<string, string> = {
   DIV08: "analytics",
   DIV09: "marketing",
   DIV10: "solar",
+  DIV11: "batteries",
 };
 
 export default function DivisionsPage() {
   return (
-    <div className="min-h-screen flex flex-col text-slate-100" style={{ background: "#060c1a" }}>
-      <main className="flex-1" style={{ background: "#060c1a" }}>
+    <div className="min-h-screen flex flex-col text-slate-100" style={{ background: "#0B1E3D" }}>
+      <main className="flex-1" style={{ background: "#0B1E3D" }}>
         {/* Full-Screen Hero with Image */}
         <section className="relative min-h-[300px] lg:min-h-[360px] flex items-center overflow-hidden">
           <div
             className="absolute inset-0 bg-cover bg-center"
             style={{ backgroundImage: "url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1600&auto=format&fit=crop&q=80')" }}
           />
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/90 via-slate-900/80 to-indigo-900/85" />
+          <div className="absolute inset-0 bg-gradient-to-br from-[#0B1E3D]/92 via-[#132C54]/80 to-[#0B1E3D]/90" />
           <div className="relative z-10 max-w-7xl mx-auto px-6 py-16 text-center space-y-4 w-full">
-            <span className="inline-flex items-center gap-2 px-3 py-1 bg-white/10 border border-white/20 rounded-full text-[10px] font-black tracking-widest text-blue-200 uppercase backdrop-blur-sm">
+            <span className="inline-flex items-center gap-2 px-3 py-1 bg-white/10 border border-[#F5A623]/25 rounded-full text-[10px] font-black tracking-widest text-[#F5A623] uppercase backdrop-blur-sm">
               <LayoutDashboard className="w-3.5 h-3.5" /> Enterprise Divisions
             </span>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight">
-              10 Specialist{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-indigo-300">Service Divisions</span>
+              11 Specialist{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#F5A623] to-[#E08E00]">Service Divisions</span>
             </h1>
-            <p className="text-blue-100 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed">
+            <p className="text-white/80 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed">
               Pakistan&apos;s only consolidated multi-industry solutions provider — delivering Construction, Energy, Technology, and Marketing excellence under one trusted brand.
             </p>
             <div className="flex flex-wrap justify-center gap-3 pt-1">
-              <Link href="/contact" className="px-6 py-2.5 bg-blue-500 hover:bg-blue-400 text-white font-bold rounded-xl text-xs uppercase tracking-wide transition-all hover:scale-105 shadow-lg shadow-blue-500/30">
+              <Link href="/contact" className="px-6 py-2.5 bg-[#F5A623] hover:bg-[#E08E00] text-[#0F172A] font-bold rounded-xl text-xs uppercase tracking-wide transition-all hover:scale-105 shadow-lg shadow-[#F5A623]/30">
                 Get Free Consultation
               </Link>
               <Link href="/portfolio" className="px-6 py-2.5 bg-white/10 border border-white/20 hover:bg-white/20 text-white font-bold rounded-xl text-xs uppercase tracking-wide transition-all backdrop-blur-sm">
@@ -113,13 +117,13 @@ export default function DivisionsPage() {
                     glowIntensity={1.0}
                     coneSpread={30}
                     animated={true}
-                    colors={["#3b82f6", "#6366f1", "#10b981"]}
+                    colors={["#F5A623", "#E08E00", "#0EA5E9"]}
                     className="group"
                   >
                     <div className="p-6 space-y-4 text-slate-900">
                       {/* Division Icon & ID */}
                       <div className="flex items-center justify-between">
-                        <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${divisionColors[div.id] || "from-blue-600 to-indigo-700"} flex items-center justify-center text-white shadow-md group-hover:scale-110 transition-transform duration-300`}>
+                        <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${divisionColors[div.id] || "from-[#0B1E3D] to-[#132C54]"} flex items-center justify-center text-white shadow-md group-hover:scale-110 transition-transform duration-300`}>
                           {divisionIcons[div.id] || <Layers className="w-8 h-8" />}
                         </div>
                         <span className="text-xs font-black text-slate-500 tracking-widest border border-slate-200 bg-slate-50 px-2.5 py-1 rounded-lg">
@@ -129,7 +133,7 @@ export default function DivisionsPage() {
 
                       {/* Title & Tagline */}
                       <div>
-                        <h2 className="text-lg font-black text-slate-900 group-hover:text-blue-600 transition-colors">
+                        <h2 className="text-lg font-black text-slate-900 group-hover:text-[#F5A623] transition-colors">
                           {div.title}
                         </h2>
                         <p className="text-slate-500 text-xs mt-1 leading-relaxed">{div.intro}</p>
@@ -143,7 +147,7 @@ export default function DivisionsPage() {
                           </span>
                         ))}
                         {div.services.length > 4 && (
-                          <span className="text-xs px-2.5 py-1 bg-blue-50 border border-blue-100 text-blue-600 rounded-md font-bold">
+                          <span className="text-xs px-2.5 py-1 bg-[#F5A623]/10 border border-[#F5A623]/20 text-[#E08E00] rounded-md font-bold">
                             +{div.services.length - 4} more
                           </span>
                         )}
@@ -160,7 +164,7 @@ export default function DivisionsPage() {
                       {/* CTA */}
                       <Link
                         href={`/divisions/${slug}`}
-                        className="inline-flex items-center gap-2 text-xs font-black text-blue-600 hover:text-blue-800 transition-colors group-hover:translate-x-1 transition-transform duration-200"
+                        className="inline-flex items-center gap-2 text-xs font-black text-[#F5A623] hover:text-[#E08E00] transition-colors group-hover:translate-x-1 transition-transform duration-200"
                       >
                         Explore Division →
                       </Link>
@@ -173,15 +177,15 @@ export default function DivisionsPage() {
         </section>
 
         {/* CTA Banner */}
-        <section className="py-16 bg-gradient-to-r from-blue-600 to-indigo-700 text-white">
+        <section className="py-16 bg-gradient-to-r from-[#0B1E3D] to-[#132C54] text-white border-y border-[#F5A623]/20">
           <div className="max-w-3xl mx-auto text-center px-6 space-y-6">
             <h2 className="text-3xl font-black text-white">Can&apos;t Find Your Service?</h2>
-            <p className="text-blue-100 text-sm">Our multi-division capabilities often extend beyond what&apos;s listed. Contact us for a custom consultation — no obligation.</p>
+            <p className="text-white/70 text-sm">Our multi-division capabilities often extend beyond what&apos;s listed. Contact us for a custom consultation — no obligation.</p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Link href="/contact" className="px-8 py-3 bg-white text-blue-700 hover:bg-blue-50 font-bold rounded-xl text-sm uppercase tracking-wide transition-all hover:scale-105 shadow-md">
+              <Link href="/contact" className="px-8 py-3 bg-[#F5A623] hover:bg-[#E08E00] text-[#0F172A] font-bold rounded-xl text-sm uppercase tracking-wide transition-all hover:scale-105 shadow-md">
                 Request Free Consultation
               </Link>
-              <a href={`https://wa.me/92343660833`} target="_blank" rel="noopener noreferrer" className="px-8 py-3 bg-emerald-500 hover:bg-emerald-400 text-white font-bold rounded-xl text-sm uppercase tracking-wide transition-all hover:scale-105 shadow-md">
+              <a href={`https://wa.me/923343660833`} target="_blank" rel="noopener noreferrer" className="px-8 py-3 bg-emerald-500 hover:bg-emerald-400 text-white font-bold rounded-xl text-sm uppercase tracking-wide transition-all hover:scale-105 shadow-md">
                 WhatsApp Us Now
               </a>
             </div>

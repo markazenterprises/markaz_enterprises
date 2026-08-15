@@ -45,7 +45,7 @@ export default function PrivacyPage() {
             },
             {
               title: "7. Contact",
-              body: "For privacy-related inquiries, contact Markaz Enterprises at: themarkazenterprises@gmail.com or via WhatsApp at +9234-3660833 or +92341-2899849."
+              body: "For privacy-related inquiries, contact Markaz Enterprises at: themarkazenterprises@gmail.com or via WhatsApp at +92334-3660833 or +92341-2899849."
             }
           ].map((section, i) => (
             <div key={i} className="border rounded-2xl p-6 space-y-2" style={{ background: "rgba(13,21,38,0.85)", borderColor: "rgba(59,130,246,0.15)" }}>

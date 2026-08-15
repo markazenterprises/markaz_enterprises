@@ -7,6 +7,30 @@ import BorderGlow from "@/components/ui/BorderGlow";
 
 const DIVISIONS = [
   {
+    id: "DIV10",
+    slug: "solar",
+    badge: "Featured · Solar Energy",
+    title: "Hybrid Solar Energy Solutions",
+    tagline: "Grid-Tied, Off-Grid & Hybrid Solar Systems Across Pakistan",
+    desc: "We design, supply, and install industrial-grade solar systems using Tier-1 panels and inverters, handle NEPRA net metering licensing, and provide cloud-based monitoring for your installation.",
+    highlights: ["Longi & JA Solar Tier-1 panels", "Huawei, Sungrow & Solis inverters", "NEPRA net metering license processing", "25-year panel linear power warranty"],
+    image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=900&auto=format&fit=crop&q=80",
+    accent: "from-amber-500 to-yellow-600",
+    badgeColor: "bg-amber-100 text-amber-900 border-amber-300 font-extrabold",
+  },
+  {
+    id: "DIV11",
+    slug: "batteries",
+    badge: "Featured · Lithium Storage",
+    title: "Battery Systems & Custom Packs",
+    tagline: "Custom LiFePO4 Battery Assembly, Smart BMS & Industrial ESS",
+    desc: "Turnkey engineering of custom LiFePO4 battery packs with active-balancing smart BMS and closed-loop inverter communications (CAN/RS485) for Growatt, Deye, and Victron systems.",
+    highlights: ["Grade-A EVE LiFePO4 prismatic cells", "Smart BMS w/ inverter CAN/RS485 comms", "Active balancing & Bluetooth app monitoring", "5-year / 5000-cycle warranty on complete packs"],
+    image: "/projects/foxess-inverter-battery-installation.jpg",
+    accent: "from-[#F5A623] to-[#E08E00]",
+    badgeColor: "bg-amber-100 text-amber-900 border-amber-300 font-extrabold",
+  },
+  {
     id: "DIV01",
     slug: "construction",
     badge: "Construction",
@@ -29,18 +53,6 @@ const DIVISIONS = [
     image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=900&auto=format&fit=crop&q=80",
     accent: "from-pink-600 to-rose-700",
     badgeColor: "bg-pink-50 text-pink-700 border-pink-200",
-  },
-  {
-    id: "DIV10",
-    slug: "solar",
-    badge: "Solar Energy",
-    title: "Hybrid Solar Energy Solutions",
-    tagline: "Grid-Tied, Off-Grid & Hybrid Solar Systems Across Pakistan",
-    desc: "We design, supply, and install industrial-grade solar systems using Tier-1 panels and inverters, handle NEPRA net metering licensing, and provide cloud-based monitoring for your installation.",
-    highlights: ["Longi & JA Solar Tier-1 panels", "Huawei & SMA inverter systems", "NEPRA net metering processing", "30-day remote cloud monitoring"],
-    image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=900&auto=format&fit=crop&q=80",
-    accent: "from-amber-500 to-yellow-600",
-    badgeColor: "bg-amber-50 text-amber-700 border-amber-200",
   },
   {
     id: "DIV04",
@@ -138,19 +150,19 @@ export default function DivisionsSection() {
   return (
     <>
       {/* Trust Stats Bar */}
-      <section className="bg-blue-600 py-12 border-y border-blue-700">
+      <section className="bg-[#0B1E3D] py-12 border-y border-[#F5A623]/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-5 gap-6 text-center text-white">
             {[
               { num: "500+", label: "Projects Delivered" },
-              { num: "10", label: "Specialized Divisions" },
+              { num: "11", label: "Specialized Divisions" },
               { num: "10+ Yrs", label: "Proven Experience" },
               { num: "98%", label: "Client Satisfaction" },
               { num: "Pakistan", label: "Nationwide Execution" },
             ].map((stat, idx) => (
               <div key={idx} className="py-4 px-2 space-y-1">
-                <span className="block text-3xl sm:text-4xl font-black text-white">{stat.num}</span>
-                <span className="block text-[11px] sm:text-xs text-blue-100 font-bold uppercase tracking-wider">
+                <span className="block text-3xl sm:text-4xl font-black text-[#F5A623]">{stat.num}</span>
+                <span className="block text-[11px] sm:text-xs text-white/70 font-bold uppercase tracking-wider">
                   {stat.label}
                 </span>
               </div>
@@ -165,14 +177,14 @@ export default function DivisionsSection() {
 
           {/* Header */}
           <div className="text-center max-w-3xl mx-auto mb-10 space-y-2">
-            <h2 className="text-xs font-black tracking-widest text-blue-500 uppercase">
+            <h2 className="text-xs font-black tracking-widest text-[#F5A623] uppercase">
               Corporate Capabilities
             </h2>
             <h3 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-slate-900">
-              10 Specialized Service Divisions
+              11 Specialized Service Divisions
             </h3>
             <p className="text-slate-500 text-sm font-medium leading-relaxed">
-              One trusted partner across construction, technology, security, and energy — delivering measurable results across Pakistan.
+              One trusted partner across energy storage, solar systems, construction, technology, and security — delivering measurable results across Pakistan.
             </p>
           </div>
 
@@ -191,31 +203,33 @@ export default function DivisionsSection() {
                   glowIntensity={0.8}
                   coneSpread={25}
                   animated={true}
-                  colors={["#3b82f6", "#6366f1", "#10b981"]}
+                  colors={["#F5A623", "#E08E00", "#0EA5E9"]}
                   className="shadow-md hover:shadow-lg transition-all duration-500 overflow-hidden"
                 >
                   <div
                     className={`grid grid-cols-1 lg:grid-cols-2 gap-0 group ${isEven ? "" : "lg:[direction:rtl]"}`}
                   >
                     {/* Image Side */}
-                    <div className={`relative min-h-[220px] lg:min-h-[280px] overflow-hidden ${isEven ? "" : "lg:[direction:ltr]"}`}>
+                    <div className={`relative min-h-[240px] lg:min-h-[300px] overflow-hidden flex items-center justify-center ${div.image.startsWith('/products/') ? 'bg-gradient-to-br from-[#0b162c] to-[#040812] p-6' : ''} ${isEven ? "" : "lg:[direction:ltr]"}`}>
                       <img
                         src={div.image}
                         alt={div.title}
-                        className="absolute inset-0 object-cover w-full h-full group-hover:scale-102 transition-transform duration-700"
+                        className={`transition-transform duration-700 ${div.image.startsWith('/products/') ? 'object-contain max-h-[230px] max-w-[85%] group-hover:scale-105 z-0' : 'absolute inset-0 object-cover w-full h-full group-hover:scale-102'}`}
                       />
-                      {/* gradient overlay */}
-                      <div className={`absolute inset-0 bg-gradient-to-r ${isEven ? "from-transparent to-slate-900/10" : "from-slate-900/10 to-transparent"}`} />
+                      {/* gradient overlay (only for background photos) */}
+                      {!div.image.startsWith('/products/') && (
+                        <div className={`absolute inset-0 bg-gradient-to-r ${isEven ? "from-transparent to-slate-900/10" : "from-slate-900/10 to-transparent"}`} />
+                      )}
 
                       {/* Division ID badge */}
-                      <div className="absolute top-5 left-5">
+                      <div className="absolute top-5 left-5 z-10">
                         <span className={`px-3 py-1.5 text-[10px] font-black uppercase tracking-widest rounded-full border ${div.badgeColor}`}>
                           {div.badge}
                         </span>
                       </div>
 
                       {/* Gradient accent bar at bottom */}
-                      <div className={`absolute bottom-0 left-0 right-0 h-1.5 bg-gradient-to-r ${div.accent}`} />
+                      <div className={`absolute bottom-0 left-0 right-0 h-1.5 bg-gradient-to-r ${div.accent} z-10`} />
                     </div>
 
                     {/* Content Side */}
@@ -233,7 +247,7 @@ export default function DivisionsSection() {
                         <h3 className="text-xl sm:text-2xl font-black text-slate-900 leading-tight">
                           {div.title}
                         </h3>
-                        <p className="text-xs font-semibold text-blue-600 uppercase tracking-wide">{div.tagline}</p>
+                        <p className="text-xs font-semibold text-[#F5A623] uppercase tracking-wide">{div.tagline}</p>
                       </div>
 
                       {/* Description */}
@@ -245,7 +259,7 @@ export default function DivisionsSection() {
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                         {div.highlights.map((h, i) => (
                           <div key={i} className="flex items-start gap-1.5">
-                            <CheckCircle className="w-3.5 h-3.5 text-blue-500 flex-shrink-0 mt-0.5" />
+                            <CheckCircle className="w-3.5 h-3.5 text-[#F5A623] flex-shrink-0 mt-0.5" />
                             <span className="text-slate-700 text-xs font-medium">{h}</span>
                           </div>
                         ))}
@@ -275,7 +289,7 @@ export default function DivisionsSection() {
               </p>
               <button
                 onClick={() => setShowAll(true)}
-                className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-xl text-xs uppercase tracking-wide transition-all hover:scale-105 shadow-md shadow-blue-500/20"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-[#F5A623] hover:bg-[#E08E00] text-[#0F172A] font-bold rounded-xl text-xs uppercase tracking-wide transition-all hover:scale-105 shadow-md shadow-[#F5A623]/20"
               >
                 See All 10 Service Divisions <ArrowRight className="w-3.5 h-3.5" />
               </button>
@@ -284,14 +298,14 @@ export default function DivisionsSection() {
             <div className="text-center mt-16 space-y-4">
               <button
                 onClick={() => setShowAll(false)}
-                className="inline-flex items-center gap-2 px-8 py-3.5 border-2 border-slate-300 hover:border-blue-400 text-slate-600 hover:text-blue-600 font-bold rounded-xl text-sm uppercase tracking-wide transition-all"
+                className="inline-flex items-center gap-2 px-8 py-3.5 border-2 border-[#F5A623]/50 hover:border-[#F5A623] text-[#F5A623] hover:text-[#E08E00] font-bold rounded-xl text-sm uppercase tracking-wide transition-all"
               >
                 Show Less
               </button>
               <div className="pt-2">
                 <Link
                   href="/divisions"
-                  className="inline-flex items-center gap-2 text-sm font-bold text-blue-600 hover:text-blue-700 underline underline-offset-4 transition-colors"
+                  className="inline-flex items-center gap-2 text-sm font-bold text-[#F5A623] hover:text-[#E08E00] underline underline-offset-4 transition-colors"
                 >
                   View dedicated Divisions page <ArrowRight className="w-4 h-4" />
                 </Link>

@@ -12,8 +12,8 @@ const PORTFOLIO_PROJECTS = [
     category: "Solar",
     client: "Textile Manufacturing Factory, Karachi",
     metric: "PKR 500k/mo saved",
-    desc: "A complete hybrid solar grid solution addressing load-shedding and carbon footprint reduction. Includes net metering setup and remote monitoring.",
-    image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=900&auto=format&fit=crop&q=75",
+    desc: "A complete hybrid solar grid solution addressing load-shedding and carbon footprint reduction. Includes FoxESS inverter & LiFePO4 battery integration, net metering setup and remote telemetry.",
+    image: "/projects/foxess-inverter-battery-installation.jpg",
     colors: ['#3b82f6', '#10b981', '#6366f1'],
     featured: true
   },
